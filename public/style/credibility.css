@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@700&family=Montserrat:wght@400;500;600&display=swap");
+body {
+  font-family: Montserrat;
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.4;
+}
+
+section {
+  width: 90%;
+  margin-bottom: 40px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.section_main p {
+  text-align: justify;
+}
+
+.labelFIO {
+  display: inline-block;
+  border-bottom: 1px solid black;
+  width: 40%;
+  padding-bottom: 3px;
+  text-align: center;
+}
+
+.label {
+  display: inline-block;
+  border-bottom: 1px solid black;
+  width: 100%;
+  padding-bottom: 3px;
+  text-align: center;
+}
+
+.paragraph {
+  font-weight: 700;
+}
+
+.signature {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.signature div {
+  width: 25%;
+  text-align: center;
+}

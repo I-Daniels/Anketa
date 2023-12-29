@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagepdf</title>
+    <link rel="icon" href="img/ico.svg" type="image/x-icon">
+    <link rel="stylesheet" href="options/reset.css">
+    <link rel="stylesheet" href="options/normalize.css">
+    <link rel="stylesheet" href="style/pdf.css">
+</head>
+
+<body>
+    <header>
+        <img src="img/ROCKWELL CAPITAL blue.svg" alt="Logo company">
+        <p>АНКЕТА</p>
+    </header>
+    <section class="main">
+        <div class="profile">
+            <div class="name">
+                <label id="Family"></label>
+                <label id="NameMiddleName"></label>
+            </div>
+            <div class="photo" id="photo">
+            </div>
+        </div>
+    </section>
+    <section>
+        <table>
+            <tbody>
+                <tr>
+                    <td class="col1">Дата рождения</td>
+                    <td><label id="c-30"></label></td>
+                </tr>
+                <tr>
+                    <td class="col1">Место рождения</td>
+                    <td><label id="c-31"></label></td>
+                </tr>
+                <tr>
+                    <td class="col1">Гражданство</td>
+                    <td><label id="c-32"></label></td>
+                </tr>
+                <tr>
+                    <td class="col1">Образование</td>
+                    <td>
+                        <label id="education"></label>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table id="education-table">
+            <tbody>
+                <tr>
+                    <td>Наименование учебных заведений</td>
+                    <td>Годы поступления и окончания</td>
+                    <td>Факультет (отделение)</td>
+                    <td>Специальность и квалификация по диплому</td>
+                </tr>
+            </tbody>
+        </table>
+        <table id="attestation-table">
+            <tbody>
+                <tr>
+                    <td>Наличие квалификационных аттестатов, дающих право ведения профессиональной деятельности</td>
+                </tr>
+            </tbody>
+        </table>
+        <table id="qualification-table">
+            <tbody>
+                <p>Повышение квалификации</p>
+                <tr>
+                    <td>Учебное заведение или организатор</td>
+                    <td>Год проведения</td>
+                    <td>Год и период обучения</td>
+                    <td>Название курса</td>
+                </tr>
+            </tbody>
+        </table>
+        <table id="studies-table">
+            <tbody>
+                <tr>
+                    <td>Учеба в аспирантуре/докторантуре, ученая степень, звание</td>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <tbody>
+                <tr>
+                    <td class="col1">Навыки работы на компьютере</td>
+                    <td><label id="skills"></label></td>
+                </tr>
+            </tbody>
+        </table>
+        <table id="language-table">
+            <tbody>
+                <p>Знание иностранных языков</p>
+                <tr>
+                    <td width="30%">Язык</td>
+                    <td>Владение</td>
+                </tr>
+            </tbody>
+        </table>
+        <table id="job-table">
+            <tbody>
+                <p>Трудовая и иная занятость за последние 10 лет</p>
+                <tr>
+                    <td>Месяц и год приема</td>
+                    <td>Месяц и год ухода</td>
+                    <td>Наименование работодателя, должность</td>
+                    <td>Причина увольнения</td>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <tbody>
+                <tr>
+                    <td class="col1">Основные должностные обязанности по последнему месту работы</td>
+                    <td><label id="c-29"></label></td>
+                </tr>
+            </tbody>
+        </table>
+        <table id="supervisor-table">
+            <tbody>
+                <tr>
+                    <td>Наиболее значимый опыт руковдящей работы</td>
+                </tr>
+            </tbody>
+        </table>
+        <table id="jobtitle-table">
+            <tbody>
+                <tr>
+                    <td>Занимаемые в настоящее время другие должности</td>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <tbody>
+                <tr>
+                    <td class="col1">Семейное положение</td>
+                    <td>
+                        <label id="Fstatus"></label>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table id="relatives-table">
+            <tbody>
+                <p>Близкие родственники</p>
+                <tr>
+                    <td width="10%">Степень родства</td>
+                    <td width="20%">ФИО</td>
+                    <td>Дата и место рождения</td>
+                    <td>Место работы, учебы (должность)</td>
+                    <td>Адрес места жительства</td>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <tbody>
+                <tr>
+                    <td class="col1">Привлекались ли Вы и Ваши родственники к административной ответственности?</td>
+                    <td><label id="c-1"></label></td>
+                </tr>
+                <tr>
+                    <td class="col1">Пребывали ли вы длительное время (проживание, работа, учеба) за границей?</td>
+                    <td><label id="c-2"></label></td>
+                </tr>
+                <tr>
+                    <td class="col1">Имеются ли у Вас и Вашего(ей) супруга(и) родственники, постоянно проживающие за
+                        границей?</td>
+                    <td><label id="c-3"></label></td>
+                </tr>
+                <tr>
+                    <td class="col1">Имеете ли Вы государственные награды или почетные звания?</td>
+                    <td>
+                        <label id="c-4"></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col1">Отношение к воинской обязанности</td>
+                    <td>
+                        <label id="c-5"></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col1">Принадлежите ли Вы к льготной категории работников?</td>
+                    <td>
+                        <label id="data"></label>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <tbody>
+                <tr>
+                    <td rowspan="3" class="col1">Паспорт</td>
+                    <td class="col2">Серия</td>
+                    <td><label id="c-6"></label></td>
+                    <td class="col2">Номер</td>
+                    <td><label id="c-7"></label></td>
+                </tr>
+                <tr>
+                    <td class="col2">Кем выдан</td>
+                    <td colspan="3"><label id="c-8"></label></td>
+                </tr>
+                <tr>
+                    <td class="col2">Дата выдачи</td>
+                    <td><label id="c-9"></label></td>
+                    <td class="col2">Код подразделения</td>
+                    <td><label id="c-10"></label></td>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <tbody>
+                <tr>
+                    <td rowspan="3" class="col1">Загранпаспорт</td>
+                    <td class="col2">Серия</td>
+                    <td><label id="c-11"></label></td>
+                    <td class="col2">Номер</td>
+                    <td><label id="c-12"></label></td>
+                </tr>
+                <tr>
+                    <td class="col2">Кем выдан</td>
+                    <td colspan="3"><label id="c-13"></label></td>
+                </tr>
+                <tr>
+                    <td class="col2">Дата выдачи</td>
+                    <td><label id="c-14"></label></td>
+                    <td class="col2">Действует до</td>
+                    <td><label id="c-15"></label></td>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <tbody>
+                <tr>
+                    <td class="col1">Адрес постоянной регистрации по паспорту</td>
+                    <td>
+                        <label id="c-16"></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col1">Адрес временной регистрации</td>
+                    <td>
+                        <label id="c-17"></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col1">Адрес фактического проживания</td>
+                    <td>
+                        <label id="c-18"></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col1">Номер страхового свидетельства</td>
+                    <td>
+                        <label id="c-19"></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col1">ИНН</td>
+                    <td>
+                        <label id="c-20"></label>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <tbody>
+                <tr>
+                    <td rowspan="3" class="col1">Контактные телефоны и адрес электронной почты</td>
+                    <td class="col2">Домашний</td>
+                    <td><label id="c-21"></label></td>
+                    <td class="col2">Рабочий</td>
+                    <td><label id="c-22"></label></td>
+                </tr>
+                <tr>
+                    <td class="col2">Мобильный</td>
+                    <td><label id="c-23"></label></td>
+                    <td class="col2">Другие</td>
+                    <td><label id="c-24"></label></td>
+                </tr>
+                <tr>
+                    <td class="col2">e-mail:</td>
+                    <td colspan="3"><label id="c-25"></label></td>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <tbody>
+                <tr>
+                    <td class="col1">Рекомендации с предыдущих мест работы</td>
+                    <td>
+                        <label id="c-26"></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col1">Иные рекомандации</td>
+                    <td>
+                        <label id="c-27"></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col1">Дополнительные сведения, которые Вы хотите сообщить о себе</td>
+                    <td>
+                        <label id="c-28"></label>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <section class="photosAny">
+        <div id="photos-container1">
+        </div>
+        <div id="photos-container2">
+        </div>
+    </section>
+    <iframe src="PersonalInformation.html" frameborder="0" id="frame"></iframe>
+    <iframe src="Credibility.html" frameborder="0" id="frame2"></iframe>
+    <script src="js/pdf.js"></script>
+    <script src="js/print.js"></script>
+</body>
+
+</html>

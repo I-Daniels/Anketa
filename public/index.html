@@ -72,19 +72,19 @@
                         <div class="div_radio">
                             <div>
                                 <input type="checkbox" name="Высшее" id="i-7">
-                                <label for="i-1">Высшее</label>
+                                <label for="i-7">Высшее</label>
                             </div>
                             <div>
                                 <input type="checkbox" name="Незаконченное_высшее" id="i-8">
-                                <label for="i-2">Незаконченное <br> высшее</label>
+                                <label for="i-8">Незаконченное <br> высшее</label>
                             </div>
                             <div>
                                 <input type="checkbox" name="Среднее_профессиональное" id="i-9">
-                                <label for="i-3">Среднее <br> профессиональное</label>
+                                <label for="i-9">Среднее <br> профессиональное</label>
                             </div>
                             <div>
                                 <input type="checkbox" name="Среднее" id="i-10">
-                                <label for="i-4">Среднее</label>
+                                <label for="i-10">Среднее</label>
                             </div>
                         </div>
                     </td>
@@ -221,7 +221,8 @@
                         <label for="date_a0">Могу <br> объясниться</label>
                     </td>
                     <td>
-                        <input type="radio" name="language0" id="date_n0" value="Читаю и понимаю тексты по специальности">
+                        <input type="radio" name="language0" id="date_n0"
+                            value="Читаю и понимаю тексты по специальности">
                         <label for="date_n0">Читаю и понимаю тексты <br> по специальности</label>
                     </td>
                     <td>
@@ -626,22 +627,37 @@
             </tr>
         </table>
         <div class="photos">
-            <div class="file-input-container" id="imageContainer">
-                <label for="i-20" class="file-input-button">Выбрать файл</label>
-                <input type="file" name="profile" id="i-20" class="file-input" accept="image/*">
-                <span class="file-input-text">Загрузите ваше <br> фото</span>
+            <div class="container">
+                <div class="image-container" id="image-container1">
+                    <img class="uploaded-image" id="uploaded-image1" src="#" alt="Добавьте свое фото">
+                </div>
+                <div>
+                    <input type="file" name="images" id="file-input1" style="display: none;">
+                    <button class="add-photo" id="add-photo1">Добавить фото</button>
+                    <button class="remove-photo" id="remove-photo1">Удалить</button>
+                </div>
             </div>
         </div>
-        <div class="addPhotos">
-            <div class="file-input-photos" id="imageAnyphotos1">
-                <label for="i-21" class="file-input-button">Выбрать файл</label>
-                <input type="file" name="profile" id="i-21" class="file-input" accept="image/*">
-                <span class="file-input-text">Загрузите другие фото <br> (паспорта, военного билета)</span>
+        <div class="photos">
+            <div class="container">
+                <div class="image-container" id="image-container2">
+                    <img class="uploaded-image" id="uploaded-image2" src="#" alt="Добавьте фото паспорта">
+                </div>
+                <div>
+                    <input type="file" name="images" id="file-input2" style="display: none;">
+                    <button class="add-photo" id="add-photo2">Добавить фото</button>
+                    <button class="remove-photo" id="remove-photo2">Удалить</button>
+                </div>
             </div>
-            <div class="file-input-photos" id="imageAnyphotos2">
-                <label for="i-22" class="file-input-button">Выбрать файл</label>
-                <input type="file" name="profile" id="i-22" class="file-input" accept="image/*">
-                <span class="file-input-text">Загрузите другие фото <br> (паспорта, военного билета)</span>
+            <div class="container">
+                <div class="image-container" id="image-container3">
+                    <img class="uploaded-image" id="uploaded-image3" src="#" alt="Добавьте фото трудовой книжки">
+                </div>
+                <div>
+                    <input type="file" name="images" id="file-input3" style="display: none;">
+                    <button class="add-photo" id="add-photo3">Добавить фото</button>
+                    <button class="remove-photo" id="remove-photo3">Удалить</button>
+                </div>
             </div>
         </div>
     </section>

@@ -1,35 +1,26 @@
-var lastName = sessionStorage.getItem('lastName') || '';
-var firstName = sessionStorage.getItem('firstName') || '';
-var middleName = sessionStorage.getItem('middleName') || '';
-var dateBirthday = sessionStorage.getItem('dateBirthday') || '';
-var placeBirthday = sessionStorage.getItem('placeBirthday') || '';
-var placeLive = sessionStorage.getItem('placeLive') || '';
-var placeReg = sessionStorage.getItem('placeReg') || '';
-var serialPass = sessionStorage.getItem('serialPass') || '';
-var numberPass = sessionStorage.getItem('numberPass') || '';
-var datePass = sessionStorage.getItem('datePass') || '';
-var wherePass = sessionStorage.getItem('wherePass') || '';
-var mobile = sessionStorage.getItem('mobile') || '';
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+
+// Извлечение значений параметров
+const lastName = urlParams.get('last');
+const middleName = urlParams.get('middle');
+const firstName = urlParams.get('first');
+
+// Вставка значений в элемент с id "fullName"
+const fullNameElement = document.getElementById('fullName');
+if (fullNameElement) {
+  fullNameElement.textContent = `${lastName} ${firstName} ${middleName}`;
+} else {
+  console.error('Элемент с id "fullName" не найден на странице.');
+}
 
 
-sessionStorage.setItem('lastName', lastName);
-sessionStorage.setItem('firstName', firstName);
-sessionStorage.setItem('middleName', middleName);
-sessionStorage.setItem('dateBirthday', dateBirthday);
-sessionStorage.setItem('placeBirthday', placeBirthday);
-sessionStorage.setItem('placeLive', placeLive);
-sessionStorage.setItem('placeReg', placeReg);
-sessionStorage.setItem('serialPass', serialPass);
-sessionStorage.setItem('numberPass', numberPass);
-sessionStorage.setItem('datePass', datePass);
-sessionStorage.setItem('wherePass', wherePass);
-sessionStorage.setItem('mobile', mobile);
-
-document.getElementById('fullName').innerText = lastName + ' ' + firstName + ' ' + middleName;
-document.getElementById('placeLive').innerText = placeLive;
-document.getElementById('placeReg').innerText = placeReg;
-document.getElementById('datePass').innerText = datePass;
-document.getElementById('wherePass').innerText = wherePass;
-document.getElementById('mobile').innerText = mobile;
-document.getElementById('passport').innerText = serialPass + ' ' + numberPass;
-document.getElementById('datePlace').innerText = dateBirthday + ' ' + placeBirthday;
+// sessionStorage.setItem('c-30', dateBirthday);
+// sessionStorage.setItem('c-31', placeBirthday);
+// sessionStorage.setItem('c-18', placeLive);
+// sessionStorage.setItem('c-16', placeReg);
+// sessionStorage.setItem('c-6', serialPass);
+// sessionStorage.setItem('c-7', numberPass);
+// sessionStorage.setItem('c-9', datePass);
+// sessionStorage.setItem('c-8', wherePass);
+// sessionStorage.setItem('c-23', mobile);

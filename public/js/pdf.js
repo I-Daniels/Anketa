@@ -15,29 +15,46 @@ document.getElementById('Fstatus').textContent = familyStatus;
 document.getElementById('education').textContent = valuesParam;
 document.getElementById('data').textContent = selectedRadio;
 
-var data = JSON.parse(sessionStorage.getItem('data')) || {};
+document.addEventListener('DOMContentLoaded', function () {
+  var jsonData = localStorage.getItem('DataForm');
+  var data = JSON.parse(jsonData);
 
-for (var id in data) {
-  if (data.hasOwnProperty(id)) {
-    document.getElementById(id).textContent = data[id];
+  for (var key in data) {
+    var element = document.getElementById(key);
+    if (element) {
+      element.value = data[key];
+    }
   }
+});
+
+function logToServer(data) {
+  fetch('http://localhost:3050/log', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  });
 }
 
-function createIMG() {
-  const targetContainer = document.getElementById('photo');
-  const imageData = localStorage.getItem('imageData');
+const imageUrlsParam = new URLSearchParams(window.location.search).getAll('imageUrlArray');
+const imageUrlArray = JSON.parse(decodeURIComponent(imageUrlsParam[0]));
 
-  if (targetContainer && imageData) {
+function insertImagesIntoContainers() {
+  imageUrlArray.forEach((imageUrl, index) => {
+    const containerId = `photos-container${index + 1}`;
+    const photosContainer = document.getElementById(containerId);
+
     const imgElement = document.createElement('img');
-    imgElement.src = imageData;
+    imgElement.src = imageUrl;
     imgElement.style.width = '100%';
-    imgElement.style.height = '100%';
+    imgElement.style.height = 'auto';
 
-    targetContainer.appendChild(imgElement);
-  }
+    photosContainer.appendChild(imgElement);
+  });
 }
 
-createIMG();
+insertImagesIntoContainers();
 
 
 function populateEducationData(tableId) {
@@ -94,26 +111,21 @@ function languageControl() {
 
 languageControl()
 
-function onloadPhoto() {
-  var photosContainer1 = document.getElementById('photos-container1');
-  var photosContainer2 = document.getElementById('photos-container2');
 
-  var image1Src = getImageFromLocalStorage('image1');
-  var image2Src = getImageFromLocalStorage('image2');
+async function getEducationData() {
+  try {
+    const response = await fetch('http://localhost:3050/get-education-data');
+    const data = await response.json();
 
-  if (image1Src) appendImageToContainer(image1Src, photosContainer1);
-  if (image2Src) appendImageToContainer(image2Src, photosContainer2);
-
-};
-
-function getImageFromLocalStorage(key) {
-  return localStorage.getItem(key);
+    data.forEach(function (education) {
+      const newRow = table.insertRow();
+      Object.values(education).forEach(function (value) {
+        const cell = newRow.insertCell();
+        const text = document.createTextNode(value);
+        cell.appendChild(text);
+      });
+    });
+  } catch (error) {
+    console.error(error);
+  }
 }
-
-function appendImageToContainer(src, container) {
-  var img = document.createElement('img');
-  img.src = src;
-  container.appendChild(img);
-}
-
-onloadPhoto()

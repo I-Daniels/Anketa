@@ -97,30 +97,6 @@ function updateElementIdAndName(container, newIndex) {
   });
 }
 
-function handleFileSelect(fileInput, imageContainer, textSelector) {
-  const file = fileInput.files[0];
-
-  if (file) {
-    const reader = new FileReader();
-
-    reader.onload = function (e) {
-      const imgElement = document.createElement('img');
-      imgElement.src = e.target.result;
-      imgElement.style.width = '100%';
-      imgElement.style.height = '100%';
-      imageContainer.innerHTML = '';
-      imageContainer.appendChild(imgElement);
-      fileInput.style.display = 'none';
-
-      const fileInputText = imageContainer.querySelector('.file-input-text');
-      if (fileInputText) {
-        fileInputText.style.display = 'none';
-      }
-    };
-    reader.readAsDataURL(file);
-  }
-}
-
 function moveCheckedValues() {
   const checkedCheckboxes = document.querySelectorAll('.div_radio input[type="checkbox"]:checked');
   const valuesArray = Array.from(checkedCheckboxes)
@@ -128,26 +104,76 @@ function moveCheckedValues() {
 
   return valuesArray.join(', ');
 }
+var educationRowsData = [];
 
-function initializeFileInputs(fileInputClass, containerClass, textSelectorClass) {
-  const fileInputs = document.querySelectorAll(fileInputClass);
-  const imageContainers = document.querySelectorAll(containerClass);
-  const textSelectors = document.querySelectorAll(textSelectorClass);
+const uploadedImages = {};
 
-  fileInputs.forEach((fileInput, index) => {
-    fileInput.addEventListener('change', () => {
-      handleFileSelect(fileInput, imageContainers[index], textSelectors[index]);
-    });
+const userId = generateUniqueId();
+
+function setupPhotoContainer(index, userId) {
+  const addPhotoButton = document.getElementById(`add-photo${index}`);
+  const fileInput = document.getElementById(`file-input${index}`);
+  const uploadedImage = document.getElementById(`uploaded-image${index}`);
+  const removePhotoButton = document.getElementById(`remove-photo${index}`);
+
+  localStorage.setItem(`userId${index}`, userId);
+
+  const savedImagePath = localStorage.getItem(`imagePath${index}`);
+  console.log(`imagePath${index}:`, savedImagePath); // Добавляем этот лог
+
+  if (savedImagePath) {
+    uploadedImage.src = savedImagePath;
+    removePhotoButton.disabled = false;
+  }
+
+  addPhotoButton.addEventListener('click', function () {
+    fileInput.click();
+  });
+
+  fileInput.addEventListener('change', async function (event) {
+    const file = event.target.files[0];
+
+    if (file) {
+      const reader = new FileReader();
+
+      reader.onload = function (e) {
+        const imageData = e.target.result;
+        uploadedImages[index] = {
+          imageData: imageData,
+          file: file
+        };
+        uploadedImage.src = e.target.result;
+        removePhotoButton.disabled = false;
+        localStorage.setItem(`imagePath${index}`, e.target.result);
+      };
+
+      reader.readAsDataURL(file);
+    } else {
+      uploadedImage.src = '';
+      removePhotoButton.disabled = true;
+      localStorage.removeItem(`imagePath${index}`);
+      delete uploadedImages[index];
+    }
+  });
+
+  removePhotoButton.addEventListener('click', function () {
+    uploadedImage.src = '';
+    fileInput.value = '';
+    removePhotoButton.disabled = true;
+    localStorage.removeItem(`imagePath${index}`);
+    delete uploadedImages[index];
   });
 }
 
-initializeFileInputs('.file-input', '.file-input-container', '.file-input-text');
-initializeFileInputs('.file-input-photos .file-input', '.file-input-photos', '.file-input-photos .file-input-text');
+for (let i = 1; i <= 3; i++) {
+  setupPhotoContainer(i, userId);
+}
 
-var educationRowsData = [];
 
-function redirect() {
+
+async function redirect() {
   try {
+    var imageUrlArray = [];
     var data = transferData();
     var data2 = saveData();
 
@@ -166,6 +192,8 @@ function redirect() {
     var moveChecked = moveCheckedValues();
     var selectedRadio = redirectCategoryPeople();
 
+    
+
     var url =
       'serverpagepdf.html?level=' +
       encodedLevel +
@@ -181,14 +209,6 @@ function redirect() {
       moveChecked +
       '&selectedRadio=' +
       selectedRadio;
-
-    const imageContainer = document.getElementById('imageContainer');
-    const imgElement = imageContainer.querySelector('img');
-
-    if (imageContainer && imgElement) {
-      const imageData = imgElement.src;
-      localStorage.setItem('imageData', imageData);
-    }
 
     var iframe1 = document.getElementById('frame');
     var iframe2 = document.getElementById('frame2');
@@ -210,27 +230,99 @@ function redirect() {
     updateEducationData('relatives-table');
     sendLanguage();
     redirectCategoryPeople();
-    sendDataToServer(selectedLevel, lastName, firstName, middleName, familyStatus, moveChecked, selectedRadio);
-    // window.location.href = url;
+
+
+    for (const index in uploadedImages) {
+      const imageData = uploadedImages[index].imageData;
+      const file = uploadedImages[index].file;
+    
+      const formData = new FormData();
+      formData.append('image', file);
+      formData.append('imageFileName', file.name);
+      formData.append('userId', userId);
+    
+      try {
+        const response = await fetch('http://localhost:3050/upload-image', {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'userId': userId,
+          },
+        });
+    
+        if (response.ok) {
+          console.log('Изображение успешно отправлено на сервер');
+    
+          try {
+            const { imageUrl } = await response.json();
+            console.log('URL изображения:', imageUrl);
+    
+            localStorage.setItem(`uploadedImageUrl${index}`, imageUrl);
+          } catch (error) {
+            console.error('Ошибка при обработке JSON:', error);
+          }
+        } else {
+          console.error('Ошибка при отправке изображения на сервер');
+
+          const responseBody = await response.text();
+          console.error('Текст ошибки:', responseBody);
+        }
+        
+      } catch (error) {
+        console.error('Ошибка при обработке запроса:', error);
+      }
+    }
+
+    for (let i = 1; i <= 3; i++) {
+      const savedImagePath = localStorage.getItem(`uploadedImageUrl${i}`);
+      console.log(`uploadedImageUrl${i}:`, savedImagePath);
+      if (savedImagePath) {
+        imageUrlArray.push(savedImagePath);
+      }
+    }
+
+
+    sendDataToServer(selectedLevel, lastName, firstName, middleName, familyStatus, moveChecked, selectedRadio, imageUrlArray);
   } catch (error) {
-    console.error('Error in redirect:', error);
+    console.error('Ошибка в redirect:', error);
   }
+
 }
 
-function sendDataToServer(selectedLevel, lastName, firstName, middleName, familyStatus, selectedRadio) {
+function sendDataToServer(selectedLevel, lastName, firstName, middleName, familyStatus, moveChecked, selectedRadio, imageUrlArray) {
   try {
-
     const transferDataResult = transferData();
     const languageData = sendLanguage();
     const educationData = updateEducationData('education-table');
-
+    const attestationData = updateEducationData('attestation-table');
+    const qualificationData = updateEducationData('qualification-table');
+    const studiesData = updateEducationData('studies-table');
+    const jobData = updateEducationData('job-table');
+    const supervisorData = updateEducationData('supervisor-table');
+    const jobtitleData = updateEducationData('jobtitle-table');
+    const relativesData = updateEducationData('relatives-table');
+    const data = transferData()
+    const imageFileName = document.getElementById('uploaded-image1').src;
     const DataForm = {
+      lastName,
+      firstName,
+      middleName,
       selectedLevel,
       familyStatus,
       selectedRadio,
+      moveChecked,
       transferDataResult,
       languageData,
       educationData,
+      attestationData,
+      qualificationData,
+      studiesData,
+      jobData,
+      supervisorData,
+      jobtitleData,
+      relativesData,
+      data,
+      imageUrlArray,
     };
 
     console.log('Sending data:', DataForm);
@@ -239,6 +331,7 @@ function sendDataToServer(selectedLevel, lastName, firstName, middleName, family
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'userId': userId,
       },
       body: JSON.stringify(DataForm),
     })
@@ -290,9 +383,7 @@ function transferData() {
     data[id] = value;
   });
 
-  console.log(data);
-
-  sessionStorage.setItem('data', JSON.stringify(data));
+  localStorage.setItem('data', JSON.stringify(data));
 
   return data;
 }
@@ -301,28 +392,10 @@ function saveData() {
   var lastName = document.getElementById('i-1').value;
   var firstName = document.getElementById('i-2').value;
   var middleName = document.getElementById('i-3').value;
-  var dateBirthday = document.getElementById('c-30').value;
-  var placeBirthday = document.getElementById('c-31').value;
-  var placeLive = document.getElementById('c-18').value;
-  var placeReg = document.getElementById('c-16').value;
-  var serialPass = document.getElementById('c-6').value;
-  var numberPass = document.getElementById('c-7').value;
-  var datePass = document.getElementById('c-9').value;
-  var wherePass = document.getElementById('c-8').value;
-  var mobile = document.getElementById('c-23').value;
 
-  sessionStorage.setItem('lastName', lastName);
-  sessionStorage.setItem('firstName', firstName);
-  sessionStorage.setItem('middleName', middleName);
-  sessionStorage.setItem('dateBirthday', dateBirthday);
-  sessionStorage.setItem('placeBirthday', placeBirthday);
-  sessionStorage.setItem('placeLive', placeLive);
-  sessionStorage.setItem('placeReg', placeReg);
-  sessionStorage.setItem('serialPass', serialPass);
-  sessionStorage.setItem('numberPass', numberPass);
-  sessionStorage.setItem('datePass', datePass);
-  sessionStorage.setItem('wherePass', wherePass);
-  sessionStorage.setItem('mobile', mobile);
+  localStorage.setItem('lastName', lastName);
+  localStorage.setItem('firstName', firstName);
+  localStorage.setItem('middleName', middleName);
 }
 
 
@@ -402,21 +475,13 @@ function handleSelect(inputId) {
   }
 }
 
-function addToContainer(imageData) {
-  const photosContainer = document.getElementById('photos-container');
-  const imgElement = document.createElement('img');
-  imgElement.src = imageData;
-  photosContainer.appendChild(imgElement);
-}
 
-function PhotosReturn() {
-  var imageContainer1 = document.getElementById('imageAnyphotos1');
-  var imageContainer2 = document.getElementById('imageAnyphotos2');
+// ------------------------------------------------------------ Photos
 
-  saveImageToLocalStorage('image1', imageContainer1.querySelector('img').src);
-  saveImageToLocalStorage('image2', imageContainer2.querySelector('img').src);
-};
 
-function saveImageToLocalStorage(key, value) {
-  localStorage.setItem(key, value);
+
+function generateUniqueId() {
+  const timestamp = new Date().getTime();
+  const randomString = Math.random().toString(36).substring(2, 8);
+  return `${timestamp}_${randomString}`;
 }

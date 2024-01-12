@@ -834,96 +834,6 @@ select option {
   background: #133f5f;
 }
 
-.file-input-container {
-  width: 30%;
-  min-height: 100px;
-  max-width: 200px;
-  max-height: 300px;
-  border: 0.5px solid white;
-  border-radius: 4px;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.file-input-containerimg {
-  max-width: 100%;
-  max-height: 100%;
-}
-
-.file-input-button {
-  padding: 10px 5px;
-  background-color: transparent;
-  border: none;
-  height: 30px;
-  opacity: 0.76;
-  cursor: pointer;
-}
-
-.file-input {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  cursor: pointer;
-  z-index: 1;
-}
-
-.file-input-text {
-  text-align: center;
-  padding-top: 10px;
-}
-
-.file-input-photos {
-  width: 30%;
-  min-height: 150px;
-  max-width: 300px;
-  max-height: 400px;
-  border: 0.5px solid white;
-  border-radius: 4px;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.file-input-photosimg {
-  max-width: 100%;
-  max-height: 100%;
-}
-
-.file-input-button {
-  padding: 10px 5px;
-  background-color: transparent;
-  border: none;
-  height: 30px;
-  opacity: 0.76;
-  cursor: pointer;
-}
-
-.photos {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.addPhotos {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-items: center;
-  text-align: center;
-  gap: 10px;
-}
-
 .agreement {
   display: flex;
   flex-direction: column;
@@ -964,6 +874,79 @@ select option {
   transition: all 0.4s;
 }
 .buttonDownload:active {
+  width: 150px;
+  height: 40px;
+  background-color: transparent;
+  border: 0.5px solid white;
+  color: #fff;
+  border-radius: 20px;
+}
+
+.photos {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.container {
+  margin: 0px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.image-container {
+  background-color: transparent;
+  border: none;
+  max-width: 300px;
+  max-height: 400px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.uploaded-image {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  margin: auto;
+  color: white;
+}
+
+.add-photo,
+.remove-photo {
+  width: 150px;
+  height: 40px;
+  border: 0.5px solid white;
+  background-color: transparent;
+  color: #fff;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+.add-photo:disabled,
+.remove-photo:disabled {
+  width: 150px;
+  height: 40px;
+  background-color: #888888;
+  border: 0.5px solid #133f5f;
+  color: #133f5f;
+  border-radius: 20px;
+}
+.add-photo:hover,
+.remove-photo:hover {
+  width: 150px;
+  height: 40px;
+  background-color: white;
+  border: 0.5px solid white;
+  color: #133f5f;
+  border-radius: 20px;
+  transition: all 0.4s;
+}
+.add-photo:active,
+.remove-photo:active {
   width: 150px;
   height: 40px;
   background-color: transparent;

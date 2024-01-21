@@ -1,956 +1,2238 @@
 @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@700&family=Montserrat:wght@400;500;600&display=swap");
-* {
-  box-sizing: border-box;
-  color: #fff;
-}
+@media only screen and (min-width: 1440px) {
+  * {
+    box-sizing: border-box;
+    color: #fff;
+  }
 
-html {
-  margin-bottom: 100px;
-}
+  html {
+    margin-bottom: 100px;
+  }
 
-header {
-  text-align: center;
-}
-header img {
-  width: 30%;
-  padding: 3% 0 10px 0;
-}
-header p {
-  font-family: EBGaramond;
-  font-weight: 500;
-  color: #fff;
-  font-size: 30px;
-}
+  header {
+    text-align: center;
+  }
+  header img {
+    width: 40%;
+    padding: 3% 0 10px 0;
+  }
+  header p {
+    font-family: EBGaramond;
+    font-weight: 500;
+    color: #fff;
+    font-size: 1.1em;
+  }
 
-body {
-  background-color: #133f5f;
-}
+  body {
+    background-color: #133f5f;
+  }
 
-.main_section {
-  width: 70%;
-  margin: 0 auto;
-  margin-bottom: 40px;
-}
-.main_section p {
-  font-family: Montserrat;
-  font-size: 16px;
-}
-.main_section table {
-  width: 100%;
-  margin-bottom: 10px;
-}
-.main_section table td,
-.main_section table tr {
-  width: 100%;
-  padding-bottom: 20px;
-}
-.main_section .div_input {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  justify-content: space-between;
-}
-.main_section .input {
-  width: 31%;
-  background-color: transparent;
-  border: 0.5px solid #fff;
-  opacity: 76%;
-  border-radius: 4px;
-  height: 50px;
-  outline: none;
-  padding-left: 10px;
-  font-family: Montserrat;
-  font-size: 16px;
-}
-.main_section .input::placeholder {
-  font-family: Montserrat;
-  font-size: 14px;
-  color: #fff;
-}
-.main_section .td_data1 {
-  width: 29%;
-}
-.main_section .td_data2 {
-  width: 70%;
-}
-.main_section .td_data2 input {
-  width: 20%;
-}
-.main_section .td_data2 input[type=date] {
-  padding-left: 10px;
-  padding-right: 10px;
-  font-family: Montserrat;
-  color: #fff;
-}
-.main_section .td_data2 #c-30::-webkit-calendar-picker-indicator {
-  filter: invert(1);
-}
-.main_section .textarea_inp {
-  width: 100%;
-  background-color: transparent;
-  border: 0.5px solid #fff;
-  opacity: 76%;
-  border-radius: 4px;
-  height: 100px;
-  outline: none;
-  padding: 10px;
-  font-family: Montserrat;
-  font-size: 16px;
-}
-.main_section .textarea_inp::placeholder {
-  font-family: Montserrat;
-  font-size: 14px;
-  color: #fff;
-}
-.main_section .div_benefit {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-}
-.main_section .div_benefit input {
-  opacity: 76%;
-  position: relative;
-  width: 24px;
-  height: 24px;
-  flex-shrink: 0;
-  accent-color: #D0D5DD;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background-color: transparent;
-  border: 1px solid #ffffff;
-  border-radius: 50%;
-  outline: none;
-  cursor: pointer;
-}
-.main_section .div_benefit :checked::before {
-  content: "";
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: #D0D5DD;
-  opacity: 76%;
-}
-.main_section .div_benefit label {
-  font-family: Montserrat;
-  font-size: 14px;
-}
-.main_section .div_benefit div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 10px;
-}
-.main_section .div_radio {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 50px;
-}
-.main_section .div_radio input {
-  opacity: 76%;
-  position: relative;
-  width: 24px;
-  height: 24px;
-  flex-shrink: 0;
-  accent-color: #D0D5DD;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background-color: transparent;
-  border: 1px solid #ffffff;
-  border-radius: 50%;
-  outline: none;
-  cursor: pointer;
-}
-.main_section .div_radio :checked::before {
-  content: "";
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: #D0D5DD;
-  opacity: 76%;
-}
-.main_section .div_radio label {
-  font-family: Montserrat;
-  font-size: 14px;
-}
-.main_section .div_radio div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 10px;
-}
-.main_section .education {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-.main_section .education .input_ed {
-  text-align: center;
-  width: 31%;
-  background-color: transparent;
-  border: none;
-  border-bottom: 0.5px solid #fff;
-  opacity: 76%;
-  border-radius: 4px;
-  height: 50px;
-  outline: none;
-  padding-left: 10px;
-  font-family: Montserrat;
-  font-size: 16px;
-}
-.main_section .education .education_container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.main_section .education .input_ed::placeholder {
-  text-align: center;
-  font-size: 14px;
-  color: #fff;
-}
-.main_section .attestation {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-.main_section .attestation .input_att {
-  text-align: center;
-  width: 100%;
-  background-color: transparent;
-  border: none;
-  border-bottom: 0.5px solid #fff;
-  opacity: 76%;
-  border-radius: 4px;
-  height: 50px;
-  outline: none;
-  padding-left: 10px;
-  font-family: Montserrat;
-  font-size: 16px;
-}
-.main_section .attestation .attestation_container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.main_section .attestation .input_att::placeholder {
-  text-align: center;
-  font-size: 14px;
-  color: #fff;
-}
-.main_section .qualification {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-.main_section .qualification .input_qf {
-  text-align: center;
-  width: 31%;
-  background-color: transparent;
-  border: none;
-  border-bottom: 0.5px solid #fff;
-  opacity: 76%;
-  border-radius: 4px;
-  height: 50px;
-  outline: none;
-  padding-left: 10px;
-  font-family: Montserrat;
-  font-size: 16px;
-}
-.main_section .qualification .qualification_container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.main_section .qualification .input_qf::placeholder {
-  text-align: center;
-  font-size: 14px;
-  color: #fff;
-}
-.main_section .studies {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-.main_section .studies .input_st {
-  text-align: center;
-  width: 100%;
-  background-color: transparent;
-  border: none;
-  border-bottom: 0.5px solid #fff;
-  opacity: 76%;
-  border-radius: 4px;
-  height: 50px;
-  outline: none;
-  padding-left: 10px;
-  font-family: Montserrat;
-  font-size: 16px;
-}
-.main_section .studies .studies_container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.main_section .studies .input_st::placeholder {
-  text-align: center;
-  font-size: 14px;
-  color: #fff;
-}
-.main_section .language_container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.main_section .language_container .input_lang {
-  text-align: center;
-  width: 90%;
-  background-color: transparent;
-  border: none;
-  border-bottom: 0.5px solid #fff;
-  opacity: 76%;
-  border-radius: 4px;
-  height: 50px;
-  outline: none;
-  font-family: Montserrat;
-  font-size: 16px;
-}
-.main_section .language_container p {
-  text-align: left;
-}
-.main_section .language_container .input_lang::placeholder {
-  text-align: center;
-  font-size: 14px;
-  color: #fff;
-}
-.main_section .language_container td {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
-  gap: 15px;
-}
-.main_section .language_container td input {
-  opacity: 76%;
-  position: relative;
-  width: 24px;
-  height: 24px;
-  flex-shrink: 0;
-  accent-color: #D0D5DD;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background-color: transparent;
-  border: 1px solid #ffffff;
-  border-radius: 50%;
-  outline: none;
-  cursor: pointer;
-}
-.main_section .language_container td :checked::before {
-  content: "";
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: #D0D5DD;
-  opacity: 76%;
-}
-.main_section .language_container td label {
-  width: 200px;
-  font-family: Montserrat;
-  font-size: 14px;
-}
-.main_section .skills_container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.main_section .skills_container p {
-  text-align: left;
-}
-.main_section .skills_container td {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
-  gap: 15px;
-}
-.main_section .skills_container td input {
-  opacity: 76%;
-  position: relative;
-  width: 24px;
-  height: 24px;
-  flex-shrink: 0;
-  accent-color: #D0D5DD;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background-color: transparent;
-  border: 1px solid #ffffff;
-  border-radius: 50%;
-  outline: none;
-  cursor: pointer;
-}
-.main_section .skills_container td :checked::before {
-  content: "";
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: #D0D5DD;
-  opacity: 76%;
-}
-.main_section .skills_container td label {
-  width: 200px;
-  font-family: Montserrat;
-  font-size: 14px;
-}
-.main_section .job {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  position: relative;
-}
-.main_section .job .input_job {
-  text-align: center;
-  width: 31%;
-  background-color: transparent;
-  border: none;
-  border-bottom: 0.5px solid #fff;
-  opacity: 76%;
-  border-radius: 4px;
-  height: 50px;
-  outline: none;
-  padding-left: 10px;
-  font-family: Montserrat;
-  font-size: 16px;
-}
-.main_section .job .job_container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.main_section .job .input_job::placeholder {
-  text-align: center;
-  font-size: 14px;
-  color: #fff;
-}
-.main_section .army {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  position: relative;
-}
-.main_section .army .input_army {
-  text-align: center;
-  width: 100%;
-  background-color: transparent;
-  border: none;
-  border-bottom: 0.5px solid #fff;
-  opacity: 76%;
-  border-radius: 4px;
-  height: 50px;
-  outline: none;
-  padding-left: 10px;
-  font-family: Montserrat;
-  font-size: 16px;
-}
-.main_section .army .army_container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.main_section .army .input_army::placeholder {
-  text-align: center;
-  font-size: 14px;
-  color: #fff;
-}
-.main_section .responsibilities {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  position: relative;
-}
-.main_section .responsibilities .input_res {
-  text-align: center;
-  width: 100%;
-  background-color: transparent;
-  border: none;
-  border-bottom: 0.5px solid #fff;
-  opacity: 76%;
-  border-radius: 4px;
-  height: 50px;
-  outline: none;
-  padding-left: 10px;
-  font-family: Montserrat;
-  font-size: 16px;
-}
-.main_section .responsibilities .responsibilities_container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.main_section .responsibilities .input_res::placeholder {
-  text-align: center;
-  font-size: 14px;
-  color: #fff;
-}
-.main_section .supervisor {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  position: relative;
-}
-.main_section .supervisor .input_sv {
-  text-align: center;
-  width: 100%;
-  background-color: transparent;
-  border: none;
-  border-bottom: 0.5px solid #fff;
-  opacity: 76%;
-  border-radius: 4px;
-  height: 50px;
-  outline: none;
-  padding-left: 10px;
-  font-family: Montserrat;
-  font-size: 16px;
-}
-.main_section .supervisor .supervisor_container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.main_section .supervisor .input_sv::placeholder {
-  text-align: center;
-  font-size: 14px;
-  color: #fff;
-}
-.main_section .jobtitle {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  position: relative;
-}
-.main_section .jobtitle .input_jt {
-  text-align: center;
-  width: 100%;
-  background-color: transparent;
-  border: none;
-  border-bottom: 0.5px solid #fff;
-  opacity: 76%;
-  border-radius: 4px;
-  height: 50px;
-  outline: none;
-  padding-left: 10px;
-  font-family: Montserrat;
-  font-size: 16px;
-}
-.main_section .jobtitle .jobtitle_container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.main_section .jobtitle .input_jt::placeholder {
-  text-align: center;
-  font-size: 14px;
-  color: #fff;
-}
-.main_section .relatives {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  position: relative;
-}
-.main_section .relatives .input_rel {
-  text-align: center;
-  width: 100%;
-  background-color: transparent;
-  border: none;
-  border-bottom: 0.5px solid #fff;
-  opacity: 76%;
-  border-radius: 4px;
-  height: 50px;
-  outline: none;
-  padding-left: 10px;
-  font-family: Montserrat;
-  font-size: 16px;
-}
-.main_section .relatives .relatives_container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.main_section .relatives .input_rel::placeholder {
-  text-align: center;
-  font-size: 14px;
-  color: #fff;
-}
-.main_section .criminal {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  position: relative;
-}
-.main_section .criminal .input_cr {
-  text-align: center;
-  width: 100%;
-  background-color: transparent;
-  border: none;
-  border-bottom: 0.5px solid #fff;
-  opacity: 76%;
-  border-radius: 4px;
-  height: 50px;
-  outline: none;
-  padding-left: 10px;
-  font-family: Montserrat;
-  font-size: 16px;
-}
-.main_section .criminal .criminal_container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.main_section .criminal .input_cr::placeholder {
-  text-align: center;
-  font-size: 14px;
-  color: #fff;
-}
-.main_section .country {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  position: relative;
-}
-.main_section .country .input_cn {
-  text-align: center;
-  width: 100%;
-  background-color: transparent;
-  border: 0.5px solid #fff;
-  opacity: 76%;
-  border-radius: 4px;
-  height: 50px;
-  outline: none;
-  padding-left: 10px;
-  font-family: Montserrat;
-  font-size: 16px;
-}
-.main_section .country .country_container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.main_section .country .input_cn::placeholder {
-  text-align: center;
-  font-size: 14px;
-  color: #fff;
-}
-.main_section .RelCountry {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  position: relative;
-}
-.main_section .RelCountry .RelCountry_container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.main_section .awards {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  position: relative;
-}
-.main_section .awards .awards_container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.main_section .passport {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative;
-}
-.main_section .passport .number_series {
-  display: flex;
-  flex-direction: row;
-}
-.main_section .passport .date_code {
-  display: flex;
-  flex-direction: row;
-}
-.main_section .passport .input_ps {
-  text-align: center;
-  width: 100%;
-  background-color: transparent;
-  border: none;
-  border-bottom: 0.5px solid #fff;
-  opacity: 76%;
-  border-radius: 4px;
-  height: 50px;
-  outline: none;
-  padding-left: 10px;
-  font-family: Montserrat;
-  font-size: 16px;
-}
-.main_section .passport .passport_container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.main_section .passport .input_ps::placeholder {
-  text-align: center;
-  font-size: 14px;
-  color: #fff;
-}
-.main_section .address {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative;
-}
-.main_section .address .input_address {
-  text-align: center;
-  width: 100%;
-  background-color: transparent;
-  border: none;
-  border-bottom: 0.5px solid #fff;
-  opacity: 76%;
-  border-radius: 4px;
-  height: 50px;
-  outline: none;
-  padding-left: 10px;
-  font-family: Montserrat;
-  font-size: 16px;
-}
-.main_section .address .address_container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.main_section .address .input_address::placeholder {
-  text-align: center;
-  font-size: 14px;
-  color: #fff;
-}
+  .main_section {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .main_section p {
+    font-family: Montserrat;
+    font-size: 1.1em;
+    text-align: left;
+  }
+  .main_section .div_fio {
+    margin-bottom: 40px;
+  }
+  .main_section .div_fio td {
+    all: unset;
+    width: 100%;
+  }
+  .main_section .div_fio td p {
+    text-align: center;
+  }
+  .main_section .div_fio td div {
+    all: unset;
+    display: flex;
+    justify-content: space-between;
+  }
+  .main_section .div_fio td div input {
+    width: 30%;
+  }
+  .main_section table {
+    width: 100%;
+    flex-direction: row;
+  }
+  .main_section table td,
+  .main_section table tr {
+    width: 100%;
+    display: flex;
+    text-align: center;
+    padding-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+  .main_section table tr div {
+    all: unset;
+  }
+  .main_section table tr .passport {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+  }
+  .main_section table tr .passport .number_series {
+    display: flex;
+    flex-direction: row;
+  }
+  .main_section table tr .passport .date_code {
+    display: flex;
+    flex-direction: row;
+  }
+  .main_section table tr .passport .input_ps {
+    text-align: center;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 0.5px solid #fff;
+    opacity: 76%;
+    border-radius: 4px;
+    height: 50px;
+    outline: none;
+    padding-left: 10px;
+    font-family: Montserrat;
+    font-size: 1.1em;
+  }
+  .main_section table tr .passport .passport_container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .main_section table tr .passport .input_ps::placeholder {
+    text-align: center;
+    font-size: 0.8em;
+    color: #fff;
+  }
+  .main_section table .td_data1 {
+    all: unset;
+    width: 40%;
+    padding-right: 10px;
+  }
+  .main_section table .td_data1 p {
+    text-align: left;
+  }
+  .main_section table .td_data1 input {
+    text-align: center;
+    width: 60%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 0.5px solid #fff;
+    opacity: 76%;
+    border-radius: 4px;
+    height: 50px;
+    outline: none;
+    font-family: Montserrat;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+  }
+  .main_section table .td_data1 input::placeholder {
+    text-align: center;
+    font-size: 0.8em;
+    color: #fff;
+  }
+  .main_section table .td_data2 {
+    all: unset;
+    width: 100%;
+  }
+  .main_section table .td_data2 div {
+    display: flex;
+    flex-direction: row;
+  }
+  .main_section table .td_data2 div input[type="text"] {
+    width: 100%;
+  }
+  .main_section table .td_data2 div input[type="date"] {
+    min-width: 200px;
+    max-width: 10%;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: Montserrat;
+    color: #fff;
+  }
+  .main_section table .td_data2 div #c-30::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+  }
+  .main_section table .td_data2 .div_benefit {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  .main_section table .td_data2 .div_benefit input {
+    opacity: 76%;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    accent-color: #D0D5DD;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+  }
+  .main_section table .td_data2 .div_benefit :checked::before {
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #D0D5DD;
+    opacity: 76%;
+  }
+  .main_section table .td_data2 .div_benefit label {
+    font-family: Montserrat;
+    font-size: 1.1em;
+  }
+  .main_section table .td_data2 .div_benefit div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+  .main_section table .td_data2 .div_radio {
+    all: unset;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+    gap: 20px;
+  }
+  .main_section table .td_data2 .div_radio div {
+    all: unset;
+    width: 40%;
+  }
+  .main_section table .td_data2 .div_radio input {
+    opacity: 76%;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    accent-color: #D0D5DD;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+  }
+  .main_section table .td_data2 .div_radio :checked::before {
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #D0D5DD;
+    opacity: 76%;
+  }
+  .main_section table .td_data2 .div_radio label {
+    font-family: Montserrat;
+    font-size: 1.1em;
+  }
+  .main_section table .td_data2 .div_radio div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 10px;
+  }
+  .main_section table .td_data2 .language_container {
+    all: unset;
+  }
+  .main_section table .td_data2 .relatives {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  .main_section table .td_data2 .relatives .input_rel {
+    text-align: center;
+    width: 49%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 0.5px solid #fff;
+    opacity: 76%;
+    border-radius: 4px;
+    height: 50px;
+    outline: none;
+    padding-left: 10px;
+    font-family: Montserrat;
+    font-size: 1.1em;
+  }
+  .main_section table .td_data2 .relatives .input_rel:first-child {
+    width: 100%;
+  }
+  .main_section table .td_data2 .relatives .relatives_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .main_section table .td_data2 .relatives .input_rel::placeholder {
+    text-align: center;
+    font-size: 0.8em;
+    color: #fff;
+  }
+  .main_section .holder {
+    font-size: 1.1em;
+    font-weight: 200;
+    color: #bababa;
+  }
+  .main_section .main-table {
+    all: unset;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+  .main_section .main-table .td_data1 {
+    width: 30%;
+  }
+  .main_section .main-table .td_data2 {
+    width: 70%;
+  }
+  .main_section input[type="text"] {
+    width: 100%;
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    border-bottom: 0.5px solid #fff;
+    opacity: 76%;
+    border-radius: 4px;
+    height: 50px;
+    outline: none;
+    padding-left: 10px;
+    font-family: Montserrat;
+    font-size: 1.1em;
+  }
+  .main_section input[type="text"]::placeholder {
+    text-align: center;
+    font-size: 0.8em;
+    color: #fff;
+  }
+  .main_section textarea {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 0.5px solid #fff;
+    opacity: 76%;
+    border-radius: 4px;
+    height: 50px;
+    outline: none;
+    padding-left: 10px;
+    font-family: Montserrat;
+    font-size: 1.1em;
+  }
+  .main_section textarea::placeholder {
+    text-align: center;
+    font-size: 0.8em;
+    color: #fff;
+  }
+  .main_section .textarea_inp {
+    width: 100%;
+    background-color: transparent;
+    border: 0.5px solid #fff;
+    opacity: 76%;
+    border-radius: 4px;
+    height: 110px;
+    outline: none;
+    padding: 10px;
+    font-family: Montserrat;
+    font-size: 1.1em;
+  }
+  .main_section .textarea_inp::placeholder {
+    all: unset;
+    text-align: left;
+    font-size: 0.8em;
+    color: #fff;
+  }
+  .main_section .div_input {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: space-between;
+  }
+  .main_section .input {
+    width: 31%;
+    background-color: transparent;
+    border: 0.5px solid #fff;
+    opacity: 76%;
+    border-radius: 4px;
+    height: 50px;
+    outline: none;
+    padding-left: 10px;
+    font-family: Montserrat;
+    font-size: 1.1em;
+  }
+  .main_section .input::placeholder {
+    font-family: Montserrat;
+    font-size: 0.8em;
+    color: #fff;
+  }
+  .main_section .remove-button {
+    all: unset;
+    justify-content: center;
+  }
+  .main_section .remove-button button {
+    margin-top: 20px;
+    background-color: transparent;
+    border: 0.5px solid #fff;
+    border-radius: 4px;
+    width: 30%;
+    height: 30px;
+    opacity: 76%;
+  }
+  .main_section .add {
+    width: 40px;
+    height: 40px;
+    border-radius: 30px;
+    background-color: transparent;
+    border: 0.5px solid #fff;
+    justify-content: center;
+    opacity: 76%;
+    margin-bottom: 30px;
+  }
+  .main_section .div-button {
+    width: 100%;
+    text-align: center;
+  }
+  .main_section .margin_section_button {
+    margin-bottom: 20px;
+  }
+  .main_section [data-tooltip]::after {
+    content: attr(data-tooltip);
+    opacity: 0;
+    transition: 1s;
+    pointer-events: none;
+  }
+  .main_section [data-tooltip]:hover::after {
+    opacity: 1;
+  }
+  .main_section [data-tooltip] {
+    position: relative;
+  }
+  .main_section [data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    max-width: 400px;
+    left: 0em;
+    top: 0px;
+    background: #004781;
+    color: #fff;
+    padding: 0.5em;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+    opacity: 0;
+    transition: 0.4s;
+  }
+  .main_section [data-tooltip]:hover::after {
+    opacity: 1;
+    top: 40px;
+    z-index: 1;
+  }
+  .main_section select option {
+    background: #133f5f;
+  }
+  .main_section .photos {
+    font-family: Montserrat;
+    font-size: 1.1em;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+  .main_section .container {
+    margin: 0px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .main_section .image-container {
+    background-color: transparent;
+    border: none;
+    max-width: 300px;
+    max-height: 400px;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .main_section .uploaded-image {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: auto;
+    color: white;
+  }
+  .main_section .add-photo,
+  .main_section .remove-photo {
+    width: 150px;
+    height: 40px;
+    border: 0.5px solid white;
+    background-color: transparent;
+    color: #fff;
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
+  .main_section .add-photo:disabled,
+  .main_section .remove-photo:disabled {
+    width: 150px;
+    height: 40px;
+    background-color: #888888;
+    border: 0.5px solid #133f5f;
+    color: #133f5f;
+    border-radius: 20px;
+  }
+  .main_section .add-photo:hover,
+  .main_section .remove-photo:hover {
+    width: 150px;
+    height: 40px;
+    background-color: white;
+    border: 0.5px solid white;
+    color: #133f5f;
+    border-radius: 20px;
+    transition: all 0.4s;
+  }
+  .main_section .add-photo:active,
+  .main_section .remove-photo:active {
+    width: 150px;
+    height: 40px;
+    background-color: transparent;
+    border: 0.5px solid white;
+    color: #fff;
+    border-radius: 20px;
+  }
 
-.remove-button {
-  text-align: center;
+  .agreement {
+    all: unset;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+    justify-content: start;
+    gap: 20px;
+    font-family: Montserrat;
+    font-size: 1.1em;
+  }
+  .agreement div {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+  .agreement .buttonDownload {
+    width: 150px;
+    height: 40px;
+    border: 0.5px solid white;
+    background-color: transparent;
+    color: #fff;
+    border-radius: 20px;
+  }
+  .agreement .buttonDownload:disabled {
+    width: 150px;
+    height: 40px;
+    background-color: #888888;
+    border: 0.5px solid #133f5f;
+    color: #133f5f;
+    border-radius: 20px;
+  }
+  .agreement .buttonDownload:hover {
+    width: 150px;
+    height: 40px;
+    background-color: white;
+    border: 0.5px solid white;
+    color: #133f5f;
+    border-radius: 20px;
+    transition: all 0.4s;
+  }
+  .agreement .buttonDownload:active {
+    width: 150px;
+    height: 40px;
+    background-color: transparent;
+    border: 0.5px solid white;
+    color: #fff;
+    border-radius: 20px;
+  }
 }
-.remove-button button {
-  margin-top: 20px;
-  background-color: transparent;
-  border: 0.5px solid #fff;
-  border-radius: 4px;
-  width: 20%;
-  height: 30px;
-  opacity: 76%;
-}
+@media only screen and (min-width: 1024px) and (max-width: 1440px) {
+  * {
+    box-sizing: border-box;
+    color: #fff;
+  }
 
-#remove {
-  margin-top: 20px;
-  background-color: transparent;
-  border: 0.5px solid #fff;
-  border-radius: 4px;
-  width: 20%;
-  height: 30px;
-  opacity: 76%;
-}
+  html {
+    margin-bottom: 100px;
+  }
 
-.add {
-  width: 40px;
-  height: 40px;
-  border-radius: 30px;
-  background-color: transparent;
-  border: 0.5px solid #fff;
-  justify-content: center;
-  opacity: 76%;
-  margin-bottom: 30px;
-}
+  header {
+    text-align: center;
+  }
+  header img {
+    width: 40%;
+    padding: 3% 0 10px 0;
+  }
+  header p {
+    font-family: EBGaramond;
+    font-weight: 500;
+    color: #fff;
+    font-size: 16px;
+  }
 
-.div-button {
-  width: 100%;
-  text-align: center;
-}
+  body {
+    background-color: #133f5f;
+  }
 
-.margin_section_button {
-  margin-bottom: 20px;
-}
+  .main_section {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .main_section p {
+    font-family: Montserrat;
+    font-size: 16px;
+    text-align: left;
+  }
+  .main_section .div_fio td {
+    all: unset;
+    width: 100%;
+  }
+  .main_section .div_fio td p {
+    text-align: center;
+  }
+  .main_section .div_fio td div {
+    all: unset;
+    display: flex;
+    justify-content: space-between;
+  }
+  .main_section .div_fio td div input {
+    width: 30%;
+  }
+  .main_section table {
+    width: 100%;
+    flex-direction: row;
+  }
+  .main_section table td,
+  .main_section table tr {
+    width: 100%;
+    display: flex;
+    text-align: center;
+    padding-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+  .main_section table tr div {
+    all: unset;
+  }
+  .main_section table tr .passport {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+  }
+  .main_section table tr .passport .number_series {
+    display: flex;
+    flex-direction: row;
+  }
+  .main_section table tr .passport .date_code {
+    display: flex;
+    flex-direction: row;
+  }
+  .main_section table tr .passport .input_ps {
+    text-align: center;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 0.5px solid #fff;
+    opacity: 76%;
+    border-radius: 4px;
+    height: 50px;
+    outline: none;
+    padding-left: 10px;
+    font-family: Montserrat;
+    font-size: 16px;
+  }
+  .main_section table tr .passport .passport_container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .main_section table tr .passport .input_ps::placeholder {
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+  }
+  .main_section table .td_data1 {
+    all: unset;
+    width: 40%;
+    padding-right: 10px;
+  }
+  .main_section table .td_data1 p {
+    text-align: left;
+  }
+  .main_section table .td_data1 input {
+    text-align: center;
+    width: 90%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 0.5px solid #fff;
+    opacity: 76%;
+    border-radius: 4px;
+    height: 50px;
+    outline: none;
+    font-family: Montserrat;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  .main_section table .td_data1 input::placeholder {
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+  }
+  .main_section table .td_data2 {
+    all: unset;
+    width: 100%;
+  }
+  .main_section table .td_data2 div {
+    display: flex;
+    flex-direction: row;
+  }
+  .main_section table .td_data2 div input[type="text"] {
+    width: 100%;
+  }
+  .main_section table .td_data2 div input[type="date"] {
+    width: 40%;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: Montserrat;
+    color: #fff;
+  }
+  .main_section table .td_data2 div #c-30::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+  }
+  .main_section table .td_data2 .div_benefit {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  .main_section table .td_data2 .div_benefit input {
+    opacity: 76%;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    accent-color: #D0D5DD;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+  }
+  .main_section table .td_data2 .div_benefit :checked::before {
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #D0D5DD;
+    opacity: 76%;
+  }
+  .main_section table .td_data2 .div_benefit label {
+    font-family: Montserrat;
+    font-size: 14px;
+  }
+  .main_section table .td_data2 .div_benefit div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+  .main_section table .td_data2 .div_radio {
+    all: unset;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+    gap: 20px;
+  }
+  .main_section table .td_data2 .div_radio div {
+    all: unset;
+    width: 40%;
+  }
+  .main_section table .td_data2 .div_radio input {
+    opacity: 76%;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    accent-color: #D0D5DD;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+  }
+  .main_section table .td_data2 .div_radio :checked::before {
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #D0D5DD;
+    opacity: 76%;
+  }
+  .main_section table .td_data2 .div_radio label {
+    font-family: Montserrat;
+    font-size: 12px;
+  }
+  .main_section table .td_data2 .div_radio div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 10px;
+  }
+  .main_section table .td_data2 .language_container {
+    all: unset;
+  }
+  .main_section table .td_data2 .relatives {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  .main_section table .td_data2 .relatives .input_rel {
+    text-align: center;
+    width: 49%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 0.5px solid #fff;
+    opacity: 76%;
+    border-radius: 4px;
+    height: 50px;
+    outline: none;
+    padding-left: 10px;
+    font-family: Montserrat;
+    font-size: 16px;
+  }
+  .main_section table .td_data2 .relatives .input_rel:first-child {
+    width: 100%;
+  }
+  .main_section table .td_data2 .relatives .relatives_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .main_section table .td_data2 .relatives .input_rel::placeholder {
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+  }
+  .main_section .holder {
+    font-size: 14px;
+    font-weight: 200;
+    color: #bababa;
+  }
+  .main_section .main-table {
+    all: unset;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+  .main_section .main-table .td_data1 {
+    width: 30%;
+  }
+  .main_section .main-table .td_data2 {
+    width: 70%;
+  }
+  .main_section input[type="text"] {
+    width: 100%;
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    border-bottom: 0.5px solid #fff;
+    opacity: 76%;
+    border-radius: 4px;
+    height: 50px;
+    outline: none;
+    padding-left: 10px;
+    font-family: Montserrat;
+    font-size: 16px;
+  }
+  .main_section input[type="text"]::placeholder {
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+  }
+  .main_section textarea {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 0.5px solid #fff;
+    opacity: 76%;
+    border-radius: 4px;
+    height: 50px;
+    outline: none;
+    padding-left: 10px;
+    font-family: Montserrat;
+    font-size: 16px;
+  }
+  .main_section textarea::placeholder {
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+  }
+  .main_section .textarea_inp {
+    width: 100%;
+    background-color: transparent;
+    border: 0.5px solid #fff;
+    opacity: 76%;
+    border-radius: 4px;
+    height: 110px;
+    outline: none;
+    padding: 10px;
+    font-family: Montserrat;
+    font-size: 16px;
+  }
+  .main_section .textarea_inp::placeholder {
+    text-align: left;
+    font-size: 14px;
+    color: #fff;
+  }
+  .main_section .div_input {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: space-between;
+  }
+  .main_section .input {
+    width: 31%;
+    background-color: transparent;
+    border: 0.5px solid #fff;
+    opacity: 76%;
+    border-radius: 4px;
+    height: 50px;
+    outline: none;
+    padding-left: 10px;
+    font-family: Montserrat;
+    font-size: 16px;
+  }
+  .main_section .input::placeholder {
+    font-family: Montserrat;
+    font-size: 14px;
+    color: #fff;
+  }
+  .main_section .remove-button {
+    all: unset;
+    justify-content: center;
+  }
+  .main_section .remove-button button {
+    margin-top: 20px;
+    background-color: transparent;
+    border: 0.5px solid #fff;
+    border-radius: 4px;
+    width: 30%;
+    height: 30px;
+    opacity: 76%;
+  }
+  .main_section .add {
+    width: 40px;
+    height: 40px;
+    border-radius: 30px;
+    background-color: transparent;
+    border: 0.5px solid #fff;
+    justify-content: center;
+    opacity: 76%;
+    margin-bottom: 30px;
+  }
+  .main_section .div-button {
+    width: 100%;
+    text-align: center;
+  }
+  .main_section .margin_section_button {
+    margin-bottom: 20px;
+  }
+  .main_section [data-tooltip]::after {
+    content: attr(data-tooltip);
+    opacity: 0;
+    transition: 1s;
+    pointer-events: none;
+  }
+  .main_section [data-tooltip]:hover::after {
+    opacity: 1;
+  }
+  .main_section [data-tooltip] {
+    position: relative;
+  }
+  .main_section [data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    max-width: 400px;
+    left: 0em;
+    top: 0px;
+    background: #004781;
+    color: #fff;
+    padding: 0.5em;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+    opacity: 0;
+    transition: 0.4s;
+  }
+  .main_section [data-tooltip]:hover::after {
+    opacity: 1;
+    top: 40px;
+    z-index: 1;
+  }
+  .main_section select option {
+    background: #133f5f;
+  }
+  .main_section .photos {
+    font-family: Montserrat;
+    font-size: 16px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+  .main_section .container {
+    margin: 0px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .main_section .image-container {
+    background-color: transparent;
+    border: none;
+    max-width: 300px;
+    max-height: 400px;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .main_section .uploaded-image {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: auto;
+    color: white;
+  }
+  .main_section .add-photo,
+  .main_section .remove-photo {
+    width: 150px;
+    height: 40px;
+    border: 0.5px solid white;
+    background-color: transparent;
+    color: #fff;
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
+  .main_section .add-photo:disabled,
+  .main_section .remove-photo:disabled {
+    width: 150px;
+    height: 40px;
+    background-color: #888888;
+    border: 0.5px solid #133f5f;
+    color: #133f5f;
+    border-radius: 20px;
+  }
+  .main_section .add-photo:hover,
+  .main_section .remove-photo:hover {
+    width: 150px;
+    height: 40px;
+    background-color: white;
+    border: 0.5px solid white;
+    color: #133f5f;
+    border-radius: 20px;
+    transition: all 0.4s;
+  }
+  .main_section .add-photo:active,
+  .main_section .remove-photo:active {
+    width: 150px;
+    height: 40px;
+    background-color: transparent;
+    border: 0.5px solid white;
+    color: #fff;
+    border-radius: 20px;
+  }
 
-[data-tooltip]::after {
-  content: attr(data-tooltip);
-  opacity: 0;
-  transition: 1s;
-  pointer-events: none;
+  .agreement {
+    all: unset;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+    justify-content: start;
+    gap: 20px;
+    font-family: Montserrat;
+    font-size: 16px;
+  }
+  .agreement div {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+  .agreement .buttonDownload {
+    width: 150px;
+    height: 40px;
+    border: 0.5px solid white;
+    background-color: transparent;
+    color: #fff;
+    border-radius: 20px;
+  }
+  .agreement .buttonDownload:disabled {
+    width: 150px;
+    height: 40px;
+    background-color: #888888;
+    border: 0.5px solid #133f5f;
+    color: #133f5f;
+    border-radius: 20px;
+  }
+  .agreement .buttonDownload:hover {
+    width: 150px;
+    height: 40px;
+    background-color: white;
+    border: 0.5px solid white;
+    color: #133f5f;
+    border-radius: 20px;
+    transition: all 0.4s;
+  }
+  .agreement .buttonDownload:active {
+    width: 150px;
+    height: 40px;
+    background-color: transparent;
+    border: 0.5px solid white;
+    color: #fff;
+    border-radius: 20px;
+  }
 }
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  * {
+    box-sizing: border-box;
+    color: #fff;
+  }
 
-[data-tooltip]:hover::after {
-  opacity: 1;
-}
+  html {
+    margin-bottom: 100px;
+  }
 
-[data-tooltip] {
-  position: relative;
-}
+  header {
+    text-align: center;
+  }
+  header img {
+    width: 40%;
+    padding: 3% 0 10px 0;
+  }
+  header p {
+    font-family: EBGaramond;
+    font-weight: 500;
+    color: #fff;
+    font-size: 16px;
+  }
 
-[data-tooltip]::after {
-  content: attr(data-tooltip);
-  position: absolute;
-  width: 400px;
-  left: 0em;
-  top: 0px;
-  background: #004781;
-  color: #fff;
-  padding: 0.5em;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  pointer-events: none;
-  opacity: 0;
-  transition: 0.4s;
-}
+  body {
+    background-color: #133f5f;
+  }
 
-[data-tooltip]:hover::after {
-  opacity: 1;
-  top: 40px;
-  z-index: 1;
-}
+  .main_section {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .main_section p {
+    font-family: Montserrat;
+    font-size: 16px;
+    text-align: left;
+  }
+  .main_section .div_fio td {
+    all: unset;
+    width: 100%;
+  }
+  .main_section .div_fio td p {
+    text-align: center;
+  }
+  .main_section .div_fio td div {
+    all: unset;
+    display: flex;
+  }
+  .main_section .div_fio td div input {
+    width: 100%;
+  }
+  .main_section .div_fio td div input:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  .main_section table {
+    width: 100%;
+    flex-direction: row;
+  }
+  .main_section table td,
+  .main_section table tr {
+    width: 100%;
+    display: flex;
+    text-align: center;
+    padding-bottom: 20px;
+    align-items: center;
+  }
+  .main_section table tr div {
+    all: unset;
+  }
+  .main_section table .td_data1 {
+    all: unset;
+    width: 40%;
+    padding-right: 10px;
+  }
+  .main_section table .td_data1 p {
+    text-align: left;
+  }
+  .main_section table .td_data1 input {
+    text-align: center;
+    width: 90%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 0.5px solid #fff;
+    opacity: 76%;
+    border-radius: 4px;
+    height: 50px;
+    outline: none;
+    font-family: Montserrat;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  .main_section table .td_data1 input::placeholder {
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+  }
+  .main_section table .td_data2 {
+    all: unset;
+    width: 100%;
+  }
+  .main_section table .td_data2 div {
+    display: flex;
+    flex-direction: row;
+  }
+  .main_section table .td_data2 div input[type="text"] {
+    width: 100%;
+  }
+  .main_section table .td_data2 div input[type="date"] {
+    width: 40%;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: Montserrat;
+    color: #fff;
+  }
+  .main_section table .td_data2 div #c-30::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+  }
+  .main_section table .td_data2 .div_benefit {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  .main_section table .td_data2 .div_benefit input {
+    opacity: 76%;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    accent-color: #D0D5DD;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+  }
+  .main_section table .td_data2 .div_benefit :checked::before {
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #D0D5DD;
+    opacity: 76%;
+  }
+  .main_section table .td_data2 .div_benefit label {
+    font-family: Montserrat;
+    font-size: 14px;
+  }
+  .main_section table .td_data2 .div_benefit div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+  .main_section table .td_data2 .div_radio {
+    all: unset;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+    gap: 20px;
+  }
+  .main_section table .td_data2 .div_radio div {
+    all: unset;
+    width: 40%;
+  }
+  .main_section table .td_data2 .div_radio input {
+    opacity: 76%;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    accent-color: #D0D5DD;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+  }
+  .main_section table .td_data2 .div_radio :checked::before {
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #D0D5DD;
+    opacity: 76%;
+  }
+  .main_section table .td_data2 .div_radio label {
+    font-family: Montserrat;
+    font-size: 12px;
+  }
+  .main_section table .td_data2 .div_radio div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 10px;
+  }
+  .main_section table .td_data2 .language_container {
+    all: unset;
+  }
+  .main_section table .td_data2 .relatives {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  .main_section table .td_data2 .relatives .input_rel {
+    text-align: center;
+    width: 49%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 0.5px solid #fff;
+    opacity: 76%;
+    border-radius: 4px;
+    height: 50px;
+    outline: none;
+    padding-left: 10px;
+    font-family: Montserrat;
+    font-size: 16px;
+  }
+  .main_section table .td_data2 .relatives .input_rel:first-child {
+    width: 100%;
+  }
+  .main_section table .td_data2 .relatives .relatives_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .main_section table .td_data2 .relatives .input_rel::placeholder {
+    text-align: center;
+    font-size: 10px;
+    color: #fff;
+  }
+  .main_section .holder {
+    font-size: 14px;
+    font-weight: 200;
+    color: #bababa;
+  }
+  .main_section .main-table {
+    all: unset;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+  .main_section .main-table .td_data1 {
+    width: 30%;
+  }
+  .main_section .main-table .td_data2 {
+    width: 70%;
+  }
+  .main_section input[type="text"] {
+    width: 100%;
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    border-bottom: 0.5px solid #fff;
+    opacity: 76%;
+    border-radius: 4px;
+    height: 50px;
+    outline: none;
+    padding-left: 10px;
+    font-family: Montserrat;
+    font-size: 16px;
+  }
+  .main_section input[type="text"]::placeholder {
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+  }
+  .main_section textarea {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 0.5px solid #fff;
+    opacity: 76%;
+    border-radius: 4px;
+    height: 50px;
+    outline: none;
+    padding-left: 10px;
+    font-family: Montserrat;
+    font-size: 16px;
+  }
+  .main_section textarea::placeholder {
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+  }
+  .main_section .textarea_inp {
+    width: 100%;
+    background-color: transparent;
+    border: 0.5px solid #fff;
+    opacity: 76%;
+    border-radius: 4px;
+    height: 110px;
+    outline: none;
+    padding: 10px;
+    font-family: Montserrat;
+    font-size: 16px;
+  }
+  .main_section .textarea_inp::placeholder {
+    all: unset;
+    text-align: left;
+    font-size: 12px;
+    color: #fff;
+  }
+  .main_section .div_input {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: space-between;
+  }
+  .main_section .input {
+    width: 31%;
+    background-color: transparent;
+    border: 0.5px solid #fff;
+    opacity: 76%;
+    border-radius: 4px;
+    height: 50px;
+    outline: none;
+    padding-left: 10px;
+    font-family: Montserrat;
+    font-size: 16px;
+  }
+  .main_section .input::placeholder {
+    font-family: Montserrat;
+    font-size: 12px;
+    color: #fff;
+  }
+  .main_section .remove-button {
+    all: unset;
+    justify-content: center;
+  }
+  .main_section .remove-button button {
+    margin-top: 20px;
+    background-color: transparent;
+    border: 0.5px solid #fff;
+    border-radius: 4px;
+    width: 30%;
+    height: 30px;
+    opacity: 76%;
+  }
+  .main_section .add {
+    width: 40px;
+    height: 40px;
+    border-radius: 30px;
+    background-color: transparent;
+    border: 0.5px solid #fff;
+    justify-content: center;
+    opacity: 76%;
+    margin-bottom: 30px;
+  }
+  .main_section .div-button {
+    width: 100%;
+    text-align: center;
+  }
+  .main_section .margin_section_button {
+    margin-bottom: 20px;
+  }
+  .main_section [data-tooltip]::after {
+    content: attr(data-tooltip);
+    opacity: 0;
+    transition: 1s;
+    pointer-events: none;
+  }
+  .main_section [data-tooltip]:hover::after {
+    opacity: 1;
+  }
+  .main_section [data-tooltip] {
+    position: relative;
+  }
+  .main_section [data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    max-width: 400px;
+    left: 0em;
+    top: 0px;
+    background: #004781;
+    color: #fff;
+    padding: 0.5em;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+    opacity: 0;
+    transition: 0.4s;
+  }
+  .main_section [data-tooltip]:hover::after {
+    opacity: 1;
+    top: 40px;
+    z-index: 1;
+  }
+  .main_section select option {
+    background: #133f5f;
+  }
+  .main_section .photos {
+    font-family: Montserrat;
+    font-size: 16px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+  .main_section .container {
+    margin: 0px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .main_section .image-container {
+    background-color: transparent;
+    border: none;
+    max-width: 300px;
+    max-height: 400px;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .main_section .uploaded-image {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: auto;
+    color: white;
+  }
+  .main_section .add-photo,
+  .main_section .remove-photo {
+    width: 150px;
+    height: 40px;
+    border: 0.5px solid white;
+    background-color: transparent;
+    color: #fff;
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
+  .main_section .add-photo:disabled,
+  .main_section .remove-photo:disabled {
+    width: 150px;
+    height: 40px;
+    background-color: #888888;
+    border: 0.5px solid #133f5f;
+    color: #133f5f;
+    border-radius: 20px;
+  }
+  .main_section .add-photo:hover,
+  .main_section .remove-photo:hover {
+    width: 150px;
+    height: 40px;
+    background-color: white;
+    border: 0.5px solid white;
+    color: #133f5f;
+    border-radius: 20px;
+    transition: all 0.4s;
+  }
+  .main_section .add-photo:active,
+  .main_section .remove-photo:active {
+    width: 150px;
+    height: 40px;
+    background-color: transparent;
+    border: 0.5px solid white;
+    color: #fff;
+    border-radius: 20px;
+  }
 
-select option {
-  background: #133f5f;
+  .agreement {
+    all: unset;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+    justify-content: start;
+    gap: 20px;
+    font-family: Montserrat;
+    font-size: 16px;
+  }
+  .agreement div {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+  .agreement .buttonDownload {
+    width: 150px;
+    height: 40px;
+    border: 0.5px solid white;
+    background-color: transparent;
+    color: #fff;
+    border-radius: 20px;
+  }
+  .agreement .buttonDownload:disabled {
+    width: 150px;
+    height: 40px;
+    background-color: #888888;
+    border: 0.5px solid #133f5f;
+    color: #133f5f;
+    border-radius: 20px;
+  }
+  .agreement .buttonDownload:hover {
+    width: 150px;
+    height: 40px;
+    background-color: white;
+    border: 0.5px solid white;
+    color: #133f5f;
+    border-radius: 20px;
+    transition: all 0.4s;
+  }
+  .agreement .buttonDownload:active {
+    width: 150px;
+    height: 40px;
+    background-color: transparent;
+    border: 0.5px solid white;
+    color: #fff;
+    border-radius: 20px;
+  }
 }
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+  * {
+    box-sizing: border-box;
+    color: #fff;
+  }
 
-.agreement {
-  display: flex;
-  flex-direction: column;
-  width: 80%;
-  margin: 0 auto;
-  justify-content: start;
-  gap: 20px;
-}
-.agreement div {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-}
+  html {
+    margin-bottom: 100px;
+  }
 
-.buttonDownload {
-  width: 150px;
-  height: 40px;
-  border: 0.5px solid white;
-  background-color: transparent;
-  color: #fff;
-  border-radius: 20px;
-}
-.buttonDownload:disabled {
-  width: 150px;
-  height: 40px;
-  background-color: #888888;
-  border: 0.5px solid #133f5f;
-  color: #133f5f;
-  border-radius: 20px;
-}
-.buttonDownload:hover {
-  width: 150px;
-  height: 40px;
-  background-color: white;
-  border: 0.5px solid white;
-  color: #133f5f;
-  border-radius: 20px;
-  transition: all 0.4s;
-}
-.buttonDownload:active {
-  width: 150px;
-  height: 40px;
-  background-color: transparent;
-  border: 0.5px solid white;
-  color: #fff;
-  border-radius: 20px;
-}
+  header {
+    text-align: center;
+  }
+  header img {
+    width: 80%;
+    padding: 3% 0 10px 0;
+  }
+  header p {
+    font-family: EBGaramond;
+    font-weight: 500;
+    color: #fff;
+    font-size: 16px;
+  }
 
-.photos {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 40px;
-}
+  body {
+    background-color: #133f5f;
+  }
 
-.container {
-  margin: 0px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
+  .main_section {
+    width: 98%;
+    margin: 0 auto;
+  }
+  .main_section p {
+    font-family: Montserrat;
+    font-size: 16px;
+    text-align: center;
+  }
+  .main_section .div_fio td {
+    all: unset;
+    width: 100%;
+  }
+  .main_section .div_fio td div {
+    all: unset;
+  }
+  .main_section .div_fio td div input {
+    width: 100%;
+  }
+  .main_section .div_fio td div input:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  .main_section table {
+    width: 100%;
+  }
+  .main_section table td,
+  .main_section table tr {
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+  .main_section .holder {
+    font-size: 14px;
+    font-weight: 200;
+    color: #bababa;
+  }
+  .main_section .main-table {
+    all: unset;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  .main_section .main-table td {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+  .main_section input[type="text"] {
+    width: 100%;
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    border-bottom: 0.5px solid #fff;
+    opacity: 76%;
+    border-radius: 4px;
+    height: 50px;
+    outline: none;
+    padding-left: 10px;
+    font-family: Montserrat;
+    font-size: 16px;
+  }
+  .main_section input[type="text"]::placeholder {
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+  }
+  .main_section textarea {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 0.5px solid #fff;
+    opacity: 76%;
+    border-radius: 4px;
+    height: 60px;
+    outline: none;
+    padding-left: 10px;
+    font-family: Montserrat;
+    font-size: 16px;
+  }
+  .main_section textarea::placeholder {
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+  }
+  .main_section .textarea_inp {
+    width: 100%;
+    background-color: transparent;
+    border: 0.5px solid #fff;
+    opacity: 76%;
+    border-radius: 4px;
+    height: 110px;
+    outline: none;
+    padding: 10px;
+    font-family: Montserrat;
+    font-size: 16px;
+  }
+  .main_section .textarea_inp::placeholder {
+    text-align: left;
+    font-size: 14px;
+    color: #fff;
+  }
+  .main_section .div_input {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: space-between;
+  }
+  .main_section .div_input1 {
+    justify-content: center;
+  }
+  .main_section .input {
+    width: 31%;
+    background-color: transparent;
+    border: 0.5px solid #fff;
+    opacity: 76%;
+    border-radius: 4px;
+    height: 50px;
+    outline: none;
+    padding-left: 10px;
+    font-family: Montserrat;
+    font-size: 16px;
+  }
+  .main_section .input::placeholder {
+    font-family: Montserrat;
+    font-size: 14px;
+    color: #fff;
+  }
+  .main_section .td_data1 {
+    all: unset;
+  }
+  .main_section .td_data1 input {
+    text-align: center;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 0.5px solid #fff;
+    opacity: 76%;
+    border-radius: 4px;
+    height: 50px;
+    outline: none;
+    font-family: Montserrat;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  .main_section .td_data1 input::placeholder {
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+  }
+  .main_section .td_data2 {
+    all: unset;
+  }
+  .main_section .td_data2 div {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .main_section .td_data2 div input[type="text"] {
+    width: 100%;
+  }
+  .main_section .td_data2 div input[type="date"] {
+    width: 40%;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: Montserrat;
+    color: #fff;
+  }
+  .main_section .td_data2 div #c-30::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+  }
+  .main_section .td_data2 .div_benefit {
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  .main_section .td_data2 .div_benefit input {
+    opacity: 76%;
+    position: relative;
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    accent-color: #D0D5DD;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+  }
+  .main_section .td_data2 .div_benefit :checked::before {
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #D0D5DD;
+    opacity: 76%;
+  }
+  .main_section .td_data2 .div_benefit label {
+    font-family: Montserrat;
+    font-size: 14px;
+  }
+  .main_section .td_data2 .div_benefit div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+  .main_section .td_data2 .div_radio {
+    all: unset;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+    gap: 20px;
+  }
+  .main_section .td_data2 .div_radio div {
+    all: unset;
+    width: 40%;
+  }
+  .main_section .td_data2 .div_radio input {
+    opacity: 76%;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    accent-color: #D0D5DD;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+  }
+  .main_section .td_data2 .div_radio :checked::before {
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #D0D5DD;
+    opacity: 76%;
+  }
+  .main_section .td_data2 .div_radio label {
+    font-family: Montserrat;
+    font-size: 12px;
+  }
+  .main_section .td_data2 .div_radio div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 10px;
+  }
+  .main_section .td_data2 .language_container {
+    all: unset;
+  }
+  .main_section .td_data2 .relatives {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  .main_section .td_data2 .relatives .input_rel {
+    text-align: center;
+    width: 49%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 0.5px solid #fff;
+    opacity: 76%;
+    border-radius: 4px;
+    height: 50px;
+    outline: none;
+    padding-left: 10px;
+    font-family: Montserrat;
+    font-size: 16px;
+  }
+  .main_section .td_data2 .relatives .input_rel:first-child {
+    width: 100%;
+  }
+  .main_section .td_data2 .relatives .relatives_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .main_section .td_data2 .relatives .input_rel::placeholder {
+    text-align: center;
+    font-size: 10px;
+    color: #fff;
+  }
+  .main_section .td_data2 .passport {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+  }
+  .main_section .td_data2 .passport .number_series {
+    display: flex;
+    flex-direction: row;
+  }
+  .main_section .td_data2 .passport .date_code {
+    display: flex;
+    flex-direction: row;
+  }
+  .main_section .td_data2 .passport .input_ps {
+    text-align: center;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 0.5px solid #fff;
+    opacity: 76%;
+    border-radius: 4px;
+    height: 50px;
+    outline: none;
+    padding-left: 10px;
+    font-family: Montserrat;
+    font-size: 16px;
+  }
+  .main_section .td_data2 .passport .passport_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .main_section .td_data2 .passport .input_ps::placeholder {
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+  }
+  .main_section .remove-button {
+    all: unset;
+    justify-content: center;
+  }
+  .main_section .remove-button button {
+    margin-top: 20px;
+    background-color: transparent;
+    border: 0.5px solid #fff;
+    border-radius: 4px;
+    width: 30%;
+    height: 30px;
+    opacity: 76%;
+  }
+  .main_section .add {
+    width: 40px;
+    height: 40px;
+    border-radius: 30px;
+    background-color: transparent;
+    border: 0.5px solid #fff;
+    justify-content: center;
+    opacity: 76%;
+    margin-bottom: 30px;
+  }
+  .main_section .div-button {
+    width: 100%;
+    text-align: center;
+  }
+  .main_section .margin_section_button {
+    margin-bottom: 20px;
+  }
+  .main_section [data-tooltip]::after {
+    content: attr(data-tooltip);
+    opacity: 0;
+    transition: 1s;
+    pointer-events: none;
+  }
+  .main_section [data-tooltip]:hover::after {
+    opacity: 1;
+  }
+  .main_section [data-tooltip] {
+    position: relative;
+  }
+  .main_section [data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    max-width: 400px;
+    left: 0em;
+    top: 0px;
+    background: #004781;
+    color: #fff;
+    padding: 0.5em;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+    opacity: 0;
+    transition: 0.4s;
+  }
+  .main_section [data-tooltip]:hover::after {
+    opacity: 1;
+    top: 40px;
+    z-index: 1;
+  }
+  .main_section select option {
+    background: #133f5f;
+  }
+  .main_section .photos {
+    font-family: Montserrat;
+    font-size: 16px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+  .main_section .container {
+    margin: 0px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .main_section .image-container {
+    background-color: transparent;
+    border: none;
+    max-width: 300px;
+    max-height: 400px;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .main_section .uploaded-image {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: auto;
+    color: white;
+  }
+  .main_section .add-photo,
+  .main_section .remove-photo {
+    width: 150px;
+    height: 40px;
+    border: 0.5px solid white;
+    background-color: transparent;
+    color: #fff;
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
+  .main_section .add-photo:disabled,
+  .main_section .remove-photo:disabled {
+    width: 150px;
+    height: 40px;
+    background-color: #888888;
+    border: 0.5px solid #133f5f;
+    color: #133f5f;
+    border-radius: 20px;
+  }
+  .main_section .add-photo:hover,
+  .main_section .remove-photo:hover {
+    width: 150px;
+    height: 40px;
+    background-color: white;
+    border: 0.5px solid white;
+    color: #133f5f;
+    border-radius: 20px;
+    transition: all 0.4s;
+  }
+  .main_section .add-photo:active,
+  .main_section .remove-photo:active {
+    width: 150px;
+    height: 40px;
+    background-color: transparent;
+    border: 0.5px solid white;
+    color: #fff;
+    border-radius: 20px;
+  }
 
-.image-container {
-  background-color: transparent;
-  border: none;
-  max-width: 300px;
-  max-height: 400px;
-  margin-bottom: 20px;
-  position: relative;
-}
-
-.uploaded-image {
-  max-width: 100%;
-  max-height: 100%;
-  display: block;
-  margin: auto;
-  color: white;
-}
-
-.add-photo,
-.remove-photo {
-  width: 150px;
-  height: 40px;
-  border: 0.5px solid white;
-  background-color: transparent;
-  color: #fff;
-  border-radius: 20px;
-  margin-bottom: 10px;
-}
-.add-photo:disabled,
-.remove-photo:disabled {
-  width: 150px;
-  height: 40px;
-  background-color: #888888;
-  border: 0.5px solid #133f5f;
-  color: #133f5f;
-  border-radius: 20px;
-}
-.add-photo:hover,
-.remove-photo:hover {
-  width: 150px;
-  height: 40px;
-  background-color: white;
-  border: 0.5px solid white;
-  color: #133f5f;
-  border-radius: 20px;
-  transition: all 0.4s;
-}
-.add-photo:active,
-.remove-photo:active {
-  width: 150px;
-  height: 40px;
-  background-color: transparent;
-  border: 0.5px solid white;
-  color: #fff;
-  border-radius: 20px;
+  .agreement {
+    all: unset;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+    justify-content: start;
+    gap: 20px;
+    font-family: Montserrat;
+    font-size: 16px;
+  }
+  .agreement div {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+  .agreement .buttonDownload {
+    width: 150px;
+    height: 40px;
+    border: 0.5px solid white;
+    background-color: transparent;
+    color: #fff;
+    border-radius: 20px;
+  }
+  .agreement .buttonDownload:disabled {
+    width: 150px;
+    height: 40px;
+    background-color: #888888;
+    border: 0.5px solid #133f5f;
+    color: #133f5f;
+    border-radius: 20px;
+  }
+  .agreement .buttonDownload:hover {
+    width: 150px;
+    height: 40px;
+    background-color: white;
+    border: 0.5px solid white;
+    color: #133f5f;
+    border-radius: 20px;
+    transition: all 0.4s;
+  }
+  .agreement .buttonDownload:active {
+    width: 150px;
+    height: 40px;
+    background-color: transparent;
+    border: 0.5px solid white;
+    color: #fff;
+    border-radius: 20px;
+  }
 }

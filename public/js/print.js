@@ -1,19 +1,3 @@
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
-
-// Извлечение значений параметров
-const lastName = urlParams.get('last');
-const middleName = urlParams.get('middle');
-const firstName = urlParams.get('first');
-
-// Вставка значений в элемент с id "fullName"
-const fullNameElement = document.getElementById('fullName');
-if (fullNameElement) {
-  fullNameElement.textContent = `${lastName} ${firstName} ${middleName}`;
-} else {
-  console.error('Элемент с id "fullName" не найден на странице.');
-}
-
 
 // sessionStorage.setItem('c-30', dateBirthday);
 // sessionStorage.setItem('c-31', placeBirthday);

@@ -30,12 +30,17 @@ function addRow(tableId, containerId, inputClass, removeClass, removeFunction) {
 
   var inputElements = newContainer.querySelectorAll('.' + inputClass);
 
-  inputElements.forEach(function (input) {
+  inputElements.forEach(function (input, index) {
     var currentId = input.id.replace(/\D/g, '');
-    var newId = parseInt(currentId) + 1;
+    var newId = parseInt(currentId) + index + 1;
     input.id = input.id.replace(/\d+/, newId);
     input.value = '';
   });
+
+  var selectElement = newContainer.querySelector('select');
+  if (selectElement) {
+    selectElement.selectedIndex = 0;
+  }
 
   table.appendChild(newContainer);
 
@@ -119,7 +124,6 @@ function setupPhotoContainer(index, userId) {
   localStorage.setItem(`userId${index}`, userId);
 
   const savedImagePath = localStorage.getItem(`imagePath${index}`);
-  console.log(`imagePath${index}:`, savedImagePath); // Добавляем этот лог
 
   if (savedImagePath) {
     uploadedImage.src = savedImagePath;
@@ -344,8 +348,10 @@ function sendDataToServer(selectedLevel, lastName, firstName, middleName, family
       .then((blobData) => {
         const blobUrl = URL.createObjectURL(blobData);
         const a = document.createElement('a');
+        var filename = lastName + '_' + firstName + '_' + middleName + '.pdf';
+
         a.href = blobUrl;
-        a.download = 'output.pdf';
+        a.download = filename;
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
@@ -380,6 +386,12 @@ function transferData() {
   elements.forEach(function (element) {
     var id = element.id;
     var value = element.value;
+
+    if (element.type === 'date' && id.endsWith('30')) {
+      var dateArray = value.split("-");
+      value = dateArray[2] + '.' + dateArray[1] + '.' + dateArray[0];
+    }
+
     data[id] = value;
   });
 
@@ -429,6 +441,18 @@ function updateEducationData(tableId) {
   return rowsData;
 }
 
+const inputElements = document.querySelectorAll('.input_ed');
+
+inputElements.forEach(input => {
+  input.addEventListener('input', function() {
+    const placeholder = this.querySelector('::placeholder');
+    if (this.scrollWidth > this.clientWidth) {
+      placeholder.style.animation = 'none';
+    } else {
+      placeholder.style.animation = 'movePlaceholder 2s infinite alternate';
+    }
+  });
+});
 
 function sendLanguage() {
   var languages = [];
@@ -485,3 +509,7 @@ function generateUniqueId() {
   const randomString = Math.random().toString(36).substring(2, 8);
   return `${timestamp}_${randomString}`;
 }
+
+window.addEventListener('beforeunload', function() {
+  localStorage.clear();
+});

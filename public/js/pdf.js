@@ -10,22 +10,21 @@ var selectedRadio = urlParams.get('selectedRadio');
 
 document.getElementById('Family').textContent = lastName;
 document.getElementById('NameMiddleName').textContent = firstName + ' ' + middleName;
+
 document.getElementById('skills').textContent = selectedLevel;
 document.getElementById('Fstatus').textContent = familyStatus;
 document.getElementById('education').textContent = valuesParam;
 document.getElementById('data').textContent = selectedRadio;
 
-document.addEventListener('DOMContentLoaded', function () {
-  var jsonData = localStorage.getItem('DataForm');
-  var data = JSON.parse(jsonData);
+// элементы доп документов
 
-  for (var key in data) {
-    var element = document.getElementById(key);
-    if (element) {
-      element.value = data[key];
-    }
-  }
-});
+document.getElementById('fullName').textContent = lastName + ' ' + firstName + ' ' + middleName;
+document.getElementById('fullName1').textContent = lastName + ' ' + firstName + ' ' + middleName;
+
+
+
+// -----------------------
+
 
 function logToServer(data) {
   fetch('http://localhost:3050/log', {

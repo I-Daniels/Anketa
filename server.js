@@ -55,7 +55,6 @@ app.post('/upload-image', upload.array('image', 3), async (req, res) => {
     }
 
     globalData.uploadedFiles.push(...images);
-    console.log('Before using uploadedFiles:', globalData.uploadedFiles);
     const imageUrls = images.map((image) => `/uploads/images/${userId}_${image.originalname}`);
     res.status(200).json({ imageUrl: imageUrls });
   } catch (error) {
@@ -137,15 +136,54 @@ app.post('/submit', async (req, res) => {
       }, { id: tableId, data: tableData });
     }
     async function updateLabels(page, labelIds, data) {
-      await page.evaluate(({ ids, data }) => {
+      const partners = {
+        'c-18': ['placeFrom'],
+        'c-16': ['registration'],
+        'c-6': ['num'],
+        'c-7': ['serial'],
+        'c-9': ['passDate'],
+        'c-8': ['passWhere'],
+        'c-30': ['birthday'],
+        'c-31': ['place'],
+        'c-23': ['mobile']
+      };
+    
+      await page.evaluate(({ ids, data, partners }) => {
+        const processedIds = new Set();
+    
+        function getDataForId(id, dataIndex) {
+          const partnerIds = partners[id] || [];
+          const partnerData = partnerIds.reduce((accumulatedData, partnerId) => {
+            const partnerIndex = ids.indexOf(partnerId);
+            const partnerValue = partnerIndex !== -1 ? data[partnerIndex] : '';
+            return accumulatedData + ' ' + partnerValue;
+          }, '');
+    
+          return partnerData.trim() || data[dataIndex];
+        }
+    
         ids.forEach((id, index) => {
           const label = document.getElementById(id);
-          if (label) {
-            label.textContent = data[index];
+    
+          if (label && !processedIds.has(id)) {
+            label.innerHTML = getDataForId(id, index);
+    
+            const partnerIds = partners[id] || [];
+            partnerIds.forEach(partnerId => {
+              const partnerLabel = document.getElementById(partnerId);
+              if (partnerLabel) {
+                const partnerData = getDataForId(partnerId, index);
+                partnerLabel.innerHTML = partnerData;
+                processedIds.add(partnerId);
+              }
+            });
+    
+            processedIds.add(id);
           }
         });
-      }, { ids: labelIds, data });
+      }, { ids: labelIds, data, partners });
     }
+
 
     await updateTable(page, 'education-table', educationData);
     await updateTable(page, 'attestation-table', attestationData);

@@ -16,7 +16,7 @@
         <p>АНКЕТА</p>
     </header>
     <section class="main_section">
-        <table>
+        <table class="div_fio">
             <tbody>
                 <tr>
                     <td colspan="3">
@@ -30,7 +30,7 @@
                 </tr>
             </tbody>
         </table>
-        <table>
+        <table class="main-table">
             <tbody>
                 <tr>
                     <td class="td_data1">
@@ -38,7 +38,8 @@
                     </td>
                     <td colspan="2" class="td_data2">
                         <div class="div_input1">
-                            <input type="date" class="input" id="c-30" placeholder="date">
+                            <input type="date" class="input" id="c-30" placeholder="date" required
+                                pattern="\d{2}-\d{2}-\d{4}">
                         </div>
                     </td>
                 </tr>
@@ -98,7 +99,7 @@
             <tr id="education_container">
                 <td colspan="2" class="td_data2">
                     <div class="education">
-                        <input type="text" class="input_ed" placeholder="Наименование и где наодится" id="data_ed0">
+                        <input type="text" class="input_ed" placeholder="Наименование и где находится" id="data_ed0">
                         <input type="text" class="input_ed" placeholder="Год поступления/окончания" id="data_date0">
                         <input type="text" class="input_ed" placeholder="Факультет (отделение)" id="data_fc0">
                         <input type="text" class="input_ed" placeholder=" Специальность и квалификация" id="data_cp0">
@@ -114,14 +115,13 @@
         </div>
         <div>
             <p>Наличие квалификационных аттестатов, дающих право ведения профессиональной деятельности:</p>
+            <p class="holder">(Укажите серию, номер, срок действия, дату выдачи и наименование выдавшего органа)</p>
         </div>
         <table id="attestation-table">
             <tr id="attestation_container">
                 <td colspan="2" class="td_data2">
                     <div class="attestation">
-                        <input type="text" class="input_att"
-                            placeholder="Укажите серию, номер, срок действия, дату выдачи и наименование выдавшего органа"
-                            id="date_att0">
+                        <input type="text" class="input_att" placeholder="Начните писать:" id="date_att0">
                     </div>
                     <div class="remove-button">
                     </div>
@@ -180,54 +180,62 @@
         </div>
         <table class="skills-table">
             <tbody>
-                <tr class="skills_container">
-                    <td class="inp-skills">
+                <tr>
+                    <td class="td_data1">
                         <p>Навыки работы на компьютере</p>
                     </td>
-                    <td>
-                        <input type="radio" name="levelPC" id="i-11">
-                        <label for="i-11">Нет опыта</label>
-                    </td>
-                    <td>
-                        <input type="radio" name="levelPC" id="i-12">
-                        <label for="i-12">Начальный</label>
-                    </td>
-                    <td>
-                        <input type="radio" name="levelPC" id="i-13">
-                        <label for="i-13">Опытный</label>
-                    </td>
-                    <td>
-                        <input type="radio" name="levelPC" id="i-14">
-                        <label for="i-14">Продвинутый</label>
+                    <td colspan="2" class="td_data2">
+                        <div class="div_radio">
+                            <div>
+                                <input type="radio" name="levelPC" id="i-11">
+                                <label for="i-11">Нет опыта</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="levelPC" id="i-12">
+                                <label for="i-12">Начальный</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="levelPC" id="i-13">
+                                <label for="i-13">Опытный</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="levelPC" id="i-14">
+                                <label for="i-14">Продвинутый</label>
+                            </div>
+                        </div>
                     </td>
                 </tr>
             </tbody>
         </table>
-        <div>
+        <div class="heading">
             <p>Знание иностранных языков</p>
         </div>
         <table class="language-table">
             <tbody>
                 <tr class="language_container">
-                    <td class="inp-language">
+                    <td class="td_data1">
                         <input type="text" id="date_lang0" class="input_lang" placeholder="Язык">
                     </td>
-                    <td>
-                        <input type="radio" name="language0" id="date_l0" value="Читаю и перевожу со словарем">
-                        <label for="date_l0">Читаю и <br> перевожу <br> со словарем</label>
-                    </td>
-                    <td>
-                        <input type="radio" name="language0" id="date_a0" value="Могу объясниться">
-                        <label for="date_a0">Могу <br> объясниться</label>
-                    </td>
-                    <td>
-                        <input type="radio" name="language0" id="date_n0"
-                            value="Читаю и понимаю тексты по специальности">
-                        <label for="date_n0">Читаю и понимаю тексты <br> по специальности</label>
-                    </td>
-                    <td>
-                        <input type="radio" name="language0" id="date_g0" value="Владею свободно">
-                        <label for="date_g0">Владею <br> свободно</label>
+                    <td colspan="2" class="td_data2">
+                        <div class="div_radio">
+                            <div>
+                                <input type="radio" name="language0" id="date_l0" value="Читаю и перевожу со словарем">
+                                <label for="date_l0">Читаю и перевожу со словарем</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="language0" id="date_a0" value="Могу объясниться">
+                                <label for="date_a0">Могу объясниться</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="language0" id="date_n0"
+                                    value="Читаю и понимаю тексты по специальности">
+                                <label for="date_n0">Читаю и понимаю тексты по специальности</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="language0" id="date_g0" value="Владею свободно">
+                                <label for="date_g0">Владею свободно</label>
+                            </div>
+                        </div>
                     </td>
                 </tr>
             </tbody>
@@ -301,13 +309,14 @@
         </div>
         <div>
             <p>Занимаемые в настоящее время другие должности:</p>
+            <p class="holder">(В т.ч. в органах управления юр. лиц, включая нерезидентов, с указанием названия и места
+                нахождения)</p>
         </div>
         <table id="jobtitle-table">
             <tr id="jobtitle_container">
                 <td colspan="2" class="td_data2">
                     <div class="jobtitle">
-                        <input type="text" class="input_jt" id="date_jt0"
-                            placeholder="В т.ч. в органах управления юр. лиц, включая нерезидентов, с указанием названия и места нахождения">
+                        <input type="text" class="input_jt" id="date_jt0" placeholder="Начните писать:">
                     </div>
                     <div class="remove-button">
                     </div>
@@ -328,24 +337,34 @@
                     <td colspan="2" class="td_data2">
                         <div class="div_radio">
                             <div>
-                                <input type="radio" name="family" id="i-15">
-                                <label for="i-13">Женат/замужем</label>
+                                <div>
+                                    <input type="radio" name="family" id="i-15">
+                                    <label for="i-13">Женат/замужем</label>
+                                </div>
                             </div>
                             <div>
-                                <input type="radio" name="family" id="i-16">
-                                <label for="i-14">Разведен(а)</label>
+                                <div>
+                                    <input type="radio" name="family" id="i-16">
+                                    <label for="i-14">Разведен(а)</label>
+                                </div>
                             </div>
                             <div>
-                                <input type="radio" name="family" id="i-17">
-                                <label for="i-15">Холост/не замужем</label>
+                                <div>
+                                    <input type="radio" name="family" id="i-17">
+                                    <label for="i-15">Холост/не замужем</label>
+                                </div>
                             </div>
                             <div>
-                                <input type="radio" name="family" id="i-18">
-                                <label for="i-16">Гражданский брак</label>
+                                <div>
+                                    <input type="radio" name="family" id="i-18">
+                                    <label for="i-16">Гражданский брак</label>
+                                </div>
                             </div>
                             <div>
-                                <input type="radio" name="family" id="i-19">
-                                <label for="i-17">Вдовец/вдова</label>
+                                <div>
+                                    <input type="radio" name="family" id="i-19">
+                                    <label for="i-17">Вдовец/вдова</label>
+                                </div>
                             </div>
                         </div>
                     </td>
@@ -363,6 +382,8 @@
                             <option value="">Степень родства</option>
                             <option value="Отец">Отец</option>
                             <option value="Мама">Мама</option>
+                            <option value="Сестра">Сестра</option>
+                            <option value="Брат">Брат</option>
                             <option value="Дочь">Дочь</option>
                             <option value="Сын">Сын</option>
                             <option value="Дед">Дед</option>
@@ -371,6 +392,7 @@
                             <option value="Прадед">Прадед</option>
                             <option value="Прабабушка">Прабабушка</option>
                             <option value="Дядя">Дядя</option>
+                            <option value="Дядя">Тетя</option>
                             <option value="Племянник(ца)">Племянник(ца)</option>
                         </select>
                         <input type="text" class="input_rel" placeholder="ФИО" id="data_relfio0">
@@ -415,11 +437,12 @@
             <tr id="RelCountry_container">
                 <td class="td_data1">
                     <p>Есть ли у Вас или Вашего(й) супруга(и) родственники, постоянно проживающие за границей?:</p>
+                    <p class="holder">(Укажите фио, год рождения, степень родства, место жительства, период проживания)</p>
                 </td>
                 <td colspan="2" class="td_data2">
                     <div class="RelCountry">
                         <textarea type="text" class="textarea_inp" id="c-3"
-                            placeholder="Укажите фио, год рождения, степень родства, место жительства, период проживания"></textarea>
+                            placeholder="Начните писать:"></textarea>
                     </div>
                 </td>
             </tr>
@@ -617,11 +640,12 @@
             <tr id="country_container">
                 <td class="td_data1">
                     <p>Дополнительные сведения</p>
+                    <p class="holder">(Научные публикации, участие в выборных органах, краткосрочное пребывание за границей, наличие водительского удостоверения и т.д.)</p>
                 </td>
                 <td colspan="2" class="td_data2">
                     <div class="country">
                         <textarea type="text" class="textarea_inp" id="c-28"
-                            placeholder="Научные публикации, участие в выборных органах, краткосрочное пребывание за границей, наличие водительского удостоверения и т.д."></textarea>
+                            placeholder="Начните писать:"></textarea>
                     </div>
                 </td>
             </tr>

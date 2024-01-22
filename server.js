@@ -11,9 +11,14 @@ const fsExtra = require('fs-extra');
 const app = express();
 const port = 3050;
 const globalData = {
-  uploadedFiles: [], // Общая переменная для хранения данных об изображениях
+  uploadedFiles: [],
+};
+const corsOptions = {
+  origin: 'http://anketa.daniels-it.ru',
+  optionsSuccessStatus: 200,
 };
 
+app.use(cors(corsOptions));
 app.use(cors());
 app.use(bodyParser.json({ limit: '10mb' }));
 app.use(express.static('public'));

@@ -71,7 +71,6 @@ app.post('/upload-image', upload.array('image', 3), async (req, res) => {
 app.post('/submit', async (req, res) => {
   try {
     const userId = req.headers['userid'];
-    console.log(userId)
     const uploadedFiles = [...globalData.uploadedFiles]; 
     const {
       lastName,
@@ -213,6 +212,13 @@ app.post('/submit', async (req, res) => {
 
     await browser.close();
     
+    await Promise.all(globalData.uploadedFiles.map(async (image) => {
+      const imagePath = path.join(__dirname, `/uploads/images/${userId}/${userId}_${image.originalname}`);
+      await fs.promises.unlink(imagePath);
+    }));
+
+    const userFolderPath = path.join(__dirname, `/uploads/images/${userId}`);
+    await fsExtra.remove(userFolderPath);
     globalData.uploadedFiles = [];
 
     res.setHeader('Content-Type', 'application/pdf');

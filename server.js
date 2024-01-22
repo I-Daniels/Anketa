@@ -71,6 +71,7 @@ app.post('/upload-image', upload.array('image', 3), async (req, res) => {
 app.post('/submit', async (req, res) => {
   try {
     const userId = req.headers['userid'];
+    console.log(userId)
     const uploadedFiles = [...globalData.uploadedFiles]; 
     const {
       lastName,

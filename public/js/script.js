@@ -246,7 +246,7 @@ async function redirect() {
       formData.append('userId', userId);
     
       try {
-        const response = await fetch('http://localhost:3050/upload-image', {
+        const response = await fetch('/upload-image', {
           method: 'POST',
           body: formData,
           headers: {

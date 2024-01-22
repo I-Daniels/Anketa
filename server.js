@@ -27,7 +27,7 @@ app.use('/uploads/images', express.static(path.join(__dirname, 'uploads/images')
 app.post('/log', (req, res) => {
   const data = req.body;
 
-  console.log('Received data:', data);
+  // console.log('Received data:', data);
 
   res.status(200).send('Data received successfully');
 });
@@ -93,10 +93,10 @@ app.post('/submit', async (req, res) => {
     } = req.body;
 
     const imageUrlArray = globalData.uploadedFiles.map((image) => `/uploads/images/${userId}/${userId}_${image.originalname}`);
-    console.log('Image uploaded successfully. Image URLs:', imageUrlArray);
+    // console.log('Image uploaded successfully. Image URLs:', imageUrlArray);
 
 
-    console.log('Before using uploadedFiles:', uploadedFiles);
+    // console.log('Before using uploadedFiles:', uploadedFiles);
     const browser = await chromium.launch({ headless: true });
     const page = await browser.newPage();
 

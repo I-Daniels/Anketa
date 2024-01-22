@@ -363,7 +363,7 @@ function sendDataToServer(selectedLevel, lastName, firstName, middleName, family
 }
 
 function getSelectedLevel() {
-  var checkedLevel = document.querySelector('.skills_container input[name="levelPC"]:checked');
+  var checkedLevel = document.querySelector('.skills-table input[name="levelPC"]:checked');
   var levelText = checkedLevel ? checkedLevel.nextElementSibling.textContent.trim() : 'Нет опыта';
   return levelText;
 }

@@ -1,17 +1,17 @@
-var checkbox1 = document.getElementById('j-1');
-var checkbox2 = document.getElementById('j-2');
-var button = document.getElementById('buttonDownload');
+var checkbox1 = document.getElementById("j-1");
+var checkbox2 = document.getElementById("j-2");
+var button = document.getElementById("buttonDownload");
 
 function updateButtonState() {
   button.disabled = !(checkbox1.checked && checkbox2.checked);
 }
 
-checkbox1.addEventListener('change', updateButtonState);
-checkbox2.addEventListener('change', updateButtonState);
+checkbox1.addEventListener("change", updateButtonState);
+checkbox2.addEventListener("change", updateButtonState);
 
 function applyMaskEducation() {
   const inputs = document.querySelectorAll('[id^="date_ed"]');
-  const maskOption = { mask: '0000/0000' };
+  const maskOption = { mask: "0000/0000" };
 
   inputs.forEach(function (input) {
     const idMatch = input.id.match(/\d+/);
@@ -28,62 +28,75 @@ function addRow(tableId, containerId, inputClass, removeClass, removeFunction) {
 
   var newContainer = container.cloneNode(true);
 
-  var inputElements = newContainer.querySelectorAll('.' + inputClass);
+  var inputElements = newContainer.querySelectorAll("." + inputClass);
 
   inputElements.forEach(function (input, index) {
-    var currentId = input.id.replace(/\D/g, '');
+    var currentId = input.id.replace(/\D/g, "");
     var newId = parseInt(currentId) + index + 1;
     input.id = input.id.replace(/\d+/, newId);
-    input.value = '';
+    input.value = "";
   });
 
-  var selectElement = newContainer.querySelector('select');
+  var selectElement = newContainer.querySelector("select");
   if (selectElement) {
     selectElement.selectedIndex = 0;
   }
 
   table.appendChild(newContainer);
 
-  var removeButton = newContainer.querySelector('.' + removeClass);
+  var removeButton = newContainer.querySelector("." + removeClass);
   if (removeButton) {
-    removeButton.innerHTML = '<button onclick="' + removeFunction.name + '(this)">Удалить</button>';
+    removeButton.innerHTML =
+      '<button onclick="' + removeFunction.name + '(this)">Удалить</button>';
   }
 }
 
 function removeRow(button) {
-  const row = button.closest('tr');
+  const row = button.closest("tr");
   if (row) {
     row.parentNode.removeChild(row);
   }
 }
 
 function addEducationRow() {
-  addRow('education-table', 'education_container', 'input_ed', 'remove-button', removeRow);
+  addRow(
+    "education-table",
+    "education_container",
+    "input_ed",
+    "remove-button",
+    removeRow
+  );
 }
 
 function addRelatives() {
-  addRow('relatives-table', 'relatives_container', 'input_rel', 'remove-button', removeRow);
+  addRow(
+    "relatives-table",
+    "relatives_container",
+    "input_rel",
+    "remove-button",
+    removeRow
+  );
 }
 
 function cloneLanguageBlock() {
-  const originalBlock = document.querySelector('.language_container');
+  const originalBlock = document.querySelector(".language_container");
 
   if (!originalBlock) {
-    console.error('Original block not found');
+    console.error("Original block not found");
     return;
   }
 
   const clonedBlock = originalBlock.cloneNode(true);
 
-  const newIndex = document.querySelectorAll('.language_container').length;
+  const newIndex = document.querySelectorAll(".language_container").length;
   updateElementIdAndName(clonedBlock, newIndex);
 
-  const table = document.querySelector('.language-table tbody');
+  const table = document.querySelector(".language-table tbody");
   table.appendChild(clonedBlock);
 }
 
 function updateElementIdAndName(container, newIndex) {
-  const inputLang = container.querySelector('.input_lang');
+  const inputLang = container.querySelector(".input_lang");
   inputLang.id = `date_lang${newIndex}`;
 
   const radioButtons = container.querySelectorAll('[name^="language"]');
@@ -92,9 +105,9 @@ function updateElementIdAndName(container, newIndex) {
     let newId = currentId.replace(/\d+$/, newIndex);
     radio.id = newId;
 
-    let labelFor = radio.nextElementSibling.getAttribute('for');
+    let labelFor = radio.nextElementSibling.getAttribute("for");
     let newLabelFor = labelFor.replace(/\d+$/, newIndex);
-    radio.nextElementSibling.setAttribute('for', newLabelFor);
+    radio.nextElementSibling.setAttribute("for", newLabelFor);
 
     let currentName = radio.name;
     let newName = currentName.replace(/\d+$/, newIndex);
@@ -103,11 +116,14 @@ function updateElementIdAndName(container, newIndex) {
 }
 
 function moveCheckedValues() {
-  const checkedCheckboxes = document.querySelectorAll('.div_radio input[type="checkbox"]:checked');
-  const valuesArray = Array.from(checkedCheckboxes)
-    .map(checkbox => checkbox.nextElementSibling.textContent.trim());
+  const checkedCheckboxes = document.querySelectorAll(
+    '.div_radio input[type="checkbox"]:checked'
+  );
+  const valuesArray = Array.from(checkedCheckboxes).map((checkbox) =>
+    checkbox.nextElementSibling.textContent.trim()
+  );
 
-  return valuesArray.join(', ');
+  return valuesArray.join(", ");
 }
 var educationRowsData = [];
 
@@ -130,11 +146,11 @@ function setupPhotoContainer(index, userId) {
     removePhotoButton.disabled = false;
   }
 
-  addPhotoButton.addEventListener('click', function () {
+  addPhotoButton.addEventListener("click", function () {
     fileInput.click();
   });
 
-  fileInput.addEventListener('change', async function (event) {
+  fileInput.addEventListener("change", async function (event) {
     const file = event.target.files[0];
 
     if (file) {
@@ -144,7 +160,7 @@ function setupPhotoContainer(index, userId) {
         const imageData = e.target.result;
         uploadedImages[index] = {
           imageData: imageData,
-          file: file
+          file: file,
         };
         uploadedImage.src = e.target.result;
         removePhotoButton.disabled = false;
@@ -153,16 +169,16 @@ function setupPhotoContainer(index, userId) {
 
       reader.readAsDataURL(file);
     } else {
-      uploadedImage.src = '';
+      uploadedImage.src = "";
       removePhotoButton.disabled = true;
       localStorage.removeItem(`imagePath${index}`);
       delete uploadedImages[index];
     }
   });
 
-  removePhotoButton.addEventListener('click', function () {
-    uploadedImage.src = '';
-    fileInput.value = '';
+  removePhotoButton.addEventListener("click", function () {
+    uploadedImage.src = "";
+    fileInput.value = "";
     removePhotoButton.disabled = true;
     localStorage.removeItem(`imagePath${index}`);
     delete uploadedImages[index];
@@ -173,140 +189,184 @@ for (let i = 1; i <= 3; i++) {
   setupPhotoContainer(i, userId);
 }
 
-
-
-async function redirect() {
-  try {
-    var imageUrlArray = [];
-    var data = transferData();
-    var data2 = saveData();
-
-    var selectedLevel = getSelectedLevel();
-    var lastName = document.getElementById('i-1').value;
-    var firstName = document.getElementById('i-2').value;
-    var middleName = document.getElementById('i-3').value;
-
-    var encodedLevel = encodeURIComponent(selectedLevel);
-    var encodedLastName = encodeURIComponent(lastName);
-    var encodedFirstName = encodeURIComponent(firstName);
-    var encodedMiddleName = encodeURIComponent(middleName);
-
-    var familyStatus = getSelectedFamilyStatus();
-    var encodedFamilyStatus = encodeURIComponent(familyStatus);
-    var moveChecked = moveCheckedValues();
-    var selectedRadio = redirectCategoryPeople();
-
-    
-
-    var url =
-      'serverpagepdf.html?level=' +
-      encodedLevel +
-      '&last=' +
-      encodedLastName +
-      '&first=' +
-      encodedFirstName +
-      '&middle=' +
-      encodedMiddleName +
-      '&familyStatus=' +
-      encodedFamilyStatus +
-      '&moveCheckedValues=' +
-      moveChecked +
-      '&selectedRadio=' +
-      selectedRadio;
-
-    var iframe1 = document.getElementById('frame');
-    var iframe2 = document.getElementById('frame2');
-
-    if (iframe1 && iframe2) {
-      iframe1.contentDocument.getElementById('fullName').value =
-        lastName + ' ' + firstName + ' ' + middleName;
-      iframe2.contentDocument.getElementById('fullName').value =
-        lastName + ' ' + firstName + ' ' + middleName;
+function checkIfPhotosUploaded() {
+  for (let i = 1; i <= 3; i++) {
+    const savedImagePath = localStorage.getItem(`imagePath${i}`);
+    if (!savedImagePath) {
+      alert("Вы не загрузили некоторые фотографии");
+      return false;
     }
-
-    updateEducationData('education-table');
-    updateEducationData('attestation-table');
-    updateEducationData('qualification-table');
-    updateEducationData('studies-table');
-    updateEducationData('job-table');
-    updateEducationData('supervisor-table');
-    updateEducationData('jobtitle-table');
-    updateEducationData('relatives-table');
-    sendLanguage();
-    redirectCategoryPeople();
-
-
-    for (const index in uploadedImages) {
-      const imageData = uploadedImages[index].imageData;
-      const file = uploadedImages[index].file;
-    
-      const formData = new FormData();
-      formData.append('image', file);
-      formData.append('imageFileName', file.name);
-      formData.append('userId', userId);
-    
-      try {
-        const response = await fetch('/upload-image', {
-          method: 'POST',
-          body: formData,
-          headers: {
-            'userId': userId,
-          },
-        });
-    
-        if (response.ok) {
-          console.log('Изображение успешно отправлено на сервер');
-    
-          try {
-            const { imageUrl } = await response.json();
-            console.log('URL изображения:', imageUrl);
-    
-            localStorage.setItem(`uploadedImageUrl${index}`, imageUrl);
-          } catch (error) {
-            console.error('Ошибка при обработке JSON:', error);
-          }
-        } else {
-          console.error('Ошибка при отправке изображения на сервер');
-
-          const responseBody = await response.text();
-          console.error('Текст ошибки:', responseBody);
-        }
-        
-      } catch (error) {
-        console.error('Ошибка при обработке запроса:', error);
-      }
-    }
-
-    for (let i = 1; i <= 3; i++) {
-      const savedImagePath = localStorage.getItem(`uploadedImageUrl${i}`);
-      console.log(`uploadedImageUrl${i}:`, savedImagePath);
-      if (savedImagePath) {
-        imageUrlArray.push(savedImagePath);
-      }
-    }
-
-
-    sendDataToServer(selectedLevel, lastName, firstName, middleName, familyStatus, moveChecked, selectedRadio, imageUrlArray);
-  } catch (error) {
-    console.error('Ошибка в redirect:', error);
   }
-
+  return true;
 }
 
-function sendDataToServer(selectedLevel, lastName, firstName, middleName, familyStatus, moveChecked, selectedRadio, imageUrlArray) {
+function checkNameFields() {
+  var lastName = document.getElementById("i-1").value;
+  var firstName = document.getElementById("i-2").value;
+
+  if (!lastName || !firstName) {
+    alert("Вы не ввели Имя и/или Фамилию");
+    return false;
+  }
+
+  return true;
+}
+
+async function sendButtonClicked() {
+  try {
+    if (!checkNameFields() || !checkIfPhotosUploaded()) {
+      return;
+    }
+
+    async function redirect() {
+      try {
+        var imageUrlArray = [];
+        var data = transferData();
+        var data2 = saveData();
+
+        var selectedLevel = getSelectedLevel();
+        var lastName = document.getElementById("i-1").value;
+        var firstName = document.getElementById("i-2").value;
+        var middleName = document.getElementById("i-3").value;
+
+        var encodedLevel = encodeURIComponent(selectedLevel);
+        var encodedLastName = encodeURIComponent(lastName);
+        var encodedFirstName = encodeURIComponent(firstName);
+        var encodedMiddleName = encodeURIComponent(middleName);
+
+        var familyStatus = getSelectedFamilyStatus();
+        var encodedFamilyStatus = encodeURIComponent(familyStatus);
+        var moveChecked = moveCheckedValues();
+        var selectedRadio = redirectCategoryPeople();
+
+        var url =
+          "serverpagepdf.html?level=" +
+          encodedLevel +
+          "&last=" +
+          encodedLastName +
+          "&first=" +
+          encodedFirstName +
+          "&middle=" +
+          encodedMiddleName +
+          "&familyStatus=" +
+          encodedFamilyStatus +
+          "&moveCheckedValues=" +
+          moveChecked +
+          "&selectedRadio=" +
+          selectedRadio;
+
+        var iframe1 = document.getElementById("frame");
+        var iframe2 = document.getElementById("frame2");
+
+        if (iframe1 && iframe2) {
+          iframe1.contentDocument.getElementById("fullName").value =
+            lastName + " " + firstName + " " + middleName;
+          iframe2.contentDocument.getElementById("fullName").value =
+            lastName + " " + firstName + " " + middleName;
+        }
+
+        updateEducationData("education-table");
+        updateEducationData("attestation-table");
+        updateEducationData("qualification-table");
+        updateEducationData("studies-table");
+        updateEducationData("job-table");
+        updateEducationData("supervisor-table");
+        updateEducationData("jobtitle-table");
+        updateEducationData("relatives-table");
+        sendLanguage();
+        redirectCategoryPeople();
+
+        for (const index in uploadedImages) {
+          const imageData = uploadedImages[index].imageData;
+          const file = uploadedImages[index].file;
+
+          const formData = new FormData();
+          formData.append("image", file);
+          formData.append("imageFileName", file.name);
+          formData.append("userId", userId);
+
+          try {
+            const response = await fetch("/upload-image", {
+              method: "POST",
+              body: formData,
+              headers: {
+                userId: userId,
+              },
+            });
+
+            if (response.ok) {
+              console.log("Изображение успешно отправлено на сервер");
+
+              try {
+                const { imageUrl } = await response.json();
+                console.log("URL изображения:", imageUrl);
+
+                localStorage.setItem(`uploadedImageUrl${index}`, imageUrl);
+              } catch (error) {
+                console.error("Ошибка при обработке JSON:", error);
+              }
+            } else {
+              console.error("Ошибка при отправке изображения на сервер");
+
+              const responseBody = await response.text();
+              console.error("Текст ошибки:", responseBody);
+            }
+          } catch (error) {
+            console.error("Ошибка при обработке запроса:", error);
+          }
+        }
+
+        for (let i = 1; i <= 3; i++) {
+          const savedImagePath = localStorage.getItem(`uploadedImageUrl${i}`);
+          console.log(`uploadedImageUrl${i}:`, savedImagePath);
+          if (savedImagePath) {
+            imageUrlArray.push(savedImagePath);
+          }
+        }
+
+        sendDataToServer(
+          selectedLevel,
+          lastName,
+          firstName,
+          middleName,
+          familyStatus,
+          moveChecked,
+          selectedRadio,
+          imageUrlArray
+        );
+      } catch (error) {
+        console.error("Ошибка в redirect:", error);
+      }
+    }
+    await redirect();
+  } catch (error) {
+    console.error("Ошибка при обработке sendButtonClicked:", error);
+  }
+}
+
+function sendDataToServer(
+  selectedLevel,
+  lastName,
+  firstName,
+  middleName,
+  familyStatus,
+  moveChecked,
+  selectedRadio,
+  imageUrlArray
+) {
   try {
     const transferDataResult = transferData();
     const languageData = sendLanguage();
-    const educationData = updateEducationData('education-table');
-    const attestationData = updateEducationData('attestation-table');
-    const qualificationData = updateEducationData('qualification-table');
-    const studiesData = updateEducationData('studies-table');
-    const jobData = updateEducationData('job-table');
-    const supervisorData = updateEducationData('supervisor-table');
-    const jobtitleData = updateEducationData('jobtitle-table');
-    const relativesData = updateEducationData('relatives-table');
-    const data = transferData()
-    const imageFileName = document.getElementById('uploaded-image1').src;
+    const educationData = updateEducationData("education-table");
+    const attestationData = updateEducationData("attestation-table");
+    const qualificationData = updateEducationData("qualification-table");
+    const studiesData = updateEducationData("studies-table");
+    const jobData = updateEducationData("job-table");
+    const supervisorData = updateEducationData("supervisor-table");
+    const jobtitleData = updateEducationData("jobtitle-table");
+    const relativesData = updateEducationData("relatives-table");
+    const data = transferData();
+    const imageFileName = document.getElementById("uploaded-image1").src;
     const DataForm = {
       lastName,
       firstName,
@@ -329,13 +389,13 @@ function sendDataToServer(selectedLevel, lastName, firstName, middleName, family
       imageUrlArray,
     };
 
-    console.log('Sending data:', DataForm);
+    console.log("Sending data:", DataForm);
 
-    fetch('/submit', {
-      method: 'POST',
+    fetch("/submit", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
-        'userId': userId,
+        "Content-Type": "application/json",
+        userId: userId,
       },
       body: JSON.stringify(DataForm),
     })
@@ -347,8 +407,8 @@ function sendDataToServer(selectedLevel, lastName, firstName, middleName, family
       })
       .then((blobData) => {
         const blobUrl = URL.createObjectURL(blobData);
-        const a = document.createElement('a');
-        var filename = lastName + '_' + firstName + '_' + middleName + '.pdf';
+        const a = document.createElement("a");
+        var filename = lastName + "_" + firstName + "_" + middleName + ".pdf";
 
         a.href = blobUrl;
         a.download = filename;
@@ -356,77 +416,88 @@ function sendDataToServer(selectedLevel, lastName, firstName, middleName, family
         a.click();
         document.body.removeChild(a);
       })
-      .catch((error) => console.error('Error in fetch:', error));
+      .catch((error) => console.error("Error in fetch:", error));
   } catch (error) {
-    console.error('Error in sendDataToServer:', error);
+    console.error("Error in sendDataToServer:", error);
   }
 }
 
 function getSelectedLevel() {
-  var checkedLevel = document.querySelector('.skills-table input[name="levelPC"]:checked');
-  var levelText = checkedLevel ? checkedLevel.nextElementSibling.textContent.trim() : 'Нет опыта';
+  var checkedLevel = document.querySelector(
+    '.skills-table input[name="levelPC"]:checked'
+  );
+  var levelText = checkedLevel
+    ? checkedLevel.nextElementSibling.textContent.trim()
+    : "Нет опыта";
   return levelText;
 }
 
 function getSelectedFamilyStatus() {
-  var checkedStatus = document.querySelector('.div_radio input[name="family"]:checked');
-  return checkedStatus ? checkedStatus.nextElementSibling.textContent.trim() : '';
+  var checkedStatus = document.querySelector(
+    '.div_radio input[name="family"]:checked'
+  );
+  return checkedStatus
+    ? checkedStatus.nextElementSibling.textContent.trim()
+    : "";
 }
 
 function redirectCategoryPeople() {
   const selectedRadio = document.querySelector('input[name="benefit"]:checked');
-  return selectedRadio ? selectedRadio.nextElementSibling.textContent.trim() : '';
+  return selectedRadio
+    ? selectedRadio.nextElementSibling.textContent.trim()
+    : "";
 }
 
 function transferData() {
   var data = {};
-  var idPrefix = 'c-';
+  var idPrefix = "c-";
   var elements = document.querySelectorAll('[id^="' + idPrefix + '"]');
 
   elements.forEach(function (element) {
     var id = element.id;
     var value = element.value;
 
-    if (element.type === 'date' && id.endsWith('30')) {
+    if (element.type === "date" && id.endsWith("30")) {
       var dateArray = value.split("-");
-      value = dateArray[2] + '.' + dateArray[1] + '.' + dateArray[0];
+      value = dateArray[2] + "." + dateArray[1] + "." + dateArray[0];
     }
 
     data[id] = value;
   });
 
-  localStorage.setItem('data', JSON.stringify(data));
+  localStorage.setItem("data", JSON.stringify(data));
 
   return data;
 }
 
 function saveData() {
-  var lastName = document.getElementById('i-1').value;
-  var firstName = document.getElementById('i-2').value;
-  var middleName = document.getElementById('i-3').value;
+  var lastName = document.getElementById("i-1").value;
+  var firstName = document.getElementById("i-2").value;
+  var middleName = document.getElementById("i-3").value;
 
-  localStorage.setItem('lastName', lastName);
-  localStorage.setItem('firstName', firstName);
-  localStorage.setItem('middleName', middleName);
+  localStorage.setItem("lastName", lastName);
+  localStorage.setItem("firstName", firstName);
+  localStorage.setItem("middleName", middleName);
 }
-
 
 function updateEducationData(tableId) {
   const table = document.getElementById(tableId);
-  const rows = table.querySelectorAll('tr');
+  const rows = table.querySelectorAll("tr");
   const rowsData = [];
 
   rows.forEach(function (row, index) {
     const rowData = {};
-    const inputsTextareaSelect = row.querySelectorAll('input, textarea, select');
+    const inputsTextareaSelect = row.querySelectorAll(
+      "input, textarea, select"
+    );
 
     inputsTextareaSelect.forEach(function (input) {
       const inputId = input.id;
       let inputValue;
 
-      if (input.tagName === 'SELECT') {
+      if (input.tagName === "SELECT") {
         inputValue = input.options[input.selectedIndex].value;
-      } else if (input.tagName === 'INPUT' && input.type !== 'radio') {
+      } else if (input.tagName === "INPUT" && input.type !== "radio") {
         inputValue = input.value;
       } else {
         inputValue = input.value;
@@ -441,22 +512,22 @@ function updateEducationData(tableId) {
   return rowsData;
 }
 
-const inputElements = document.querySelectorAll('.input_ed');
+const inputElements = document.querySelectorAll(".input_ed");
 
-inputElements.forEach(input => {
-  input.addEventListener('input', function() {
-    const placeholder = this.querySelector('::placeholder');
+inputElements.forEach((input) => {
+  input.addEventListener("input", function () {
+    const placeholder = this.querySelector("::placeholder");
     if (this.scrollWidth > this.clientWidth) {
-      placeholder.style.animation = 'none';
+      placeholder.style.animation = "none";
     } else {
-      placeholder.style.animation = 'movePlaceholder 2s infinite alternate';
+      placeholder.style.animation = "movePlaceholder 2s infinite alternate";
     }
   });
 });
 
 function sendLanguage() {
   var languages = [];
-  var languageContainers = document.querySelectorAll('.language_container');
+  var languageContainers = document.querySelectorAll(".language_container");
 
   languageContainers.forEach(function (container, index) {
     var languageId = "date_lang" + index;
@@ -468,7 +539,6 @@ function sendLanguage() {
 
   return languages;
 }
-
 
 function getSelectedRadioValue(name) {
   var radios = document.querySelectorAll('input[name="' + name + '"]');
@@ -499,10 +569,7 @@ function handleSelect(inputId) {
   }
 }
 
-
 // ------------------------------------------------------------ Photos
-
-
 
 function generateUniqueId() {
   const timestamp = new Date().getTime();
@@ -510,6 +577,6 @@ function generateUniqueId() {
   return `${timestamp}_${randomString}`;
 }
 
-window.addEventListener('beforeunload', function() {
+window.addEventListener("beforeunload", function () {
   localStorage.clear();
 });

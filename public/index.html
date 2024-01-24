@@ -1,704 +1,1475 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ROCKWELL CAPITAL (Анкета кандидата)</title>
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/imask/6.0.7/imask.min.js"></script>
-    <link rel="icon" href="img/ico.svg" type="image/x-icon">
-</head>
+    <link rel="icon" href="img/ico.svg" type="image/x-icon" />
+  </head>
 
-<body>
+  <body>
     <header>
-        <img src="img/ROCKWELL CAPITAL.svg" alt="Logo company">
-        <p>АНКЕТА</p>
+      <img src="img/ROCKWELL CAPITAL.svg" alt="Logo company" />
+      <p>АНКЕТА</p>
+      <p>
+        (Добрый день. При заполнении данной анкеты, просьба не пропускать
+        пункты, в случае пропуска будет стоять "-")
+      <br> <br> Обязательные поля отмечены знаком *
+      </p>
     </header>
     <section class="main_section">
-        <table class="div_fio">
-            <tbody>
-                <tr>
-                    <td colspan="3">
-                        <p>Ф.И.О. кандидата</p>
-                        <div class="div_input">
-                            <input type="text" class="input" placeholder="Фамилия" id="i-1">
-                            <input type="text" class="input" placeholder="Имя" id="i-2">
-                            <input type="text" class="input" placeholder=" Отчество" id="i-3">
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="main-table">
-            <tbody>
-                <tr>
-                    <td class="td_data1">
-                        <p>Дата рождения</p>
-                    </td>
-                    <td colspan="2" class="td_data2">
-                        <div class="div_input1">
-                            <input type="date" class="input" id="c-30" placeholder="date" required
-                                pattern="\d{2}-\d{2}-\d{4}">
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="td_data1">
-                        <p>Место рождения</p>
-                    </td>
-                    <td colspan="2" class="td_data2">
-                        <div class="div_input1">
-                            <textarea name="place" class="textarea_inp" id="c-31"
-                                placeholder="Село, деревня, город, район, область, край, республика, страна"></textarea>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="td_data1">
-                        <p>Гражданство</p>
-                    </td>
-                    <td colspan="2" class="td_data2">
-                        <div class="div_input1">
-                            <textarea name="place" class="textarea_inp" id="c-32"
-                                placeholder="Если меняли, то когда и по какой причине"></textarea>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="td_data1">
-                        <p>Образование</p>
-                    </td>
-                    <td colspan="2" class="td_data2">
-                        <div class="div_radio">
-                            <div>
-                                <input type="checkbox" name="Высшее" id="i-7">
-                                <label for="i-7">Высшее</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" name="Незаконченное_высшее" id="i-8">
-                                <label for="i-8">Незаконченное <br> высшее</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" name="Среднее_профессиональное" id="i-9">
-                                <label for="i-9">Среднее <br> профессиональное</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" name="Среднее" id="i-10">
-                                <label for="i-10">Среднее</label>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <div>
-            <p>Наименование учебных заведение:</p>
-        </div>
-        <table id="education-table">
-            <tr id="education_container">
-                <td colspan="2" class="td_data2">
-                    <div class="education">
-                        <input type="text" class="input_ed" placeholder="Наименование и где находится" id="data_ed0">
-                        <input type="text" class="input_ed" placeholder="Год поступления/окончания" id="data_date0">
-                        <input type="text" class="input_ed" placeholder="Факультет (отделение)" id="data_fc0">
-                        <input type="text" class="input_ed" placeholder=" Специальность и квалификация" id="data_cp0">
-                    </div>
-                    <div class="remove-button">
-                    </div>
-                </td>
-            </tr>
-        </table>
-        <div class="div-button">
-            <button id="addEducation" onclick="addEducationRow()" class="add"><img src="img/add.svg" alt="add"
-                    width="90%"></button>
-        </div>
-        <div>
-            <p>Наличие квалификационных аттестатов, дающих право ведения профессиональной деятельности:</p>
-            <p class="holder">(Укажите серию, номер, срок действия, дату выдачи и наименование выдавшего органа)</p>
-        </div>
-        <table id="attestation-table">
-            <tr id="attestation_container">
-                <td colspan="2" class="td_data2">
-                    <div class="attestation">
-                        <input type="text" class="input_att" placeholder="Начните писать:" id="date_att0">
-                    </div>
-                    <div class="remove-button">
-                    </div>
-                </td>
-            </tr>
-        </table>
-        <div class="div-button">
-            <button id="addAttestation"
-                onclick="addRow('attestation-table', 'attestation_container', 'input_att', 'remove-button', removeRow)"
-                class="add"><img src="img/add.svg" alt="add" width="90%"></button>
-        </div>
-        <div>
-            <p>Повышение квалификации:</p>
-        </div>
-        <table id="qualification-table">
-            <tr id="qualification_container">
-                <td colspan="2" class="td_data2">
-                    <div class="qualification">
-                        <input type="text" class="input_qf" placeholder="Учебное заведение или организатор"
-                            id="data_qf0">
-                        <input type="text" class="input_qf" placeholder="Год проведения" id="data_qfdate0">
-                        <input type="text" class="input_qf" placeholder=" Год и период обучения" id="date_per0">
-                        <input type="text" class="input_qf" placeholder=" Название курса" id="date_nameqf0">
-                    </div>
-                    <div class="remove-button">
-                    </div>
-                </td>
-            </tr>
-        </table>
-        <div class="div-button">
-            <button id="addQualification"
-                onclick="addRow('qualification-table', 'qualification_container', 'input_qf', 'remove-button', removeRow)"
-                class="add"><img src="img/add.svg" alt="add" width="90%"></button>
-        </div>
-        </div>
-        <div>
-            <p>Учеба в аспирантуре/докторантуре, ученая степень, звание:</p>
-        </div>
-        <table id="studies-table">
-            <tr id="studies_container">
-                <td colspan="2" class="td_data2">
-                    <div class="studies">
-                        <input type="text" class="input_st" placeholder="Где и когда?" id="date_st0">
-                    </div>
-                    <div class="remove-button">
-                    </div>
-                </td>
-            </tr>
-        </table>
-        <div class="margin_section_button">
-            <div class="div-button">
-                <button id="addStudies"
-                    onclick="addRow('studies-table', 'studies_container', 'input_st', 'remove-button', removeRow)"
-                    class="add"><img src="img/add.svg" alt="add" width="90%"></button>
+      <table class="div_fio">
+        <tbody>
+          <tr>
+            <td colspan="3">
+              <p>Ф.И.О. кандидата</p>
+              <div class="div_input">
+                <input
+                  type="text"
+                  class="input"
+                  placeholder="Фамилия*"
+                  id="i-1"
+                />
+                <input type="text" class="input" placeholder="Имя*" id="i-2" />
+                <input
+                  type="text"
+                  class="input"
+                  placeholder=" Отчество"
+                  id="i-3"
+                />
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="main-table">
+        <tbody>
+          <tr>
+            <td class="td_data1">
+              <p>Дата рождения*</p>
+            </td>
+            <td colspan="2" class="td_data2">
+              <div class="div_input1">
+                <input
+                  type="date"
+                  class="input"
+                  id="c-30"
+                  placeholder="date"
+                  required
+                  pattern="\d{2}-\d{2}-\d{4}"
+                />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="td_data1">
+              <p>Место рождения*</p>
+            </td>
+            <td colspan="2" class="td_data2">
+              <div class="div_input1">
+                <textarea
+                  name="place"
+                  class="textarea_inp"
+                  id="c-31"
+                  placeholder="Село, деревня, город, район, область, край, республика, страна"
+                ></textarea>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="td_data1">
+              <p>Гражданство*</p>
+            </td>
+            <td colspan="2" class="td_data2">
+              <div class="div_input1">
+                <textarea
+                  name="place"
+                  class="textarea_inp"
+                  id="c-32"
+                  placeholder="Если меняли, то когда и по какой причине"
+                ></textarea>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="td_data1">
+              <p>Образование*</p>
+            </td>
+            <td colspan="2" class="td_data2">
+              <div class="div_radio">
+                <div>
+                  <input type="checkbox" name="Высшее" id="i-7" />
+                  <label for="i-7">Высшее</label>
+                </div>
+                <div>
+                  <input type="checkbox" name="Незаконченное_высшее" id="i-8" />
+                  <label for="i-8"
+                    >Незаконченное <br />
+                    высшее</label
+                  >
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    name="Среднее_профессиональное"
+                    id="i-9"
+                  />
+                  <label for="i-9"
+                    >Среднее <br />
+                    профессиональное</label
+                  >
+                </div>
+                <div>
+                  <input type="checkbox" name="Среднее" id="i-10" />
+                  <label for="i-10">Среднее</label>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div>
+        <p>Наименование учебных заведение:*</p>
+      </div>
+      <table id="education-table">
+        <tr id="education_container">
+          <td colspan="2" class="td_data2">
+            <div class="education">
+              <input
+                type="text"
+                class="input_ed"
+                placeholder="Наименование и где находится"
+                id="data_ed0"
+              />
+              <input
+                type="text"
+                class="input_ed"
+                placeholder="Год поступления/окончания"
+                id="data_date0"
+              />
+              <input
+                type="text"
+                class="input_ed"
+                placeholder="Факультет (отделение)"
+                id="data_fc0"
+              />
+              <input
+                type="text"
+                class="input_ed"
+                placeholder=" Специальность и квалификация"
+                id="data_cp0"
+              />
             </div>
-        </div>
-        <table class="skills-table">
-            <tbody>
-                <tr>
-                    <td class="td_data1">
-                        <p>Навыки работы на компьютере</p>
-                    </td>
-                    <td colspan="2" class="td_data2">
-                        <div class="div_radio">
-                            <div>
-                                <input type="radio" name="levelPC" id="i-11">
-                                <label for="i-11">Нет опыта</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="levelPC" id="i-12">
-                                <label for="i-12">Начальный</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="levelPC" id="i-13">
-                                <label for="i-13">Опытный</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="levelPC" id="i-14">
-                                <label for="i-14">Продвинутый</label>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <div class="heading">
-            <p>Знание иностранных языков</p>
-        </div>
-        <table class="language-table">
-            <tbody>
-                <tr class="language_container">
-                    <td class="td_data1">
-                        <input type="text" id="date_lang0" class="input_lang" placeholder="Язык">
-                    </td>
-                    <td colspan="2" class="td_data2">
-                        <div class="div_radio">
-                            <div>
-                                <input type="radio" name="language0" id="date_l0" value="Читаю и перевожу со словарем">
-                                <label for="date_l0">Читаю и перевожу со словарем</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="language0" id="date_a0" value="Могу объясниться">
-                                <label for="date_a0">Могу объясниться</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="language0" id="date_n0"
-                                    value="Читаю и понимаю тексты по специальности">
-                                <label for="date_n0">Читаю и понимаю тексты по специальности</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="language0" id="date_g0" value="Владею свободно">
-                                <label for="date_g0">Владею свободно</label>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <div class="margin_section_button">
-            <div class="div-button">
-                <button id="addLanguage" onclick="cloneLanguageBlock()" class="add">
-                    <img src="img/add.svg" alt="add" width="90%">
-                </button>
+            <div class="remove-button"></div>
+          </td>
+        </tr>
+      </table>
+      <div class="div-button">
+        <button id="addEducation" onclick="addEducationRow()" class="add">
+          <img src="img/add.svg" alt="add" width="90%" />
+        </button>
+      </div>
+      <div>
+        <p>
+          Наличие квалификационных аттестатов, дающих право ведения
+          профессиональной деятельности:
+        </p>
+        <p class="holder">
+          (Укажите серию, номер, срок действия, дату выдачи и наименование
+          выдавшего органа)
+        </p>
+      </div>
+      <table id="attestation-table">
+        <tr id="attestation_container">
+          <td colspan="2" class="td_data2">
+            <div class="attestation">
+              <input
+                type="text"
+                class="input_att"
+                placeholder="Начните писать:"
+                id="date_att0"
+              />
             </div>
+            <div class="remove-button"></div>
+          </td>
+        </tr>
+      </table>
+      <div class="div-button">
+        <button
+          id="addAttestation"
+          onclick="addRow('attestation-table', 'attestation_container', 'input_att', 'remove-button', removeRow)"
+          class="add"
+        >
+          <img src="img/add.svg" alt="add" width="90%" />
+        </button>
+      </div>
+      <div>
+        <p>Повышение квалификации:</p>
+      </div>
+      <table id="qualification-table">
+        <tr id="qualification_container">
+          <td colspan="2" class="td_data2">
+            <div class="qualification">
+              <input
+                type="text"
+                class="input_qf"
+                placeholder="Учебное заведение или организатор"
+                id="data_qf0"
+              />
+              <input
+                type="text"
+                class="input_qf"
+                placeholder="Год проведения"
+                id="data_qfdate0"
+              />
+              <input
+                type="text"
+                class="input_qf"
+                placeholder=" Год и период обучения"
+                id="date_per0"
+              />
+              <input
+                type="text"
+                class="input_qf"
+                placeholder=" Название курса"
+                id="date_nameqf0"
+              />
+            </div>
+            <div class="remove-button"></div>
+          </td>
+        </tr>
+      </table>
+      <div class="div-button">
+        <button
+          id="addQualification"
+          onclick="addRow('qualification-table', 'qualification_container', 'input_qf', 'remove-button', removeRow)"
+          class="add"
+        >
+          <img src="img/add.svg" alt="add" width="90%" />
+        </button>
+      </div>
+      <div>
+        <p>Учеба в аспирантуре/докторантуре, ученая степень, звание:</p>
+      </div>
+      <table id="studies-table">
+        <tr id="studies_container">
+          <td colspan="2" class="td_data2">
+            <div class="studies">
+              <input
+                type="text"
+                class="input_st"
+                placeholder="Где и когда?"
+                id="date_st0"
+              />
+            </div>
+            <div class="remove-button"></div>
+          </td>
+        </tr>
+      </table>
+      <div class="margin_section_button">
+        <div class="div-button">
+          <button
+            id="addStudies"
+            onclick="addRow('studies-table', 'studies_container', 'input_st', 'remove-button', removeRow)"
+            class="add"
+          >
+            <img src="img/add.svg" alt="add" width="90%" />
+          </button>
         </div>
-        <div>
-            <p data-tooltip="Заполните в хронологическом порядке в соответствии с записями 
+      </div>
+      <table class="skills-table">
+        <tbody>
+          <tr>
+            <td class="td_data1">
+              <p>Навыки работы на компьютере*</p>
+            </td>
+            <td colspan="2" class="td_data2">
+              <div class="div_radio">
+                <div>
+                  <input type="radio" name="levelPC" id="i-11" />
+                  <label for="i-11">Нет опыта</label>
+                </div>
+                <div>
+                  <input type="radio" name="levelPC" id="i-12" />
+                  <label for="i-12">Начальный</label>
+                </div>
+                <div>
+                  <input type="radio" name="levelPC" id="i-13" />
+                  <label for="i-13">Опытный</label>
+                </div>
+                <div>
+                  <input type="radio" name="levelPC" id="i-14" />
+                  <label for="i-14">Продвинутый</label>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="heading">
+        <p>Знание иностранных языков*</p>
+      </div>
+      <table class="language-table">
+        <tbody>
+          <tr class="language_container">
+            <td class="td_data1">
+              <input
+                type="text"
+                id="date_lang0"
+                class="input_lang"
+                placeholder="Язык"
+              />
+            </td>
+            <td colspan="2" class="td_data2">
+              <div class="div_radio">
+                <div>
+                  <input
+                    type="radio"
+                    name="language0"
+                    id="date_l0"
+                    value="Читаю и перевожу со словарем"
+                  />
+                  <label for="date_l0">Читаю и перевожу со словарем</label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    name="language0"
+                    id="date_a0"
+                    value="Могу объясниться"
+                  />
+                  <label for="date_a0">Могу объясниться</label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    name="language0"
+                    id="date_n0"
+                    value="Читаю и понимаю тексты по специальности"
+                  />
+                  <label for="date_n0"
+                    >Читаю и понимаю тексты по специальности</label
+                  >
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    name="language0"
+                    id="date_g0"
+                    value="Владею свободно"
+                  />
+                  <label for="date_g0">Владею свободно</label>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="margin_section_button">
+        <div class="div-button">
+          <button id="addLanguage" onclick="cloneLanguageBlock()" class="add">
+            <img src="img/add.svg" alt="add" width="90%" />
+          </button>
+        </div>
+      </div>
+      <div>
+        <p
+          data-tooltip="Заполните в хронологическом порядке в соответствии с записями 
                 в трудовой книжке; укажите учебу в высших и средних специальных учебных заведениях, 
                 военную службу (включая номер части), работу по совместительству, по гражданско-правовым договорам, 
-                предпринимательскую деятельность; а также истинные причины увольнения (не по записям в ТК). ">
-                Трудовая и иная занятость за последние 10 лет: <img src="img/icon-warning.svg" alt="reading" width="10">
-            </p>
-        </div>
-        <table id="job-table">
-            <tr id="job_container">
-                <td colspan="2" class="td_data2">
-                    <div class="job">
-                        <input type="text" class="input_job" placeholder="Месяц и год приема" id="data_jobdate0">
-                        <input type="text" class="input_job" placeholder="Месяц и год ухода" id="data_jobcan0">
-                        <textarea type="text" class="input_job" placeholder="Наименование работодателя, должность"
-                            id="date_jtx0"></textarea>
-                        <textarea type="text" class="input_job" placeholder="Причина увольнения"
-                            id="date_jtcan0"></textarea>
-                    </div>
-                    <div class="remove-button">
-                    </div>
-                </td>
-            </tr>
-        </table>
-        <div class="div-button">
-            <button id="addJob" onclick="addRow('job-table', 'job_container', 'input_job', 'remove-button', removeRow)"
-                class="add"><img src="img/add.svg" alt="add" width="90%"></button>
-        </div>
-        <div>
-            <p>Основные должностные обязанности по последнему месту работы:</p>
-        </div>
-        <table id="responsibilities-table">
-            <tr id="responsibilities_container">
-                <td colspan="2" class="td_data2">
-                    <div class="responsibilities">
-                        <input type="text" class="input_res" id="c-29" placeholder="Начните писать:">
-                    </div>
+                предпринимательскую деятельность; а также истинные причины увольнения (не по записям в ТК). "
+        >
+          Трудовая и иная занятость за последние 10 лет:*
+          <img src="img/icon-warning.svg" alt="reading" width="10" />
+        </p>
+      </div>
+      <table id="job-table">
+        <tr id="job_container">
+          <td colspan="2" class="td_data2">
+            <div class="job">
+              <input
+                type="text"
+                class="input_job"
+                placeholder="Месяц и год приема"
+                id="data_jobdate0"
+              />
+              <input
+                type="text"
+                class="input_job"
+                placeholder="Месяц и год ухода"
+                id="data_jobcan0"
+              />
+              <textarea
+                type="text"
+                class="input_job"
+                placeholder="Наименование работодателя, должность"
+                id="date_jtx0"
+              ></textarea>
+              <textarea
+                type="text"
+                class="input_job"
+                placeholder="Причина увольнения"
+                id="date_jtcan0"
+              ></textarea>
+            </div>
+            <div class="remove-button"></div>
+          </td>
+        </tr>
+      </table>
+      <div class="div-button">
+        <button
+          id="addJob"
+          onclick="addRow('job-table', 'job_container', 'input_job', 'remove-button', removeRow)"
+          class="add"
+        >
+          <img src="img/add.svg" alt="add" width="90%" />
+        </button>
+      </div>
+      <div>
+        <p>Основные должностные обязанности по последнему месту работы:</p>
+      </div>
+      <table id="responsibilities-table">
+        <tr id="responsibilities_container">
+          <td colspan="2" class="td_data2">
+            <div class="responsibilities">
+              <input
+                type="text"
+                class="input_res"
+                id="c-29"
+                placeholder="Начните писать:"
+              />
+            </div>
+          </td>
+        </tr>
+      </table>
+      <div>
+        <p>Наиболее значимый опыт руководящей работы:</p>
+      </div>
+      <table id="supervisor-table">
+        <tr id="supervisor_container">
+          <td colspan="2" class="td_data2">
+            <div class="supervisor">
+              <input
+                type="text"
+                class="input_sv"
+                id="date_sv0"
+                placeholder="Где и количество подчиненных"
+              />
+            </div>
+            <div class="remove-button"></div>
+          </td>
+        </tr>
+      </table>
+      <div class="div-button">
+        <button
+          id="addSupervisor"
+          onclick="addRow('supervisor-table', 'supervisor_container', 'input_sv', 'remove-button', removeRow)"
+          class="add"
+        >
+          <img src="img/add.svg" alt="add" width="90%" />
+        </button>
+      </div>
+      <div>
+        <p>Занимаемые в настоящее время другие должности:</p>
+        <p class="holder">
+          (В т.ч. в органах управления юр. лиц, включая нерезидентов, с
+          указанием названия и места нахождения)
+        </p>
+      </div>
+      <table id="jobtitle-table">
+        <tr id="jobtitle_container">
+          <td colspan="2" class="td_data2">
+            <div class="jobtitle">
+              <input
+                type="text"
+                class="input_jt"
+                id="date_jt0"
+                placeholder="Начните писать:"
+              />
+            </div>
+            <div class="remove-button"></div>
+          </td>
+        </tr>
+      </table>
+      <div class="div-button">
+        <button
+          id="addJobTitle"
+          onclick="addRow('jobtitle-table', 'jobtitle_container', 'input_jt', 'remove-button', removeRow)"
+          class="add"
+        >
+          <img src="img/add.svg" alt="add" width="90%" />
+        </button>
+      </div>
+      <table>
+        <tbody>
+          <tr>
+            <td class="td_data1">
+              <p>Семейное положение*</p>
+            </td>
+            <td colspan="2" class="td_data2">
+              <div class="div_radio">
+                <div>
+                  <div>
+                    <input type="radio" name="family" id="i-15" />
+                    <label for="i-15">Женат/замужем</label>
+                  </div>
+                </div>
+                <div>
+                  <div>
+                    <input type="radio" name="family" id="i-16" />
+                    <label for="i-16">Разведен(а)</label>
+                  </div>
+                </div>
+                <div>
+                  <div>
+                    <input type="radio" name="family" id="i-17" />
+                    <label for="i-17">Холост/не замужем</label>
+                  </div>
+                </div>
+                <div>
+                  <div>
+                    <input type="radio" name="family" id="i-18" />
+                    <label for="i-18">Гражданский брак</label>
+                  </div>
+                </div>
+                <div>
+                  <div>
+                    <input type="radio" name="family" id="i-19" />
+                    <label for="i-19">Вдовец/вдова</label>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div>
+        <p>
+          Ваши близкие родственники (Если кого-то нет, оставьте поле пустым)*
+        </p>
+      </div>
+      <table id="relatives-table">
+        <!-- Папа -->
+        <tr id="relatives_container_father">
+          <td colspan="2" class="td_data2">
+            <div class="relatives">
+              <p>Папа</p>
+              <input
+                type="text"
+                class="input_rel"
+                placeholder="ФИО"
+                id="data_relfio_father"
+              />
+              <input
+                type="text"
+                class="input_rel"
+                placeholder="Дата и место рождения"
+                id="date_reldate_father"
+              />
+              <input
+                type="text"
+                class="input_rel"
+                placeholder="Место работы (учебы), должность"
+                id="date_reljob_father"
+              />
+              <input
+                type="text"
+                class="input_rel"
+                placeholder="Адрес места жительства"
+                id="date_relpl_father"
+              />
+            </div>
+          </td>
+        </tr>
 
-                </td>
-            </tr>
-        </table>
-        <div>
-            <p>Наиболее значимый опыт руководящей работы:</p>
-        </div>
-        <table id="supervisor-table">
-            <tr id="supervisor_container">
-                <td colspan="2" class="td_data2">
-                    <div class="supervisor">
-                        <input type="text" class="input_sv" id="date_sv0" placeholder="Где и количество подчиненных">
-                    </div>
-                    <div class="remove-button">
-                    </div>
-                </td>
-            </tr>
-        </table>
-        <div class="div-button">
-            <button id="addSupervisor"
-                onclick="addRow('supervisor-table', 'supervisor_container', 'input_sv', 'remove-button', removeRow)"
-                class="add"><img src="img/add.svg" alt="add" width="90%"></button>
-        </div>
-        <div>
-            <p>Занимаемые в настоящее время другие должности:</p>
-            <p class="holder">(В т.ч. в органах управления юр. лиц, включая нерезидентов, с указанием названия и места
-                нахождения)</p>
-        </div>
-        <table id="jobtitle-table">
-            <tr id="jobtitle_container">
-                <td colspan="2" class="td_data2">
-                    <div class="jobtitle">
-                        <input type="text" class="input_jt" id="date_jt0" placeholder="Начните писать:">
-                    </div>
-                    <div class="remove-button">
-                    </div>
-                </td>
-            </tr>
-        </table>
-        <div class="div-button">
-            <button id="addJobTitle"
-                onclick="addRow('jobtitle-table', 'jobtitle_container', 'input_jt', 'remove-button', removeRow)"
-                class="add"><img src="img/add.svg" alt="add" width="90%"></button>
-        </div>
-        <table>
-            <tbody>
-                <tr>
-                    <td class="td_data1">
-                        <p>Семейное положение</p>
-                    </td>
-                    <td colspan="2" class="td_data2">
-                        <div class="div_radio">
-                            <div>
-                                <div>
-                                    <input type="radio" name="family" id="i-15">
-                                    <label for="i-15">Женат/замужем</label>
-                                </div>
-                            </div>
-                            <div>
-                                <div>
-                                    <input type="radio" name="family" id="i-16">
-                                    <label for="i-16">Разведен(а)</label>
-                                </div>
-                            </div>
-                            <div>
-                                <div>
-                                    <input type="radio" name="family" id="i-17">
-                                    <label for="i-17">Холост/не замужем</label>
-                                </div>
-                            </div>
-                            <div>
-                                <div>
-                                    <input type="radio" name="family" id="i-18">
-                                    <label for="i-18">Гражданский брак</label>
-                                </div>
-                            </div>
-                            <div>
-                                <div>
-                                    <input type="radio" name="family" id="i-19">
-                                    <label for="i-19">Вдовец/вдова</label>
-                                </div>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <div>
-            <p>Ваши близкие родственники (супруг(и), в т.ч. бывшие, дети, родители, братья и сестры)</p>
-        </div>
-        <table id="relatives-table">
-            <tr id="relatives_container">
-                <td colspan="2" class="td_data2">
-                    <div class="relatives">
-                        <select name="pets" class="input_rel" id="data_rel0">
-                            <option value="">Степень родства</option>
-                            <option value="Отец">Отец</option>
-                            <option value="Мама">Мама</option>
-                            <option value="Сестра">Сестра</option>
-                            <option value="Брат">Брат</option>
-                            <option value="Дочь">Дочь</option>
-                            <option value="Сын">Сын</option>
-                            <option value="Дед">Дед</option>
-                            <option value="Бабушка">Бабушка</option>
-                            <option value="Внук(чка)">Внук(чка)</option>
-                            <option value="Прадед">Прадед</option>
-                            <option value="Прабабушка">Прабабушка</option>
-                            <option value="Дядя">Дядя</option>
-                            <option value="Дядя">Тетя</option>
-                            <option value="Племянник(ца)">Племянник(ца)</option>
-                        </select>
-                        <input type="text" class="input_rel" placeholder="ФИО" id="data_relfio0">
-                        <input type="text" class="input_rel" placeholder="Дата и место рождения" id="date_reldate0">
-                        <input type="text" class="input_rel" placeholder="Место работы (учебы), должность"
-                            id="date_reljob0">
-                        <input type="text" class="input_rel" placeholder="Адрес места жительства" id="date_relpl0">
-                    </div>
-                </td>
-            </tr>
-        </table>
-        <div class="div-button">
-            <button id="addRelatives" onclick="addRelatives()" class="add"><img src="img/add.svg" alt="add"
-                    width="90%"></button>
-        </div>
-        <div>
-            <p>Привлекались ли Вы или Ваши близкие родственники к административной или уголовной ответственности?</p>
-        </div>
-        <table id="criminal-table">
-            <tr id="criminal_container">
-                <td colspan="2" class="td_data2">
-                    <div class="criminal">
-                        <input type="text" class="input_cr" id="c-1" placeholder="Если да, то когда и за что">
-                    </div>
-                </td>
-            </tr>
-        </table>
-        <table id="country-table">
-            <tr id="country_container">
-                <td class="td_data1">
-                    <p>Пребывали ли Вы длительное время (проживание, работа, учеба) за границей?</p>
-                </td>
-                <td colspan="2" class="td_data2">
-                    <div class="country">
-                        <textarea type="text" class="textarea_inp" id="c-2"
-                            placeholder="Когда, где, цель пребывания"></textarea>
-                    </div>
-                </td>
-            </tr>
-        </table>
-        <table id="RelCountry-table">
-            <tr id="RelCountry_container">
-                <td class="td_data1">
-                    <p>Есть ли у Вас или Вашего(й) супруга(и) родственники, постоянно проживающие за границей?:</p>
-                    <p class="holder">(Укажите фио, год рождения, степень родства, место жительства, период проживания)</p>
-                </td>
-                <td colspan="2" class="td_data2">
-                    <div class="RelCountry">
-                        <textarea type="text" class="textarea_inp" id="c-3"
-                            placeholder="Начните писать:"></textarea>
-                    </div>
-                </td>
-            </tr>
-        </table>
-        <table id="awards-table">
-            <tr id="awards_container">
-                <td class="td_data1">
-                    <p>Имеете ли Вы государственные награды или почетные звания:</p>
-                </td>
-                <td colspan="2" class="td_data2">
-                    <div class="awards">
-                        <textarea type="text" class="textarea_inp" id="c-4"
-                            placeholder="Укажите какие и год награждения"></textarea>
-                    </div>
-                </td>
-            </tr>
-        </table>
-        <table id="army-table">
-            <tr id="army_container">
-                <td class="td_data1">
-                    <p>Отношение к воинской обязанности и воинское звание</p>
-                </td>
-                <td colspan="2" class="td_data2">
-                    <div class="army">
-                        <input type="text" class="input_army" id="c-5"
-                            placeholder="Укажите номер и дату выдачи военного билета">
-                    </div>
-                </td>
-            </tr>
-        </table>
-        <table>
-            <tbody>
-                <tr>
-                    <td class="td_data1">
-                        <p
-                            data-tooltip="(матери-одиночки, инвалиды, участники боевых действий, ликвидации последствий аварии на ЧАЭС и др.)">
-                            Принадлежите ли Вы к льготной категории людей <img src="img/icon-warning.svg" alt="reading"
-                                width="10"></p>
-                    </td>
-                    <td colspan="2" class="td_data2">
-                        <div class="div_benefit">
-                            <div>
-                                <input type="radio" name="benefit" id="" data-benefit-label="benefit-label-c-6">
-                                <label for="">Да</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="benefit" id="" data-benefit-label="benefit-label-c-7">
-                                <label for="">Нет</label>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table id="passport-table">
-            <tr id="passport_container">
-                <td class="td_data1">
-                    <p>Паспорт</p>
-                </td>
-                <td colspan="2" class="td_data">
-                    <div class="passport">
-                        <div class="number_series">
-                            <input type="text" class="input_ps" id="c-6" placeholder="Серия">
-                            <input type="text" class="input_ps" id="c-7" placeholder="Номер">
-                        </div>
-                        <div class="whereps">
-                            <input type="text" class="input_ps" id="c-8" placeholder="Кем выдан">
-                        </div>
-                        <div class="date_code">
-                            <input type="text" class="input_ps" id="c-9" placeholder="Дата выдачи">
-                            <input type="text" class="input_ps" id="c-10" placeholder="Код подразделения">
-                        </div>
-                    </div>
-                </td>
-            </tr>
-        </table>
-        <table id="passport-table">
-            <tr id="passport_container">
-                <td class="td_data1">
-                    <p>Загранпаспорт</p>
-                </td>
-                <td colspan="2" class="td_data">
-                    <div class="passport">
-                        <div class="number_series">
-                            <input type="text" class="input_ps" id="c-11" placeholder="Серия">
-                            <input type="text" class="input_ps" id="c-12" placeholder="Номер">
-                        </div>
-                        <div class="whereps">
-                            <input type="text" class="input_ps" id="c-13" placeholder="Кем выдан">
-                        </div>
-                        <div class="date_code">
-                            <input type="text" class="input_ps" id="c-14" placeholder="Дата выдачи">
-                            <input type="text" class="input_ps" id="c-15" placeholder="Действует до">
-                        </div>
-                    </div>
-                </td>
-            </tr>
-        </table>
-        <table id="address-table">
-            <tr id="address_container">
-                <td class="td_data1">
-                    <p>Адрес постоянной <br> регистрации по паспорту <br> (с индексом)</p>
-                </td>
-                <td colspan="2" class="td_data2">
-                    <div class="address">
-                        <input type="text" class="input_address" id="c-16" placeholder="Начните писать:">
-                    </div>
-                </td>
-            </tr>
-            <tr id="address_container">
-                <td class="td_data1">
-                    <p>Адрес временной регистрации (с индексом, до какого времени)</p>
-                </td>
-                <td colspan="2" class="td_data2">
-                    <div class="address">
-                        <input type="text" class="input_address" id="c-17" placeholder="Начните писать:">
-                    </div>
-                </td>
-            </tr>
-            <tr id="address_container">
-                <td class="td_data1">
-                    <p>Адрес фактического проживания (с индексом)</p>
-                </td>
-                <td colspan="2" class="td_data2">
-                    <div class="address">
-                        <input type="text" class="input_address" id="c-18" placeholder="Начните писать:">
-                    </div>
-                </td>
-            </tr>
-            <tr id="address_container">
-                <td class="td_data1">
-                    <p>Номер страхового свидетельства ПФ РФ</p>
-                </td>
-                <td colspan="2" class="td_data2">
-                    <div class="address">
-                        <input type="text" class="input_address" id="c-19" placeholder="Начните писать:">
-                    </div>
-                </td>
-            </tr>
-            <tr id="address_container">
-                <td class="td_data1">
-                    <p>ИНН</p>
-                </td>
-                <td colspan="2" class="td_data2">
-                    <div class="address">
-                        <input type="text" class="input_address" id="c-20" placeholder="Начните писать:">
-                    </div>
-                </td>
-            </tr>
-        </table>
-        <table id="passport-table">
-            <tr id="passport_container">
-                <td class="td_data1">
-                    <p>Контактные телефоны и адрес электронной почты</p>
-                </td>
-                <td colspan="2" class="td_data">
-                    <div class="passport">
-                        <div class="number_series">
-                            <input type="text" class="input_ps" id="c-21" placeholder="Домашний">
-                            <input type="text" class="input_ps" id="c-22" placeholder="Рабочий">
-                        </div>
-                        <div class="date_code">
-                            <input type="text" class="input_ps" id="c-23" placeholder="Мобильный">
-                            <input type="text" class="input_ps" id="c-24" placeholder="Другие">
-                        </div>
-                        <div class="whereps">
-                            <input type="text" class="input_ps" id="c-25" placeholder="e-mail:">
-                        </div>
-                    </div>
-                </td>
-            </tr>
-        </table>
-        <table id="country-table">
-            <tr id="country_container">
-                <td class="td_data1">
-                    <p>Рекомендации с предыдущих мест работы (ФИО)</p>
-                </td>
-                <td colspan="2" class="td_data2">
-                    <div class="country">
-                        <textarea type="text" class="textarea_inp" id="c-26" placeholder="Начните писать"></textarea>
-                    </div>
-                </td>
-            </tr>
-            <tr id="country_container">
-                <td class="td_data1">
-                    <p>Иные рекомендации</p>
-                </td>
-                <td colspan="2" class="td_data2">
-                    <div class="country">
-                        <textarea type="text" class="textarea_inp" id="c-27"
-                            placeholder="ФИО, место работы, должность, телефон"></textarea>
-                    </div>
-                </td>
-            </tr>
-            <tr id="country_container">
-                <td class="td_data1">
-                    <p>Дополнительные сведения</p>
-                    <p class="holder">(Научные публикации, участие в выборных органах, краткосрочное пребывание за границей, наличие водительского удостоверения и т.д.)</p>
-                </td>
-                <td colspan="2" class="td_data2">
-                    <div class="country">
-                        <textarea type="text" class="textarea_inp" id="c-28"
-                            placeholder="Начните писать:"></textarea>
-                    </div>
-                </td>
-            </tr>
-        </table>
-        <div class="photos">
-            <div class="container">
-                <div class="image-container" id="image-container1">
-                    <img class="uploaded-image" id="uploaded-image1" src="#" alt="Добавьте свое фото">
+        <!-- Мама -->
+        <tr id="relatives_container_mother">
+          <td colspan="2" class="td_data2">
+            <div class="relatives">
+              <p>Мама</p>
+              <input
+                type="text"
+                class="input_rel"
+                placeholder="ФИО"
+                id="data_relfio_mother"
+              />
+              <input
+                type="text"
+                class="input_rel"
+                placeholder="Дата и место рождения"
+                id="date_reldate_mother"
+              />
+              <input
+                type="text"
+                class="input_rel"
+                placeholder="Место работы (учебы), должность"
+                id="date_reljob_mother"
+              />
+              <input
+                type="text"
+                class="input_rel"
+                placeholder="Адрес места жительства"
+                id="date_relpl_mother"
+              />
+            </div>
+          </td>
+        </tr>
+
+        <!-- Муж.Жена -->
+        <tr id="relatives_container_husbandWife">
+          <td colspan="2" class="td_data2">
+            <div class="relatives">
+              <p>Муж/Жена (и/или бывшие)</p>
+              <input
+                type="text"
+                class="input_rel"
+                placeholder="ФИО"
+                id="data_relfio_husbandWife"
+              />
+              <input
+                type="text"
+                class="input_rel"
+                placeholder="Дата и место рождения"
+                id="date_reldate_husbandWife"
+              />
+              <input
+                type="text"
+                class="input_rel"
+                placeholder="Место работы, должность"
+                id="date_reljob_husbandWife"
+              />
+              <input
+                type="text"
+                class="input_rel"
+                placeholder="Адрес места жительства"
+                id="date_relpl_husbandWife"
+              />
+              <div class="remove-button"></div>
+            </div>
+          </td>
+          <td class="td_data2">
+            <div class="div-button">
+              <button
+                onclick="addRelatives('relatives_container_husbandWife')"
+                class="add"
+              >
+                <img src="img/add.svg" alt="add" width="90%" />
+              </button>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Сестра.Брат -->
+        <tr id="relatives_container_sisterbrother" class="relatives-container">
+          <td colspan="2" class="td_data2">
+            <div class="relatives">
+              <p>Брат/Сестра</p>
+              <input
+                type="text"
+                class="input_rel"
+                placeholder="ФИО"
+                id="data_relfio_sisterbrother"
+              />
+              <input
+                type="text"
+                class="input_rel"
+                placeholder="Дата и место рождения"
+                id="date_reldate_sisterbrother"
+              />
+              <input
+                type="text"
+                class="input_rel"
+                placeholder="Место работы (учебы), должность"
+                id="date_reljob_sisterbrother"
+              />
+              <input
+                type="text"
+                class="input_rel"
+                placeholder="Адрес места жительства"
+                id="date_relpl_sisterbrother"
+              />
+              <div class="remove-button"></div>
+            </div>
+          </td>
+          <td class="td_data2">
+            <div class="div-button">
+              <button
+                onclick="addRelatives('relatives_container_sisterbrother')"
+                class="add"
+              >
+                <img src="img/add.svg" alt="add" width="90%" />
+              </button>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Дочь.Сын -->
+        <tr id="relatives_container_daughterSon" class="relatives-container">
+          <td colspan="2" class="td_data2">
+            <div class="relatives">
+              <p>Сын/Дочь</p>
+              <input
+                type="text"
+                class="input_rel"
+                placeholder="ФИО"
+                id="data_relfio_daughterSon"
+              />
+              <input
+                type="text"
+                class="input_rel"
+                placeholder="Дата и место рождения"
+                id="date_reldate_daughterSon"
+              />
+              <input
+                type="text"
+                class="input_rel"
+                placeholder="Место работы (учебы), должность"
+                id="date_reljob_daughterSon"
+              />
+              <input
+                type="text"
+                class="input_rel"
+                placeholder="Адрес места жительства"
+                id="date_relpl_daughterSon"
+              />
+              <div class="remove-button"></div>
+            </div>
+          </td>
+          <td class="td_data2">
+            <div class="div-button">
+              <button
+                onclick="addRelatives('relatives_container_daughterSon')"
+                class="add"
+              >
+                <img src="img/add.svg" alt="add" width="90%" />
+              </button>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Дед -->
+        <tr id="relatives_container_grandfather" class="relatives-container">
+          <td colspan="2" class="td_data2">
+            <div class="relatives">
+              <p>Дед</p>
+              <input
+                type="text"
+                class="input_rel"
+                placeholder="ФИО"
+                id="data_relfio_grandfather"
+              />
+              <input
+                type="text"
+                class="input_rel"
+                placeholder="Дата и место рождения"
+                id="date_reldate_grandfather"
+              />
+              <input
+                type="text"
+                class="input_rel"
+                placeholder="Место работы (учебы), должность"
+                id="date_reljob_grandfather"
+              />
+              <input
+                type="text"
+                class="input_rel"
+                placeholder="Адрес места жительства"
+                id="date_relpl_grandfather"
+              />
+              <div class="remove-button"></div>
+            </div>
+          </td>
+          <td class="td_data2">
+            <div class="div-button">
+              <button
+                onclick="addRelatives('relatives_container_grandfather')"
+                class="add"
+              >
+                <img src="img/add.svg" alt="add" width="90%" />
+              </button>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Бабушка -->
+        <tr id="relatives_container_grandmother" class="relatives-container">
+          <td colspan="2" class="td_data2">
+            <div class="relatives">
+              <p>Бабушка</p>
+              <input
+                type="text"
+                class="input_rel"
+                placeholder="ФИО"
+                id="data_relfio_grandmother"
+              />
+              <input
+                type="text"
+                class="input_rel"
+                placeholder="Дата и место рождения"
+                id="date_reldate_grandmother"
+              />
+              <input
+                type="text"
+                class="input_rel"
+                placeholder="Место работы (учебы), должность"
+                id="date_reljob_grandmother"
+              />
+              <input
+                type="text"
+                class="input_rel"
+                placeholder="Адрес места жительства"
+                id="date_relpl_grandmother"
+              />
+              <div class="remove-button"></div>
+            </div>
+          </td>
+          <td class="td_data2">
+            <div class="div-button">
+              <button
+                onclick="addRelatives('relatives_container_grandmother')"
+                class="add"
+              >
+                <img src="img/add.svg" alt="add" width="90%" />
+              </button>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Внук(чка) -->
+        <tr id="relatives_container_grandchild" class="relatives-container">
+          <td colspan="2" class="td_data2">
+            <div class="relatives">
+              <p>Внук(чка)</p>
+              <input
+                type="text"
+                class="input_rel"
+                placeholder="ФИО"
+                id="data_relfio_grandchild"
+              />
+              <input
+                type="text"
+                class="input_rel"
+                placeholder="Дата и место рождения"
+                id="date_reldate_grandchild"
+              />
+              <input
+                type="text"
+                class="input_rel"
+                placeholder="Место работы (учебы), должность"
+                id="date_reljob_grandchild"
+              />
+              <input
+                type="text"
+                class="input_rel"
+                placeholder="Адрес места жительства"
+                id="date_relpl_grandchild"
+              />
+              <div class="remove-button"></div>
+            </div>
+          </td>
+          <td class="td_data2">
+            <div class="div-button">
+              <button
+                onclick="addRelatives('relatives_container_grandchild')"
+                class="add"
+              >
+                <img src="img/add.svg" alt="add" width="90%" />
+              </button>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Дядя -->
+        <tr id="relatives_container_uncleaunt" class="relatives-container">
+          <td colspan="2" class="td_data2">
+            <div class="relatives">
+              <p>Дядя/Тетя</p>
+              <input
+                type="text"
+                class="input_rel"
+                placeholder="ФИО"
+                id="data_relfio_uncleaunt"
+              />
+              <input
+                type="text"
+                class="input_rel"
+                placeholder="Дата и место рождения"
+                id="date_reldate_uncleaunt"
+              />
+              <input
+                type="text"
+                class="input_rel"
+                placeholder="Место работы (учебы), должность"
+                id="date_reljob_uncleaunt"
+              />
+              <input
+                type="text"
+                class="input_rel"
+                placeholder="Адрес места жительства"
+                id="date_relpl_uncleaunt"
+              />
+              <div class="remove-button"></div>
+            </div>
+          </td>
+          <td class="td_data2">
+            <div class="div-button">
+              <button
+                onclick="addRelatives('relatives_container_uncleaunt')"
+                class="add"
+              >
+                <img src="img/add.svg" alt="add" width="90%" />
+              </button>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Племянник(ца) -->
+        <tr id="relatives_container_nephew" class="relatives-container">
+          <td colspan="2" class="td_data2">
+            <div class="relatives">
+              <p>Племянник(ца)</p>
+              <input
+                type="text"
+                class="input_rel"
+                placeholder="ФИО"
+                id="data_relfio_nephew"
+              />
+              <input
+                type="text"
+                class="input_rel"
+                placeholder="Дата и место рождения"
+                id="date_reldate_nephew"
+              />
+              <input
+                type="text"
+                class="input_rel"
+                placeholder="Место работы (учебы), должность"
+                id="date_reljob_nephew"
+              />
+              <input
+                type="text"
+                class="input_rel"
+                placeholder="Адрес места жительства"
+                id="date_relpl_nephew"
+              />
+              <div class="remove-button"></div>
+            </div>
+          </td>
+          <td class="td_data2">
+            <div class="div-button">
+              <button
+                onclick="addRelatives('relatives_container_nephew')"
+                class="add"
+              >
+                <img src="img/add.svg" alt="add" width="90%" />
+              </button>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <div>
+        <p>
+          Привлекались ли Вы или Ваши близкие родственники к административной
+          или уголовной ответственности?*
+        </p>
+      </div>
+      <table id="criminal-table">
+        <tr id="criminal_container">
+          <td colspan="2" class="td_data2">
+            <div class="criminal">
+              <input
+                type="text"
+                class="input_cr"
+                id="c-1"
+                placeholder="Если да, то когда и за что"
+              />
+            </div>
+          </td>
+        </tr>
+      </table>
+      <table class="country-table">
+        <tr id="country_container">
+          <td class="td_data1">
+            <p>
+              Пребывали ли Вы длительное время (проживание, работа, учеба) за
+              границей?*
+            </p>
+          </td>
+          <td colspan="2" class="td_data2">
+            <div class="country">
+              <textarea
+                type="text"
+                class="textarea_inp"
+                id="c-2"
+                placeholder="Когда, где, цель пребывания"
+              ></textarea>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <table id="RelCountry-table">
+        <tr id="RelCountry_container">
+          <td class="td_data1">
+            <p>
+              Есть ли у Вас или Вашего(й) супруга(и) родственники, постоянно
+              проживающие за границей?:*
+            </p>
+            <p class="holder">
+              (Укажите фио, год рождения, степень родства, место жительства,
+              период проживания)
+            </p>
+          </td>
+          <td colspan="2" class="td_data2">
+            <div class="RelCountry">
+              <textarea
+                type="text"
+                class="textarea_inp"
+                id="c-3"
+                placeholder="Начните писать:"
+              ></textarea>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <table id="awards-table">
+        <tr id="awards_container">
+          <td class="td_data1">
+            <p>Имеете ли Вы государственные награды или почетные звания:*</p>
+          </td>
+          <td colspan="2" class="td_data2">
+            <div class="awards">
+              <textarea
+                type="text"
+                class="textarea_inp"
+                id="c-4"
+                placeholder="Укажите какие и год награждения"
+              ></textarea>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <table id="army-table">
+        <tr id="army_container">
+          <td class="td_data1">
+            <p>Отношение к воинской обязанности и воинское звание*</p>
+          </td>
+          <td colspan="2" class="td_data2">
+            <div class="army">
+              <input
+                type="text"
+                class="input_army"
+                id="c-5"
+                placeholder="Укажите номер и дату выдачи военного билета"
+              />
+            </div>
+          </td>
+        </tr>
+      </table>
+      <table>
+        <tbody>
+          <tr>
+            <td class="td_data1">
+              <p
+                data-tooltip="(матери-одиночки, инвалиды, участники боевых действий, ликвидации последствий аварии на ЧАЭС и др.)"
+              >
+                Принадлежите ли Вы к льготной категории людей*
+                <img src="img/icon-warning.svg" alt="reading" width="10" />
+              </p>
+            </td>
+            <td colspan="2" class="td_data2">
+              <div class="div_benefit">
+                <div>
+                  <input
+                    type="radio"
+                    name="benefit"
+                    id=""
+                    data-benefit-label="benefit-label-c-6"
+                  />
+                  <label for="">Да</label>
                 </div>
                 <div>
-                    <input type="file" name="images" id="file-input1" style="display: none;">
-                    <button class="add-photo" id="add-photo1">Добавить фото</button>
-                    <button class="remove-photo" id="remove-photo1">Удалить</button>
+                  <input
+                    type="radio"
+                    name="benefit"
+                    id=""
+                    data-benefit-label="benefit-label-c-7"
+                  />
+                  <label for="">Нет</label>
                 </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="passport-table">
+        <tr class="passport_container">
+          <td class="td_data1">
+            <p>Паспорт*</p>
+          </td>
+          <td colspan="2" class="td_data">
+            <div class="passport">
+              <div class="number_series">
+                <input
+                  type="text"
+                  class="input_ps"
+                  id="c-6"
+                  placeholder="Серия"
+                />
+                <input
+                  type="text"
+                  class="input_ps"
+                  id="c-7"
+                  placeholder="Номер"
+                />
+              </div>
+              <div class="whereps">
+                <input
+                  type="text"
+                  class="input_ps"
+                  id="c-8"
+                  placeholder="Кем выдан"
+                />
+              </div>
+              <div class="date_code">
+                <input
+                  type="text"
+                  class="input_ps"
+                  id="c-9"
+                  placeholder="Дата выдачи"
+                />
+                <input
+                  type="text"
+                  class="input_ps"
+                  id="c-10"
+                  placeholder="Код подразделения"
+                />
+              </div>
             </div>
+          </td>
+        </tr>
+      </table>
+      <table class="passport-table">
+        <tr class="passport_container">
+          <td class="td_data1">
+            <p>Загранпаспорт</p>
+          </td>
+          <td colspan="2" class="td_data">
+            <div class="passport">
+              <div class="number_series">
+                <input
+                  type="text"
+                  class="input_ps"
+                  id="c-11"
+                  placeholder="Серия"
+                />
+                <input
+                  type="text"
+                  class="input_ps"
+                  id="c-12"
+                  placeholder="Номер"
+                />
+              </div>
+              <div class="whereps">
+                <input
+                  type="text"
+                  class="input_ps"
+                  id="c-13"
+                  placeholder="Кем выдан"
+                />
+              </div>
+              <div class="date_code">
+                <input
+                  type="text"
+                  class="input_ps"
+                  id="c-14"
+                  placeholder="Дата выдачи"
+                />
+                <input
+                  type="text"
+                  class="input_ps"
+                  id="c-15"
+                  placeholder="Действует до"
+                />
+              </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <table id="address-table">
+        <tr class="address_container">
+          <td class="td_data1">
+            <p>
+              Адрес постоянной <br />
+              регистрации по паспорту <br />
+              (с индексом)*
+            </p>
+          </td>
+          <td colspan="2" class="td_data2">
+            <div class="address">
+              <input
+                type="text"
+                class="input_address"
+                id="c-16"
+                placeholder="Начните писать:"
+              />
+            </div>
+          </td>
+        </tr>
+        <tr class="address_container">
+          <td class="td_data1">
+            <p>Адрес временной регистрации (с индексом, до какого времени)</p>
+          </td>
+          <td colspan="2" class="td_data2">
+            <div class="address">
+              <input
+                type="text"
+                class="input_address"
+                id="c-17"
+                placeholder="Начните писать:"
+              />
+            </div>
+          </td>
+        </tr>
+        <tr class="address_container">
+          <td class="td_data1">
+            <p>Адрес фактического проживания (с индексом)*</p>
+          </td>
+          <td colspan="2" class="td_data2">
+            <div class="address">
+              <input
+                type="text"
+                class="input_address"
+                id="c-18"
+                placeholder="Начните писать:"
+              />
+            </div>
+          </td>
+        </tr>
+        <tr class="address_container">
+          <td class="td_data1">
+            <p>Номер страхового свидетельства ПФ РФ*</p>
+          </td>
+          <td colspan="2" class="td_data2">
+            <div class="address">
+              <input
+                type="text"
+                class="input_address"
+                id="c-19"
+                placeholder="Начните писать:"
+              />
+            </div>
+          </td>
+        </tr>
+        <tr class="address_container">
+          <td class="td_data1">
+            <p>ИНН*</p>
+          </td>
+          <td colspan="2" class="td_data2">
+            <div class="address">
+              <input
+                type="text"
+                class="input_address"
+                id="c-20"
+                placeholder="Начните писать:"
+              />
+            </div>
+          </td>
+        </tr>
+      </table>
+      <table id="passport-table">
+        <tr id="passport_container">
+          <td class="td_data1">
+            <p>Контактные телефоны и адрес электронной почты*</p>
+          </td>
+          <td colspan="2" class="td_data">
+            <div class="passport">
+              <div class="number_series">
+                <input
+                  type="text"
+                  class="input_ps"
+                  id="c-21"
+                  placeholder="Домашний"
+                />
+                <input
+                  type="text"
+                  class="input_ps"
+                  id="c-22"
+                  placeholder="Рабочий"
+                />
+              </div>
+              <div class="date_code">
+                <input
+                  type="text"
+                  class="input_ps"
+                  id="c-23"
+                  placeholder="Мобильный*"
+                />
+                <input
+                  type="text"
+                  class="input_ps"
+                  id="c-24"
+                  placeholder="Другие"
+                />
+              </div>
+              <div class="whereps">
+                <input
+                  type="text"
+                  class="input_ps"
+                  id="c-25"
+                  placeholder="e-mail:"
+                />
+              </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <table class="country-table">
+        <tr class="country_container">
+          <td class="td_data1">
+            <p>Рекомендации с предыдущих мест работы (ФИО)</p>
+          </td>
+          <td colspan="2" class="td_data2">
+            <div class="country">
+              <textarea
+                type="text"
+                class="textarea_inp"
+                id="c-26"
+                placeholder="Начните писать"
+              ></textarea>
+            </div>
+          </td>
+        </tr>
+        <tr class="country_container">
+          <td class="td_data1">
+            <p>Иные рекомендации</p>
+          </td>
+          <td colspan="2" class="td_data2">
+            <div class="country">
+              <textarea
+                type="text"
+                class="textarea_inp"
+                id="c-27"
+                placeholder="ФИО, место работы, должность, телефон"
+              ></textarea>
+            </div>
+          </td>
+        </tr>
+        <tr class="country_container">
+          <td class="td_data1">
+            <p>Дополнительные сведения</p>
+            <p class="holder">
+              (Научные публикации, участие в выборных органах, краткосрочное
+              пребывание за границей, наличие водительского удостоверения и
+              т.д.)
+            </p>
+          </td>
+          <td colspan="2" class="td_data2">
+            <div class="country">
+              <textarea
+                type="text"
+                class="textarea_inp"
+                id="c-28"
+                placeholder="Начните писать:"
+              ></textarea>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <div class="photos">
+        <div class="container">
+          <div class="image-container" id="image-container1">
+            <img
+              class="uploaded-image"
+              id="uploaded-image1"
+              src="#"
+              alt="Добавьте свое фото"
+            />
+          </div>
+          <div>
+            <input
+              type="file"
+              name="images"
+              id="file-input1"
+              style="display: none"
+            />
+            <button class="add-photo" id="add-photo1">Добавить фото</button>
+            <button class="remove-photo" id="remove-photo1">Удалить</button>
+          </div>
         </div>
-        <div class="photos">
-            <div class="container">
-                <div class="image-container" id="image-container2">
-                    <img class="uploaded-image" id="uploaded-image2" src="#" alt="Добавьте фото паспорта">
-                </div>
-                <div>
-                    <input type="file" name="images" id="file-input2" style="display: none;">
-                    <button class="add-photo" id="add-photo2">Добавить фото</button>
-                    <button class="remove-photo" id="remove-photo2">Удалить</button>
-                </div>
-            </div>
-            <div class="container">
-                <div class="image-container" id="image-container3">
-                    <img class="uploaded-image" id="uploaded-image3" src="#" alt="Добавьте фото трудовой книжки">
-                </div>
-                <div>
-                    <input type="file" name="images" id="file-input3" style="display: none;">
-                    <button class="add-photo" id="add-photo3">Добавить фото</button>
-                    <button class="remove-photo" id="remove-photo3">Удалить</button>
-                </div>
-            </div>
+      </div>
+      <div class="photos">
+        <div class="container">
+          <div class="image-container" id="image-container2">
+            <img
+              class="uploaded-image"
+              id="uploaded-image2"
+              src="#"
+              alt="Добавьте фото паспорта"
+            />
+          </div>
+          <div>
+            <input
+              type="file"
+              name="images"
+              id="file-input2"
+              style="display: none"
+            />
+            <button class="add-photo" id="add-photo2">Добавить фото</button>
+            <button class="remove-photo" id="remove-photo2">Удалить</button>
+          </div>
         </div>
+        <div class="container">
+          <div class="image-container" id="image-container3">
+            <img
+              class="uploaded-image"
+              id="uploaded-image3"
+              src="#"
+              alt="Добавьте фото трудовой книжки"
+            />
+          </div>
+          <div>
+            <input
+              type="file"
+              name="images"
+              id="file-input3"
+              style="display: none"
+            />
+            <button class="add-photo" id="add-photo3">Добавить фото</button>
+            <button class="remove-photo" id="remove-photo3">Удалить</button>
+          </div>
+        </div>
+      </div>
     </section>
     <section class="agreement">
-        <div>
-            <input type="checkbox" name="treatment" id="j-1">
-            <label for="j-1">Согласие на <a href="PersonalInformation.html">персональную обработку данных</a></label>
-        </div>
-        <div>
-            <input type="checkbox" name="treatment" id="j-2">
-            <label for="j-2">Подтверждаю, что <a href="Credibility.html">сведения в данной Анкете</a> являются полными и
-                достоверными</label>
-        </div>
-        <button class="buttonDownload" type="button" disabled id="buttonDownload" onclick="sendButtonClicked()">Скачать
-            результаты</button>
+      <div>
+        <input type="checkbox" name="treatment" id="j-1" />
+        <label for="j-1"
+          >Согласие на
+          <a href="PersonalInformation.html"
+            >персональную обработку данных*</a
+          ></label
+        >
+      </div>
+      <div>
+        <input type="checkbox" name="treatment" id="j-2" />
+        <label for="j-2"
+          >Подтверждаю, что
+          <a href="Credibility.html">сведения в данной Анкете</a> являются
+          полными и достоверными*</label
+        >
+      </div>
+      <button
+        class="buttonDownload"
+        type="button"
+        disabled
+        id="buttonDownload"
+        onclick="sendButtonClicked()"
+      >
+        Скачать результаты
+      </button>
     </section>
     <script src="js/script.js"></script>
-</body>
-
+  </body>
 </html>

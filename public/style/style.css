@@ -17,7 +17,7 @@
     padding: 3% 0 10px 0;
   }
   header p {
-    font-family: EBGaramond;
+    font-family: Montserrat;
     font-weight: 500;
     color: #fff;
     font-size: 1.1em;
@@ -66,6 +66,102 @@
     padding-bottom: 20px;
     justify-content: center;
     align-items: center;
+  }
+  .main_section table #relatives_container_husbandWife {
+    border: 1px solid white;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 20px 0 20px;
+    margin-bottom: 40px;
+  }
+  .main_section table #relatives_container_husbandWife div {
+    width: 100%;
+    justify-content: center;
+  }
+  .main_section table #relatives_container_sisterbrother {
+    border: 1px solid white;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 20px 0 20px;
+    margin-bottom: 40px;
+  }
+  .main_section table #relatives_container_sisterbrother div {
+    width: 100%;
+    justify-content: center;
+  }
+  .main_section table #relatives_container_daughterSon {
+    border: 1px solid white;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 20px 0 20px;
+    margin-bottom: 40px;
+  }
+  .main_section table #relatives_container_daughterSon div {
+    width: 100%;
+    justify-content: center;
+  }
+  .main_section table #relatives_container_grandfather {
+    border: 1px solid white;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 20px 0 20px;
+    margin-bottom: 40px;
+  }
+  .main_section table #relatives_container_grandfather div {
+    width: 100%;
+    justify-content: center;
+  }
+  .main_section table #relatives_container_grandmother {
+    border: 1px solid white;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 20px 0 20px;
+    margin-bottom: 40px;
+  }
+  .main_section table #relatives_container_grandmother div {
+    width: 100%;
+    justify-content: center;
+  }
+  .main_section table #relatives_container_grandchild {
+    border: 1px solid white;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 20px 0 20px;
+    margin-bottom: 40px;
+  }
+  .main_section table #relatives_container_grandchild div {
+    width: 100%;
+    justify-content: center;
+  }
+  .main_section table #relatives_container_uncleaunt {
+    border: 1px solid white;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 20px 0 20px;
+    margin-bottom: 40px;
+  }
+  .main_section table #relatives_container_uncleaunt div {
+    width: 100%;
+    justify-content: center;
+  }
+  .main_section table #relatives_container_nephew {
+    border: 1px solid white;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 20px 0 20px;
+    margin-bottom: 40px;
+  }
+  .main_section table #relatives_container_nephew div {
+    width: 100%;
+    justify-content: center;
   }
   .main_section table tr div {
     all: unset;
@@ -170,7 +266,7 @@
     width: 24px;
     height: 24px;
     flex-shrink: 0;
-    accent-color: #D0D5DD;
+    accent-color: #d0d5dd;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -189,7 +285,7 @@
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background-color: #D0D5DD;
+    background-color: #d0d5dd;
     opacity: 76%;
   }
   .main_section table .td_data2 .div_benefit label {
@@ -222,7 +318,7 @@
     width: 24px;
     height: 24px;
     flex-shrink: 0;
-    accent-color: #D0D5DD;
+    accent-color: #d0d5dd;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -241,7 +337,7 @@
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background-color: #D0D5DD;
+    background-color: #d0d5dd;
     opacity: 76%;
   }
   .main_section table .td_data2 .div_radio label {
@@ -264,6 +360,12 @@
     justify-content: space-between;
     flex-wrap: wrap;
     position: relative;
+    margin-bottom: 20px;
+  }
+  .main_section table .td_data2 .relatives p {
+    all: unset;
+    font-family: Montserrat;
+    width: 100%;
   }
   .main_section table .td_data2 .relatives .input_rel {
     text-align: center;
@@ -293,6 +395,7 @@
     color: #fff;
   }
   .main_section .holder {
+    font-family: Montserrat;
     font-size: 1.1em;
     font-weight: 200;
     color: #bababa;
@@ -476,14 +579,14 @@
     max-width: 300px;
     max-height: 400px;
     margin-bottom: 20px;
-    position: relative;
+    overflow: hidden;
   }
   .main_section .uploaded-image {
     max-width: 100%;
     max-height: 100%;
     display: block;
-    margin: auto;
     color: white;
+    object-fit: contain;
   }
   .main_section .add-photo,
   .main_section .remove-photo {
@@ -592,7 +695,7 @@
     padding: 3% 0 10px 0;
   }
   header p {
-    font-family: EBGaramond;
+    font-family: Montserrat;
     font-weight: 500;
     color: #fff;
     font-size: 16px;
@@ -638,6 +741,102 @@
     padding-bottom: 20px;
     justify-content: center;
     align-items: center;
+  }
+  .main_section table #relatives_container_husbandWife {
+    border: 1px solid white;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    padding: 20px 20px 0 20px;
+  }
+  .main_section table #relatives_container_husbandWife div {
+    width: 100%;
+    justify-content: center;
+  }
+  .main_section table #relatives_container_sisterbrother {
+    border: 1px solid white;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    padding: 20px 20px 0 20px;
+  }
+  .main_section table #relatives_container_sisterbrother div {
+    width: 100%;
+    justify-content: center;
+  }
+  .main_section table #relatives_container_daughterSon {
+    border: 1px solid white;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    padding: 20px 20px 0 20px;
+  }
+  .main_section table #relatives_container_daughterSon div {
+    width: 100%;
+    justify-content: center;
+  }
+  .main_section table #relatives_container_grandfather {
+    border: 1px solid white;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    padding: 20px 20px 0 20px;
+  }
+  .main_section table #relatives_container_grandfather div {
+    width: 100%;
+    justify-content: center;
+  }
+  .main_section table #relatives_container_grandmother {
+    border: 1px solid white;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    padding: 20px 20px 0 20px;
+  }
+  .main_section table #relatives_container_grandmother div {
+    width: 100%;
+    justify-content: center;
+  }
+  .main_section table #relatives_container_grandchild {
+    border: 1px solid white;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    padding: 20px 20px 0 20px;
+  }
+  .main_section table #relatives_container_grandchild div {
+    width: 100%;
+    justify-content: center;
+  }
+  .main_section table #relatives_container_uncleaunt {
+    border: 1px solid white;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    padding: 20px 20px 0 20px;
+  }
+  .main_section table #relatives_container_uncleaunt div {
+    width: 100%;
+    justify-content: center;
+  }
+  .main_section table #relatives_container_nephew {
+    border: 1px solid white;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    padding: 20px 20px 0 20px;
+  }
+  .main_section table #relatives_container_nephew div {
+    width: 100%;
+    justify-content: center;
   }
   .main_section table tr div {
     all: unset;
@@ -741,7 +940,7 @@
     width: 24px;
     height: 24px;
     flex-shrink: 0;
-    accent-color: #D0D5DD;
+    accent-color: #d0d5dd;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -760,7 +959,7 @@
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background-color: #D0D5DD;
+    background-color: #d0d5dd;
     opacity: 76%;
   }
   .main_section table .td_data2 .div_benefit label {
@@ -793,7 +992,7 @@
     width: 24px;
     height: 24px;
     flex-shrink: 0;
-    accent-color: #D0D5DD;
+    accent-color: #d0d5dd;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -812,7 +1011,7 @@
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background-color: #D0D5DD;
+    background-color: #d0d5dd;
     opacity: 76%;
   }
   .main_section table .td_data2 .div_radio label {
@@ -834,7 +1033,13 @@
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin-bottom: 20px;
     position: relative;
+  }
+  .main_section table .td_data2 .relatives p {
+    all: unset;
+    font-family: Montserrat;
+    width: 100%;
   }
   .main_section table .td_data2 .relatives .input_rel {
     text-align: center;
@@ -864,6 +1069,7 @@
     color: #fff;
   }
   .main_section .holder {
+    font-family: Montserrat;
     font-size: 14px;
     font-weight: 200;
     color: #bababa;
@@ -1046,13 +1252,14 @@
     max-width: 300px;
     max-height: 400px;
     margin-bottom: 20px;
-    position: relative;
+    overflow: hidden;
   }
   .main_section .uploaded-image {
     max-width: 100%;
     max-height: 100%;
     display: block;
     margin: auto;
+    object-fit: contain;
     color: white;
   }
   .main_section .add-photo,
@@ -1162,7 +1369,7 @@
     padding: 3% 0 10px 0;
   }
   header p {
-    font-family: EBGaramond;
+    font-family: Montserrat;
     font-weight: 500;
     color: #fff;
     font-size: 16px;
@@ -1209,6 +1416,102 @@
     text-align: center;
     padding-bottom: 20px;
     align-items: center;
+  }
+  .main_section table #relatives_container_husbandWife {
+    border: 1px solid white;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    padding: 20px 20px 0 20px;
+  }
+  .main_section table #relatives_container_husbandWife div {
+    width: 100%;
+    justify-content: center;
+  }
+  .main_section table #relatives_container_sisterbrother {
+    border: 1px solid white;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    padding: 20px 20px 0 20px;
+  }
+  .main_section table #relatives_container_sisterbrother div {
+    width: 100%;
+    justify-content: center;
+  }
+  .main_section table #relatives_container_daughterSon {
+    border: 1px solid white;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    padding: 20px 20px 0 20px;
+  }
+  .main_section table #relatives_container_daughterSon div {
+    width: 100%;
+    justify-content: center;
+  }
+  .main_section table #relatives_container_grandfather {
+    border: 1px solid white;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    padding: 20px 20px 0 20px;
+  }
+  .main_section table #relatives_container_grandfather div {
+    width: 100%;
+    justify-content: center;
+  }
+  .main_section table #relatives_container_grandmother {
+    border: 1px solid white;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    padding: 20px 20px 0 20px;
+  }
+  .main_section table #relatives_container_grandmother div {
+    width: 100%;
+    justify-content: center;
+  }
+  .main_section table #relatives_container_grandchild {
+    border: 1px solid white;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    padding: 20px 20px 0 20px;
+  }
+  .main_section table #relatives_container_grandchild div {
+    width: 100%;
+    justify-content: center;
+  }
+  .main_section table #relatives_container_uncleaunt {
+    border: 1px solid white;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    padding: 20px 20px 0 20px;
+  }
+  .main_section table #relatives_container_uncleaunt div {
+    width: 100%;
+    justify-content: center;
+  }
+  .main_section table #relatives_container_nephew {
+    border: 1px solid white;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    padding: 20px 20px 0 20px;
+  }
+  .main_section table #relatives_container_nephew div {
+    width: 100%;
+    justify-content: center;
   }
   .main_section table tr div {
     all: unset;
@@ -1272,7 +1575,7 @@
     width: 24px;
     height: 24px;
     flex-shrink: 0;
-    accent-color: #D0D5DD;
+    accent-color: #d0d5dd;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -1291,7 +1594,7 @@
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background-color: #D0D5DD;
+    background-color: #d0d5dd;
     opacity: 76%;
   }
   .main_section table .td_data2 .div_benefit label {
@@ -1324,7 +1627,7 @@
     width: 24px;
     height: 24px;
     flex-shrink: 0;
-    accent-color: #D0D5DD;
+    accent-color: #d0d5dd;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -1343,7 +1646,7 @@
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background-color: #D0D5DD;
+    background-color: #d0d5dd;
     opacity: 76%;
   }
   .main_section table .td_data2 .div_radio label {
@@ -1361,11 +1664,17 @@
     all: unset;
   }
   .main_section table .td_data2 .relatives {
+    margin-bottom: 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
     position: relative;
+  }
+  .main_section table .td_data2 .relatives p {
+    all: unset;
+    font-family: Montserrat;
+    width: 100%;
   }
   .main_section table .td_data2 .relatives .input_rel {
     text-align: center;
@@ -1395,6 +1704,7 @@
     color: #fff;
   }
   .main_section .holder {
+    font-family: Montserrat;
     font-size: 14px;
     font-weight: 200;
     color: #bababa;
@@ -1578,7 +1888,7 @@
     max-width: 300px;
     max-height: 400px;
     margin-bottom: 20px;
-    position: relative;
+    overflow: hidden;
   }
   .main_section .uploaded-image {
     max-width: 100%;
@@ -1586,6 +1896,7 @@
     display: block;
     margin: auto;
     color: white;
+    object-fit: contain;
   }
   .main_section .add-photo,
   .main_section .remove-photo {
@@ -1694,7 +2005,7 @@
     padding: 3% 0 10px 0;
   }
   header p {
-    font-family: EBGaramond;
+    font-family: Montserrat;
     font-weight: 500;
     color: #fff;
     font-size: 16px;
@@ -1735,8 +2046,98 @@
     display: block;
     text-align: center;
     padding-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  .main_section table #relatives_container_husbandWife {
+    border: 1px solid white;
+    border-radius: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    padding: 20px 20px 0 20px;
+  }
+  .main_section table #relatives_container_husbandWife div {
+    width: 100%;
+    justify-content: center;
+  }
+  .main_section table #relatives_container_sisterbrother {
+    border: 1px solid white;
+    border-radius: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    padding: 20px 20px 0 20px;
+  }
+  .main_section table #relatives_container_sisterbrother div {
+    width: 100%;
+    justify-content: center;
+  }
+  .main_section table #relatives_container_daughterSon {
+    border: 1px solid white;
+    border-radius: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    padding: 20px 20px 0 20px;
+  }
+  .main_section table #relatives_container_daughterSon div {
+    width: 100%;
+    justify-content: center;
+  }
+  .main_section table #relatives_container_grandfather {
+    border: 1px solid white;
+    border-radius: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    padding: 20px 20px 0 20px;
+  }
+  .main_section table #relatives_container_grandfather div {
+    width: 100%;
+    justify-content: center;
+  }
+  .main_section table #relatives_container_grandmother {
+    border: 1px solid white;
+    border-radius: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    padding: 20px 20px 0 20px;
+  }
+  .main_section table #relatives_container_grandmother div {
+    width: 100%;
+    justify-content: center;
+  }
+  .main_section table #relatives_container_grandchild {
+    border: 1px solid white;
+    border-radius: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    padding: 20px 20px 0 20px;
+  }
+  .main_section table #relatives_container_grandchild div {
+    width: 100%;
+    justify-content: center;
+  }
+  .main_section table #relatives_container_uncleaunt {
+    border: 1px solid white;
+    border-radius: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    padding: 20px 20px 0 20px;
+  }
+  .main_section table #relatives_container_uncleaunt div {
+    width: 100%;
+    justify-content: center;
+  }
+  .main_section table #relatives_container_nephew {
+    border: 1px solid white;
+    border-radius: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    padding: 20px 20px 0 20px;
+  }
+  .main_section table #relatives_container_nephew div {
+    width: 100%;
+    justify-content: center;
   }
   .main_section .holder {
+    font-family: Montserrat;
     font-size: 14px;
     font-weight: 200;
     color: #bababa;
@@ -1890,7 +2291,7 @@
     width: 18px;
     height: 18px;
     flex-shrink: 0;
-    accent-color: #D0D5DD;
+    accent-color: #d0d5dd;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -1909,7 +2310,7 @@
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background-color: #D0D5DD;
+    background-color: #d0d5dd;
     opacity: 76%;
   }
   .main_section .td_data2 .div_benefit label {
@@ -1942,7 +2343,7 @@
     width: 20px;
     height: 20px;
     flex-shrink: 0;
-    accent-color: #D0D5DD;
+    accent-color: #d0d5dd;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -1961,7 +2362,7 @@
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background-color: #D0D5DD;
+    background-color: #d0d5dd;
     opacity: 76%;
   }
   .main_section .td_data2 .div_radio label {
@@ -1980,14 +2381,20 @@
   }
   .main_section .td_data2 .relatives {
     display: flex;
-    flex-direction: row;
+    margin-bottom: 20px;
+    flex-direction: column;
     justify-content: space-between;
     flex-wrap: wrap;
     position: relative;
   }
+  .main_section .td_data2 .relatives p {
+    all: unset;
+    font-family: Montserrat;
+    width: 100%;
+  }
   .main_section .td_data2 .relatives .input_rel {
     text-align: center;
-    width: 49%;
+    width: 100%;
     background-color: transparent;
     border: none;
     border-bottom: 0.5px solid #fff;
@@ -2138,7 +2545,7 @@
     max-width: 300px;
     max-height: 400px;
     margin-bottom: 20px;
-    position: relative;
+    overflow: hidden;
   }
   .main_section .uploaded-image {
     max-width: 100%;
@@ -2146,6 +2553,7 @@
     display: block;
     margin: auto;
     color: white;
+    object-fit: contain;
   }
   .main_section .add-photo,
   .main_section .remove-photo {

@@ -68,14 +68,32 @@ function addEducationRow() {
   );
 }
 
-function addRelatives() {
-  addRow(
-    "relatives-table",
-    "relatives_container",
-    "input_rel",
-    "remove-button",
-    removeRow
-  );
+
+function addRelatives(containerId) {
+  var container = document.getElementById(containerId);
+
+  if (container) {
+    var newContainer = container.cloneNode(true);
+
+    var inputElements = newContainer.querySelectorAll(".input_rel");
+    inputElements.forEach(function (input) {
+      input.value = "";
+    });
+
+    var removeButton = newContainer.querySelector(".remove-button");
+    if (removeButton) {
+      removeButton.innerHTML = '<button onclick="removeRelatives(this)">Удалить</button>';
+    }
+
+    container.parentNode.insertBefore(newContainer, container.nextSibling);
+  }
+}
+
+function removeRelatives(button) {
+  var container = button.closest(".relatives-container");
+  if (container) {
+    container.parentNode.removeChild(container);
+  }
 }
 
 function cloneLanguageBlock() {
@@ -212,12 +230,41 @@ function checkNameFields() {
   return true;
 }
 
+function checkPassportFields() {
+  var passportFieldsToCheck = [6, 7, 8, 9, 10];
+
+  for (var i = 0; i < passportFieldsToCheck.length; i++) {
+    var fieldValue = document.getElementById('c-' + passportFieldsToCheck[i]).value;
+
+    if (!fieldValue) {
+      alert("Вы не заполнили данные паспорта");
+      return false;
+    }
+  }
+
+  return true;
+}
+
+
+function checkFields(indices) {
+  for (var i = 0; i < indices.length; i++) {
+    var fieldValue = document.getElementById('c-' + indices[i]).value;
+
+    if (!fieldValue) {
+      alert("Не все обязательные поля заполнены");
+      return false;
+    }
+  }
+
+  return true;
+}
+var fieldsToCheck = [1, 2, 3, 4, 5, 16, 18, 19, 20, 23, 30, 31, 32];
 async function sendButtonClicked() {
   try {
-    if (!checkNameFields() || !checkIfPhotosUploaded()) {
+    if (!checkNameFields() || !checkFields(fieldsToCheck) || !checkPassportFields() || !checkIfPhotosUploaded()) {
       return;
     }
-
+    
     async function redirect() {
       try {
         var imageUrlArray = [];
@@ -364,7 +411,8 @@ function sendDataToServer(
     const jobData = updateEducationData("job-table");
     const supervisorData = updateEducationData("supervisor-table");
     const jobtitleData = updateEducationData("jobtitle-table");
-    const relativesData = updateEducationData("relatives-table");
+    const relativesData = updateRelativesData("relatives-table");
+    console.log(relativesData)
     const data = transferData();
     const imageFileName = document.getElementById("uploaded-image1").src;
     const DataForm = {
@@ -462,6 +510,8 @@ function transferData() {
       value = dateArray[2] + "." + dateArray[1] + "." + dateArray[0];
     }
 
+    value = value.trim() || "-";
+    
     data[id] = value;
   });
 
@@ -488,22 +538,22 @@ function updateEducationData(tableId) {
   rows.forEach(function (row, index) {
     const rowData = {};
     const inputsTextareaSelect = row.querySelectorAll(
-      "input, textarea, select"
+      "input, textarea, p"
     );
 
     inputsTextareaSelect.forEach(function (input) {
       const inputId = input.id;
       let inputValue;
 
-      if (input.tagName === "SELECT") {
-        inputValue = input.options[input.selectedIndex].value;
+      if (input.tagName === "P") {
+        inputValue = input.innerText;
       } else if (input.tagName === "INPUT" && input.type !== "radio") {
         inputValue = input.value;
       } else {
         inputValue = input.value;
       }
 
-      rowData[inputId] = inputValue;
+      rowData[inputId] = inputValue.trim() || "-";
     });
 
     rowsData.push(rowData);
@@ -512,18 +562,33 @@ function updateEducationData(tableId) {
   return rowsData;
 }
 
-const inputElements = document.querySelectorAll(".input_ed");
+function updateRelativesData(tableId) {
+  const table = document.getElementById(tableId);
+  const rows = table.querySelectorAll("tr");
+  const rowsData = [];
 
-inputElements.forEach((input) => {
-  input.addEventListener("input", function () {
-    const placeholder = this.querySelector("::placeholder");
-    if (this.scrollWidth > this.clientWidth) {
-      placeholder.style.animation = "none";
-    } else {
-      placeholder.style.animation = "movePlaceholder 2s infinite alternate";
+  rows.forEach(function (row, index) {
+    const rowData = {};
+    const inputsTextareaSelect = row.querySelectorAll("input, textarea");
+
+    const firstElement = row.querySelector("p");
+    if (firstElement) {
+      const relationship = firstElement.textContent.trim();
+      rowData[relationship] = firstElement.innerText || "-";
     }
+
+    inputsTextareaSelect.forEach(function (input) {
+      const inputId = input.id;
+      let inputValue = input.value;
+
+      rowData[inputId] = inputValue || "-";
+    });
+
+    rowsData.push(rowData);
   });
-});
+
+  return rowsData;
+}
 
 function sendLanguage() {
   var languages = [];

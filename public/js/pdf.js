@@ -76,6 +76,29 @@ function populateEducationData(tableId) {
   }
 }
 
+function populateRelativesData(tableId) {
+  const relativesData = JSON.parse(sessionStorage.getItem(`${tableId}Data`)) || [];
+  const table = document.getElementById(tableId);
+
+  if (table) {
+    const tableBody = table.querySelector('tbody');
+
+    relativesData.forEach(function (data, index) {
+      const row = tableBody.insertRow();
+
+      const firstCell = row.insertCell();
+      firstCell.innerHTML = `<p>${data.relationship}</p>`;
+
+      for (const key in data) {
+        if (data.hasOwnProperty(key) && key !== 'relationship') {
+          const cell = row.insertCell();
+          cell.innerHTML = `<label>${data[key]}</label>`;
+        }
+      }
+    });
+  }
+}
+
 populateEducationData('education-table');
 populateEducationData('attestation-table');
 populateEducationData('qualification-table');
@@ -83,7 +106,7 @@ populateEducationData('studies-table');
 populateEducationData('job-table');
 populateEducationData('supervisor-table');
 populateEducationData('jobtitle-table');
-populateEducationData('relatives-table');
+populateRelativesData('relatives-table');
 
 
 

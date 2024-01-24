@@ -1,403 +1,155 @@
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@700&family=Montserrat:wght@400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@700&family=Montserrat:wght@400;500;600&display=swap");
 // ----------------------------------
-
 
 $background-color: #133f5f;
 $font: Montserrat;
-$font2: EB+Garamond;
+$font2: EB + Garamond;
 $color: #fff;
-
 
 // ----------------------------------
 
-
 @media only screen and (min-width: 1440px) {
-    * {
-        box-sizing: border-box;
-        color: $color;
+  * {
+    box-sizing: border-box;
+    color: $color;
+  }
+
+  html {
+    margin-bottom: 100px;
+  }
+
+  header {
+    text-align: center;
+
+    img {
+      width: 40%;
+      padding: 3% 0 10px 0;
     }
 
-    html {
-        margin-bottom: 100px;
+    p {
+      font-family: $font;
+      font-weight: 500;
+      color: $color;
+      font-size: 1.1em;
+    }
+  }
+
+  body {
+    background-color: $background-color;
+  }
+
+  .main_section {
+    width: 90%;
+    margin: 0 auto;
+
+    p {
+      font-family: $font;
+      font-size: 1.1em;
+      text-align: left;
     }
 
-    header {
+    .div_fio {
+      margin-bottom: 40px;
+      td {
+        all: unset;
+        width: 100%;
+
+        p {
+          text-align: center;
+        }
+
+        div {
+          all: unset;
+          display: flex;
+          justify-content: space-between;
+
+          input {
+            width: 30%;
+          }
+        }
+      }
+    }
+
+    table {
+      width: 100%;
+      flex-direction: row;
+
+      td,
+      tr {
+        width: 100%;
+        display: flex;
         text-align: center;
+        padding-bottom: 20px;
+        justify-content: center;
+        align-items: center;
+      }
 
-        img {
-            width: 40%;
-            padding: 3% 0 10px 0;
+      @mixin relatives-container-styles {
+        border: 1px solid white;
+        border-radius: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 20px 20px 0 20px;
+        margin-bottom: 40px;
+        div {
+          width: 100%;
+          justify-content: center;
+        }
+      }
+
+      #relatives_container_husbandWife {
+        @include relatives-container-styles;
+      }
+
+      #relatives_container_sisterbrother {
+        @include relatives-container-styles;
+      }
+      #relatives_container_daughterSon {
+        @include relatives-container-styles;
+      }
+
+      #relatives_container_grandfather {
+        @include relatives-container-styles;
+      }
+      #relatives_container_grandmother {
+        @include relatives-container-styles;
+      }
+
+      #relatives_container_grandchild {
+        @include relatives-container-styles;
+      }
+      #relatives_container_uncleaunt {
+        @include relatives-container-styles;
+      }
+
+      #relatives_container_nephew {
+        @include relatives-container-styles;
+      }
+
+      tr {
+        div {
+          all: unset;
         }
 
-        p {
-            font-family: $font2;
-            font-weight: 500;
-            color: $color;
-            font-size: 1.1em;
-        }
-    }
+        .passport {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          position: relative;
 
-    body {
-        background-color: $background-color;
-    }
-
-    .main_section {
-        width: 90%;
-        margin: 0 auto;
-
-        p {
-            font-family: $font;
-            font-size: 1.1em;
-            text-align: left;
-        }
-
-
-        .div_fio {
-            margin-bottom: 40px;
-            td {
-                all: unset;
-                width: 100%;
-
-                p {
-                    text-align: center;
-                }
-
-                div {
-                    all: unset;
-                    display: flex;
-                    justify-content: space-between;
-
-                    input {
-                        width: 30%;
-                    }
-                }
-            }
-        }
-
-        table {
-            width: 100%;
-            flex-direction: row;
-
-            td,
-            tr {
-                width: 100%;
-                display: flex;
-                text-align: center;
-                padding-bottom: 20px;
-                justify-content: center;
-                align-items: center;
-            }
-
-            tr {
-                div {
-                    all: unset;
-
-                }
-
-                .passport {
-                    width: 100%;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;
-                    position: relative;
-
-                    .number_series {
-                        display: flex;
-                        flex-direction: row;
-                    }
-
-                    .date_code {
-                        display: flex;
-                        flex-direction: row;
-                    }
-
-                    .input_ps {
-                        text-align: center;
-                        width: 100%;
-                        background-color: transparent;
-                        border: none;
-                        border-bottom: 0.5px solid #fff;
-                        opacity: 76%;
-                        border-radius: 4px;
-                        height: 50px;
-                        outline: none;
-                        padding-left: 10px;
-                        font-family: $font;
-                        font-size: 1.1em;
-                    }
-
-                    .passport_container {
-                        width: 100%;
-                        display: flex;
-                        flex-direction: row;
-                        align-items: center;
-                    }
-
-                    .input_ps::placeholder {
-                        text-align: center;
-                        font-size: 0.8em;
-                        color: $color;
-                    }
-                }
-            }
-
-            .td_data1 {
-                all: unset;
-                width: 40%;
-                padding-right: 10px;
-
-                p {
-                    text-align: left;
-                }
-
-                input {
-                    text-align: center;
-                    width: 60%;
-                    background-color: transparent;
-                    border: none;
-                    border-bottom: 0.5px solid #fff;
-                    opacity: 76%;
-                    border-radius: 4px;
-                    height: 50px;
-                    outline: none;
-                    font-family: $font;
-                    font-size: 1.1em;
-                    margin-bottom: 20px;
-                }
-
-                input::placeholder {
-                    text-align: center;
-                    font-size: 0.8em;
-                    color: $color;
-                }
-            }
-
-            .td_data2 {
-                all: unset;
-                width: 100%;
-
-                div {
-                    display: flex;
-                    flex-direction: row;
-
-                    input[type="text"] {
-                        width: 100%;
-                    }
-
-                    input[type="date"] {
-                        min-width: 200px;
-                        max-width: 10%;
-                        padding-left: 10px;
-                        padding-right: 10px;
-                        font-family: $font;
-                        color: $color;
-                    }
-
-                    #c-30::-webkit-calendar-picker-indicator {
-                        filter: invert(1);
-                    }
-                }
-
-                .div_benefit {
-                    display: flex;
-                    flex-direction: row;
-                    gap: 20px;
-
-                    input {
-                        opacity: 76%;
-                        position: relative;
-                        width: 24px;
-                        height: 24px;
-                        flex-shrink: 0;
-                        accent-color: #D0D5DD;
-                        -webkit-appearance: none;
-                        -moz-appearance: none;
-                        appearance: none;
-                        background-color: transparent;
-                        border: 1px solid #ffffff;
-                        border-radius: 50%;
-                        outline: none;
-                        cursor: pointer;
-                    }
-
-                    :checked::before {
-                        content: "";
-                        top: 50%;
-                        left: 50%;
-                        transform: translate(-50%, -50%);
-                        position: absolute;
-                        width: 12px;
-                        height: 12px;
-                        border-radius: 50%;
-                        background-color: #D0D5DD;
-                        opacity: 76%;
-                    }
-
-                    label {
-                        font-family: $font;
-                        font-size: 1.1em;
-                    }
-
-                    div {
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        text-align: center;
-                        gap: 10px;
-                    }
-                }
-
-                .div_radio {
-                    all: unset;
-                    width: 100%;
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: space-between;
-                    margin: 0 auto;
-                    gap: 20px;
-
-                    div {
-                        all: unset;
-                        width: 40%;
-                    }
-
-                    input {
-                        opacity: 76%;
-                        position: relative;
-                        width: 24px;
-                        height: 24px;
-                        flex-shrink: 0;
-                        accent-color: #D0D5DD;
-                        -webkit-appearance: none;
-                        -moz-appearance: none;
-                        appearance: none;
-                        background-color: transparent;
-                        border: 1px solid #ffffff;
-                        border-radius: 50%;
-                        outline: none;
-                        cursor: pointer;
-                    }
-
-                    :checked::before {
-                        content: "";
-                        top: 50%;
-                        left: 50%;
-                        transform: translate(-50%, -50%);
-                        position: absolute;
-                        width: 12px;
-                        height: 12px;
-                        border-radius: 50%;
-                        background-color: #D0D5DD;
-                        opacity: 76%;
-                    }
-
-                    label {
-                        font-family: $font;
-                        font-size: 1.1em;
-                    }
-
-                    div {
-                        display: flex;
-                        flex-direction: row;
-                        align-items: center;
-                        text-align: left;
-                        gap: 10px;
-                    }
-                }
-
-
-                .language_container {
-                    all: unset;
-                }
-
-
-                .relatives {
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-between;
-                    flex-wrap: wrap;
-                    position: relative;
-
-                    .input_rel {
-                        text-align: center;
-                        width: 49%;
-                        background-color: transparent;
-                        border: none;
-                        border-bottom: 0.5px solid #fff;
-                        opacity: 76%;
-                        border-radius: 4px;
-                        height: 50px;
-                        outline: none;
-                        padding-left: 10px;
-                        font-family: $font;
-                        font-size: 1.1em;
-                    }
-
-                    .input_rel:first-child {
-                        width: 100%;
-                    }
-
-
-                    .relatives_container {
-                        display: flex;
-                        flex-direction: row;
-                        align-items: center;
-                    }
-
-                    .input_rel::placeholder {
-                        text-align: center;
-                        font-size: 0.8em;
-                        color: $color;
-                    }
-                }
-
-            }
-        }
-
-
-        .holder {
-            font-size: 1.1em;
-            font-weight: 200;
-            color: #bababa;
-        }
-
-        .main-table {
-            all: unset;
+          .number_series {
             display: flex;
-            width: 100%;
-            flex-direction: column;
+            flex-direction: row;
+          }
 
-            .td_data1 {
-                width: 30%;
-            }
+          .date_code {
+            display: flex;
+            flex-direction: row;
+          }
 
-            .td_data2 {
-                width: 70%;
-            }
-        }
-
-        input[type="text"] {
-            width: 100%;
+          .input_ps {
             text-align: center;
-            background-color: transparent;
-            border: none;
-            border-bottom: 0.5px solid #fff;
-            opacity: 76%;
-            border-radius: 4px;
-            height: 50px;
-            outline: none;
-            padding-left: 10px;
-            font-family: $font;
-            font-size: 1.1em;
-
-            &::placeholder {
-                text-align: center;
-                font-size: 0.8em;
-                color: $color;
-            }
-        }
-
-        textarea {
             width: 100%;
             background-color: transparent;
             border: none;
@@ -409,1264 +161,698 @@ $color: #fff;
             padding-left: 10px;
             font-family: $font;
             font-size: 1.1em;
+          }
 
-            &::placeholder {
-                text-align: center;
-                font-size: 0.8em;
-                color: $color;
-            }
-        }
-
-        .textarea_inp {
+          .passport_container {
             width: 100%;
-            background-color: transparent;
-            border: 0.5px solid #fff;
-            opacity: 76%;
-            border-radius: 4px;
-            height: 110px;
-            outline: none;
-            padding: 10px;
-            font-family: $font;
-            font-size: 1.1em;
-
-            &::placeholder {
-                all: unset;
-                text-align: left;
-                font-size: 0.8em;
-                color: $color;
-            }
-        }
-
-        .div_input {
             display: flex;
             flex-direction: row;
-            width: 100%;
-            margin: 0 auto;
-            justify-content: space-between;
-        }
+            align-items: center;
+          }
 
-        .input {
-            width: 31%;
-            background-color: transparent;
-            border: 0.5px solid #fff;
-            opacity: 76%;
-            border-radius: 4px;
-            height: 50px;
-            outline: none;
-            padding-left: 10px;
-            font-family: $font;
-            font-size: 1.1em;
-        }
-
-        .input::placeholder {
-            font-family: $font;
+          .input_ps::placeholder {
+            text-align: center;
             font-size: 0.8em;
             color: $color;
+          }
+        }
+      }
+
+      .td_data1 {
+        all: unset;
+        width: 40%;
+        padding-right: 10px;
+
+        p {
+          text-align: left;
         }
 
-
-        .remove-button {
-            all: unset;
-            justify-content: center;
-
-            button {
-                margin-top: 20px;
-                background-color: transparent;
-                border: 0.5px solid $color;
-                border-radius: 4px;
-                width: 30%;
-                height: 30px;
-                opacity: 76%;
-            }
+        input {
+          text-align: center;
+          width: 60%;
+          background-color: transparent;
+          border: none;
+          border-bottom: 0.5px solid #fff;
+          opacity: 76%;
+          border-radius: 4px;
+          height: 50px;
+          outline: none;
+          font-family: $font;
+          font-size: 1.1em;
+          margin-bottom: 20px;
         }
 
-        .add {
-            width: 40px;
-            height: 40px;
-            border-radius: 30px;
-            background-color: transparent;
-            border: 0.5px solid $color;
-            justify-content: center;
-            opacity: 76%;
-            margin-bottom: 30px;
+        input::placeholder {
+          text-align: center;
+          font-size: 0.8em;
+          color: $color;
         }
+      }
 
-        .div-button {
+      .td_data2 {
+        all: unset;
+        width: 100%;
+
+        div {
+          display: flex;
+          flex-direction: row;
+
+          input[type="text"] {
             width: 100%;
-            text-align: center;
+          }
+
+          input[type="date"] {
+            min-width: 200px;
+            max-width: 10%;
+            padding-left: 10px;
+            padding-right: 10px;
+            font-family: $font;
+            color: $color;
+          }
+
+          #c-30::-webkit-calendar-picker-indicator {
+            filter: invert(1);
+          }
         }
 
-        .margin_section_button {
-            margin-bottom: 20px;
-        }
+        .div_benefit {
+          display: flex;
+          flex-direction: row;
+          gap: 20px;
 
-        [data-tooltip]::after {
-            content: attr(data-tooltip);
-            opacity: 0;
-            transition: 1s;
-            pointer-events: none;
-        }
-
-        [data-tooltip]:hover::after {
-            opacity: 1;
-        }
-
-        [data-tooltip] {
+          input {
+            opacity: 76%;
             position: relative;
-        }
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+            accent-color: #d0d5dd;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-color: transparent;
+            border: 1px solid #ffffff;
+            border-radius: 50%;
+            outline: none;
+            cursor: pointer;
+          }
 
-        [data-tooltip]::after {
-            content: attr(data-tooltip);
+          :checked::before {
+            content: "";
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             position: absolute;
-            max-width: 400px;
-            left: 0em;
-            top: 0px;
-            background: #004781;
-            color: #fff;
-            padding: 0.5em;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-            pointer-events: none;
-            opacity: 0;
-            transition: 0.4s;
-        }
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #d0d5dd;
+            opacity: 76%;
+          }
 
-        [data-tooltip]:hover::after {
-            opacity: 1;
-            top: 40px;
-            z-index: 1;
-        }
-
-        select option {
-            background: $background-color;
-        }
-
-        .photos {
+          label {
             font-family: $font;
             font-size: 1.1em;
-            width: 100%;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
+          }
 
-        .container {
-            margin: 0px 20px;
+          div {
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
+            gap: 10px;
+          }
         }
 
-        .image-container {
-            background-color: transparent;
-            border: none;
-            max-width: 300px;
-            max-height: 400px;
-            margin-bottom: 20px;
+        .div_radio {
+          all: unset;
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          margin: 0 auto;
+          gap: 20px;
+
+          div {
+            all: unset;
+            width: 40%;
+          }
+
+          input {
+            opacity: 76%;
             position: relative;
-        }
-
-        .uploaded-image {
-            max-width: 100%;
-            max-height: 100%;
-            display: block;
-            margin: auto;
-            color: rgb(255, 255, 255);
-        }
-
-        .add-photo,
-        .remove-photo {
-            width: 150px;
-            height: 40px;
-            border: 0.5px solid white;
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+            accent-color: #d0d5dd;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
             background-color: transparent;
-            color: $color;
-            border-radius: 20px;
-            margin-bottom: 10px;
+            border: 1px solid #ffffff;
+            border-radius: 50%;
+            outline: none;
+            cursor: pointer;
+          }
 
-            &:disabled {
-                width: 150px;
-                height: 40px;
-                background-color: rgb(136, 136, 136);
-                border: 0.5px solid $background-color;
-                color: $background-color;
-                border-radius: 20px;
-            }
+          :checked::before {
+            content: "";
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #d0d5dd;
+            opacity: 76%;
+          }
 
-            &:hover {
-                width: 150px;
-                height: 40px;
-                background-color: white;
-                border: 0.5px solid white;
-                color: $background-color;
-                border-radius: 20px;
-                transition: all 0.4s;
-            }
+          label {
+            font-family: $font;
+            font-size: 1.1em;
+          }
 
-            &:active {
-                width: 150px;
-                height: 40px;
-                background-color: transparent;
-                border: 0.5px solid white;
-                color: $color;
-                border-radius: 20px;
-            }
-        }
-
-    }
-
-
-    .agreement {
-        all: unset;
-        display: flex;
-        flex-direction: column;
-        width: 80%;
-        margin: 0 auto;
-        justify-content: start;
-        gap: 20px;
-        font-family: $font;
-        font-size: 1.1em;
-
-        div {
+          div {
             display: flex;
             flex-direction: row;
+            align-items: center;
+            text-align: left;
             gap: 10px;
+          }
         }
 
-        .buttonDownload {
-            width: 150px;
-            height: 40px;
-            border: 0.5px solid white;
+        .language_container {
+          all: unset;
+        }
+
+        .relatives {
+          p {
+            all: unset;
+            font-family: $font;
+            width: 100%;
+          }
+
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          position: relative;
+          margin-bottom: 20px;
+
+          .input_rel {
+            text-align: center;
+            width: 49%;
             background-color: transparent;
+            border: none;
+            border-bottom: 0.5px solid #fff;
+            opacity: 76%;
+            border-radius: 4px;
+            height: 50px;
+            outline: none;
+            padding-left: 10px;
+            font-family: $font;
+            font-size: 1.1em;
+          }
+
+          .input_rel:first-child {
+            width: 100%;
+          }
+
+          .relatives_container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+          }
+
+          .input_rel::placeholder {
+            text-align: center;
+            font-size: 0.8em;
             color: $color;
-            border-radius: 20px;
-
-            &:disabled {
-                width: 150px;
-                height: 40px;
-                background-color: rgb(136, 136, 136);
-                border: 0.5px solid $background-color;
-                color: $background-color;
-                border-radius: 20px;
-            }
-
-            &:hover {
-                width: 150px;
-                height: 40px;
-                background-color: white;
-                border: 0.5px solid white;
-                color: $background-color;
-                border-radius: 20px;
-                transition: all 0.4s;
-            }
-
-            &:active {
-                width: 150px;
-                height: 40px;
-                background-color: transparent;
-                border: 0.5px solid white;
-                color: $color;
-                border-radius: 20px;
-            }
+          }
         }
+      }
     }
+
+    .holder {
+      font-family: $font;
+      font-size: 1.1em;
+      font-weight: 200;
+      color: #bababa;
+    }
+
+    .main-table {
+      all: unset;
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+
+      .td_data1 {
+        width: 30%;
+      }
+
+      .td_data2 {
+        width: 70%;
+      }
+    }
+
+    input[type="text"] {
+      width: 100%;
+      text-align: center;
+      background-color: transparent;
+      border: none;
+      border-bottom: 0.5px solid #fff;
+      opacity: 76%;
+      border-radius: 4px;
+      height: 50px;
+      outline: none;
+      padding-left: 10px;
+      font-family: $font;
+      font-size: 1.1em;
+
+      &::placeholder {
+        text-align: center;
+        font-size: 0.8em;
+        color: $color;
+      }
+    }
+
+    textarea {
+      width: 100%;
+      background-color: transparent;
+      border: none;
+      border-bottom: 0.5px solid #fff;
+      opacity: 76%;
+      border-radius: 4px;
+      height: 50px;
+      outline: none;
+      padding-left: 10px;
+      font-family: $font;
+      font-size: 1.1em;
+
+      &::placeholder {
+        text-align: center;
+        font-size: 0.8em;
+        color: $color;
+      }
+    }
+
+    .textarea_inp {
+      width: 100%;
+      background-color: transparent;
+      border: 0.5px solid #fff;
+      opacity: 76%;
+      border-radius: 4px;
+      height: 110px;
+      outline: none;
+      padding: 10px;
+      font-family: $font;
+      font-size: 1.1em;
+
+      &::placeholder {
+        all: unset;
+        text-align: left;
+        font-size: 0.8em;
+        color: $color;
+      }
+    }
+
+    .div_input {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      margin: 0 auto;
+      justify-content: space-between;
+    }
+
+    .input {
+      width: 31%;
+      background-color: transparent;
+      border: 0.5px solid #fff;
+      opacity: 76%;
+      border-radius: 4px;
+      height: 50px;
+      outline: none;
+      padding-left: 10px;
+      font-family: $font;
+      font-size: 1.1em;
+    }
+
+    .input::placeholder {
+      font-family: $font;
+      font-size: 0.8em;
+      color: $color;
+    }
+
+    .remove-button {
+      all: unset;
+      justify-content: center;
+
+      button {
+        margin-top: 20px;
+        background-color: transparent;
+        border: 0.5px solid $color;
+        border-radius: 4px;
+        width: 30%;
+        height: 30px;
+        opacity: 76%;
+      }
+    }
+
+    .add {
+      width: 40px;
+      height: 40px;
+      border-radius: 30px;
+      background-color: transparent;
+      border: 0.5px solid $color;
+      justify-content: center;
+      opacity: 76%;
+      margin-bottom: 30px;
+    }
+
+    .div-button {
+      width: 100%;
+      text-align: center;
+    }
+
+    .margin_section_button {
+      margin-bottom: 20px;
+    }
+
+    [data-tooltip]::after {
+      content: attr(data-tooltip);
+      opacity: 0;
+      transition: 1s;
+      pointer-events: none;
+    }
+
+    [data-tooltip]:hover::after {
+      opacity: 1;
+    }
+
+    [data-tooltip] {
+      position: relative;
+    }
+
+    [data-tooltip]::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      max-width: 400px;
+      left: 0em;
+      top: 0px;
+      background: #004781;
+      color: #fff;
+      padding: 0.5em;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      pointer-events: none;
+      opacity: 0;
+      transition: 0.4s;
+    }
+
+    [data-tooltip]:hover::after {
+      opacity: 1;
+      top: 40px;
+      z-index: 1;
+    }
+
+    select option {
+      background: $background-color;
+    }
+
+    .photos {
+      font-family: $font;
+      font-size: 1.1em;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .container {
+      margin: 0px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .image-container {
+      background-color: transparent;
+      border: none;
+      max-width: 300px;
+      max-height: 400px;
+      margin-bottom: 20px;
+      overflow: hidden;
+
+    }
+
+    .uploaded-image {
+      max-width: 100%;
+      max-height: 100%;
+      display: block;
+      color: rgb(255, 255, 255);
+      object-fit: contain;
+    }
+
+    .add-photo,
+    .remove-photo {
+      width: 150px;
+      height: 40px;
+      border: 0.5px solid white;
+      background-color: transparent;
+      color: $color;
+      border-radius: 20px;
+      margin-bottom: 10px;
+
+      &:disabled {
+        width: 150px;
+        height: 40px;
+        background-color: rgb(136, 136, 136);
+        border: 0.5px solid $background-color;
+        color: $background-color;
+        border-radius: 20px;
+      }
+
+      &:hover {
+        width: 150px;
+        height: 40px;
+        background-color: white;
+        border: 0.5px solid white;
+        color: $background-color;
+        border-radius: 20px;
+        transition: all 0.4s;
+      }
+
+      &:active {
+        width: 150px;
+        height: 40px;
+        background-color: transparent;
+        border: 0.5px solid white;
+        color: $color;
+        border-radius: 20px;
+      }
+    }
+  }
+
+  .agreement {
+    all: unset;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+    justify-content: start;
+    gap: 20px;
+    font-family: $font;
+    font-size: 1.1em;
+
+    div {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+    }
+
+    .buttonDownload {
+      width: 150px;
+      height: 40px;
+      border: 0.5px solid white;
+      background-color: transparent;
+      color: $color;
+      border-radius: 20px;
+
+      &:disabled {
+        width: 150px;
+        height: 40px;
+        background-color: rgb(136, 136, 136);
+        border: 0.5px solid $background-color;
+        color: $background-color;
+        border-radius: 20px;
+      }
+
+      &:hover {
+        width: 150px;
+        height: 40px;
+        background-color: white;
+        border: 0.5px solid white;
+        color: $background-color;
+        border-radius: 20px;
+        transition: all 0.4s;
+      }
+
+      &:active {
+        width: 150px;
+        height: 40px;
+        background-color: transparent;
+        border: 0.5px solid white;
+        color: $color;
+        border-radius: 20px;
+      }
+    }
+  }
 }
 @media only screen and (min-width: 1024px) and (max-width: 1440px) {
-    * {
-        box-sizing: border-box;
-        color: $color;
+  * {
+    box-sizing: border-box;
+    color: $color;
+  }
+
+  html {
+    margin-bottom: 100px;
+  }
+
+  header {
+    text-align: center;
+
+    img {
+      width: 40%;
+      padding: 3% 0 10px 0;
     }
 
-    html {
-        margin-bottom: 100px;
+    p {
+      font-family: $font;
+      font-weight: 500;
+      color: $color;
+      font-size: 16px;
+    }
+  }
+
+  body {
+    background-color: $background-color;
+  }
+
+  .main_section {
+    width: 90%;
+    margin: 0 auto;
+
+    p {
+      font-family: $font;
+      font-size: 16px;
+      text-align: left;
     }
 
-    header {
-        text-align: center;
-
-        img {
-            width: 40%;
-            padding: 3% 0 10px 0;
-        }
-
-        p {
-            font-family: $font2;
-            font-weight: 500;
-            color: $color;
-            font-size: 16px;
-        }
-    }
-
-    body {
-        background-color: $background-color;
-    }
-
-    .main_section {
-        width: 90%;
-        margin: 0 auto;
-
-        p {
-            font-family: $font;
-            font-size: 16px;
-            text-align: left;
-        }
-
-
-        .div_fio {
-            td {
-                all: unset;
-                width: 100%;
-
-                p {
-                    text-align: center;
-                }
-
-                div {
-                    all: unset;
-                    display: flex;
-                    justify-content: space-between;
-
-                    input {
-                        width: 30%;
-                    }
-                }
-            }
-        }
-
-        table {
-            width: 100%;
-            flex-direction: row;
-
-            td,
-            tr {
-                width: 100%;
-                display: flex;
-                text-align: center;
-                padding-bottom: 20px;
-                justify-content: center;
-                align-items: center;
-            }
-
-            tr {
-                div {
-                    all: unset;
-
-                }
-
-                .passport {
-                    width: 100%;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;
-                    position: relative;
-
-                    .number_series {
-                        display: flex;
-                        flex-direction: row;
-                    }
-
-                    .date_code {
-                        display: flex;
-                        flex-direction: row;
-                    }
-
-                    .input_ps {
-                        text-align: center;
-                        width: 100%;
-                        background-color: transparent;
-                        border: none;
-                        border-bottom: 0.5px solid #fff;
-                        opacity: 76%;
-                        border-radius: 4px;
-                        height: 50px;
-                        outline: none;
-                        padding-left: 10px;
-                        font-family: $font;
-                        font-size: 16px;
-                    }
-
-                    .passport_container {
-                        width: 100%;
-                        display: flex;
-                        flex-direction: row;
-                        align-items: center;
-                    }
-
-                    .input_ps::placeholder {
-                        text-align: center;
-                        font-size: 14px;
-                        color: $color;
-                    }
-                }
-            }
-
-            .td_data1 {
-                all: unset;
-                width: 40%;
-                padding-right: 10px;
-
-                p {
-                    text-align: left;
-                }
-
-                input {
-                    text-align: center;
-                    width: 90%;
-                    background-color: transparent;
-                    border: none;
-                    border-bottom: 0.5px solid #fff;
-                    opacity: 76%;
-                    border-radius: 4px;
-                    height: 50px;
-                    outline: none;
-                    font-family: $font;
-                    font-size: 16px;
-                    margin-bottom: 20px;
-                }
-
-                input::placeholder {
-                    text-align: center;
-                    font-size: 14px;
-                    color: $color;
-                }
-            }
-
-            .td_data2 {
-                all: unset;
-                width: 100%;
-
-                div {
-                    display: flex;
-                    flex-direction: row;
-
-                    input[type="text"] {
-                        width: 100%;
-                    }
-
-                    input[type="date"] {
-                        width: 40%;
-                        padding-left: 10px;
-                        padding-right: 10px;
-                        font-family: $font;
-                        color: $color;
-                    }
-
-                    #c-30::-webkit-calendar-picker-indicator {
-                        filter: invert(1);
-                    }
-                }
-
-                .div_benefit {
-                    display: flex;
-                    flex-direction: row;
-                    gap: 20px;
-
-                    input {
-                        opacity: 76%;
-                        position: relative;
-                        width: 24px;
-                        height: 24px;
-                        flex-shrink: 0;
-                        accent-color: #D0D5DD;
-                        -webkit-appearance: none;
-                        -moz-appearance: none;
-                        appearance: none;
-                        background-color: transparent;
-                        border: 1px solid #ffffff;
-                        border-radius: 50%;
-                        outline: none;
-                        cursor: pointer;
-                    }
-
-                    :checked::before {
-                        content: "";
-                        top: 50%;
-                        left: 50%;
-                        transform: translate(-50%, -50%);
-                        position: absolute;
-                        width: 12px;
-                        height: 12px;
-                        border-radius: 50%;
-                        background-color: #D0D5DD;
-                        opacity: 76%;
-                    }
-
-                    label {
-                        font-family: $font;
-                        font-size: 14px;
-                    }
-
-                    div {
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        text-align: center;
-                        gap: 10px;
-                    }
-                }
-
-                .div_radio {
-                    all: unset;
-                    width: 100%;
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: space-between;
-                    margin: 0 auto;
-                    gap: 20px;
-
-                    div {
-                        all: unset;
-                        width: 40%;
-                    }
-
-                    input {
-                        opacity: 76%;
-                        position: relative;
-                        width: 24px;
-                        height: 24px;
-                        flex-shrink: 0;
-                        accent-color: #D0D5DD;
-                        -webkit-appearance: none;
-                        -moz-appearance: none;
-                        appearance: none;
-                        background-color: transparent;
-                        border: 1px solid #ffffff;
-                        border-radius: 50%;
-                        outline: none;
-                        cursor: pointer;
-                    }
-
-                    :checked::before {
-                        content: "";
-                        top: 50%;
-                        left: 50%;
-                        transform: translate(-50%, -50%);
-                        position: absolute;
-                        width: 12px;
-                        height: 12px;
-                        border-radius: 50%;
-                        background-color: #D0D5DD;
-                        opacity: 76%;
-                    }
-
-                    label {
-                        font-family: $font;
-                        font-size: 12px;
-                    }
-
-                    div {
-                        display: flex;
-                        flex-direction: row;
-                        align-items: center;
-                        text-align: left;
-                        gap: 10px;
-                    }
-                }
-
-
-                .language_container {
-                    all: unset;
-                }
-
-
-                .relatives {
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-between;
-                    flex-wrap: wrap;
-                    position: relative;
-
-                    .input_rel {
-                        text-align: center;
-                        width: 49%;
-                        background-color: transparent;
-                        border: none;
-                        border-bottom: 0.5px solid #fff;
-                        opacity: 76%;
-                        border-radius: 4px;
-                        height: 50px;
-                        outline: none;
-                        padding-left: 10px;
-                        font-family: $font;
-                        font-size: 16px;
-                    }
-
-                    .input_rel:first-child {
-                        width: 100%;
-                    }
-
-
-                    .relatives_container {
-                        display: flex;
-                        flex-direction: row;
-                        align-items: center;
-                    }
-
-                    .input_rel::placeholder {
-                        text-align: center;
-                        font-size: 12px;
-                        color: $color;
-                    }
-                }
-
-            }
-        }
-
-
-        .holder {
-            font-size: 14px;
-            font-weight: 200;
-            color: #bababa;
-        }
-
-        .main-table {
-            all: unset;
-            display: flex;
-            width: 100%;
-            flex-direction: column;
-
-            .td_data1 {
-                width: 30%;
-            }
-
-            .td_data2 {
-                width: 70%;
-            }
-        }
-
-        input[type="text"] {
-            width: 100%;
-            text-align: center;
-            background-color: transparent;
-            border: none;
-            border-bottom: 0.5px solid #fff;
-            opacity: 76%;
-            border-radius: 4px;
-            height: 50px;
-            outline: none;
-            padding-left: 10px;
-            font-family: $font;
-            font-size: 16px;
-
-            &::placeholder {
-                text-align: center;
-                font-size: 14px;
-                color: $color;
-            }
-        }
-
-        textarea {
-            width: 100%;
-            background-color: transparent;
-            border: none;
-            border-bottom: 0.5px solid #fff;
-            opacity: 76%;
-            border-radius: 4px;
-            height: 50px;
-            outline: none;
-            padding-left: 10px;
-            font-family: $font;
-            font-size: 16px;
-
-            &::placeholder {
-                text-align: center;
-                font-size: 14px;
-                color: $color;
-            }
-        }
-
-        .textarea_inp {
-            width: 100%;
-            background-color: transparent;
-            border: 0.5px solid #fff;
-            opacity: 76%;
-            border-radius: 4px;
-            height: 110px;
-            outline: none;
-            padding: 10px;
-            font-family: $font;
-            font-size: 16px;
-
-            &::placeholder {
-                text-align: left;
-                font-size: 14px;
-                color: $color;
-            }
-        }
-
-        .div_input {
-            display: flex;
-            flex-direction: row;
-            width: 100%;
-            margin: 0 auto;
-            justify-content: space-between;
-        }
-
-        .input {
-            width: 31%;
-            background-color: transparent;
-            border: 0.5px solid #fff;
-            opacity: 76%;
-            border-radius: 4px;
-            height: 50px;
-            outline: none;
-            padding-left: 10px;
-            font-family: $font;
-            font-size: 16px;
-        }
-
-        .input::placeholder {
-            font-family: $font;
-            font-size: 14px;
-            color: $color;
-        }
-
-
-        .remove-button {
-            all: unset;
-            justify-content: center;
-
-            button {
-                margin-top: 20px;
-                background-color: transparent;
-                border: 0.5px solid $color;
-                border-radius: 4px;
-                width: 30%;
-                height: 30px;
-                opacity: 76%;
-            }
-        }
-
-        .add {
-            width: 40px;
-            height: 40px;
-            border-radius: 30px;
-            background-color: transparent;
-            border: 0.5px solid $color;
-            justify-content: center;
-            opacity: 76%;
-            margin-bottom: 30px;
-        }
-
-        .div-button {
-            width: 100%;
-            text-align: center;
-        }
-
-        .margin_section_button {
-            margin-bottom: 20px;
-        }
-
-        [data-tooltip]::after {
-            content: attr(data-tooltip);
-            opacity: 0;
-            transition: 1s;
-            pointer-events: none;
-        }
-
-        [data-tooltip]:hover::after {
-            opacity: 1;
-        }
-
-        [data-tooltip] {
-            position: relative;
-        }
-
-        [data-tooltip]::after {
-            content: attr(data-tooltip);
-            position: absolute;
-            max-width: 400px;
-            left: 0em;
-            top: 0px;
-            background: #004781;
-            color: #fff;
-            padding: 0.5em;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-            pointer-events: none;
-            opacity: 0;
-            transition: 0.4s;
-        }
-
-        [data-tooltip]:hover::after {
-            opacity: 1;
-            top: 40px;
-            z-index: 1;
-        }
-
-        select option {
-            background: $background-color;
-        }
-
-        .photos {
-            font-family: $font;
-            font-size: 16px;
-            width: 100%;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .container {
-            margin: 0px 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .image-container {
-            background-color: transparent;
-            border: none;
-            max-width: 300px;
-            max-height: 400px;
-            margin-bottom: 20px;
-            position: relative;
-        }
-
-        .uploaded-image {
-            max-width: 100%;
-            max-height: 100%;
-            display: block;
-            margin: auto;
-            color: rgb(255, 255, 255);
-        }
-
-        .add-photo,
-        .remove-photo {
-            width: 150px;
-            height: 40px;
-            border: 0.5px solid white;
-            background-color: transparent;
-            color: $color;
-            border-radius: 20px;
-            margin-bottom: 10px;
-
-            &:disabled {
-                width: 150px;
-                height: 40px;
-                background-color: rgb(136, 136, 136);
-                border: 0.5px solid $background-color;
-                color: $background-color;
-                border-radius: 20px;
-            }
-
-            &:hover {
-                width: 150px;
-                height: 40px;
-                background-color: white;
-                border: 0.5px solid white;
-                color: $background-color;
-                border-radius: 20px;
-                transition: all 0.4s;
-            }
-
-            &:active {
-                width: 150px;
-                height: 40px;
-                background-color: transparent;
-                border: 0.5px solid white;
-                color: $color;
-                border-radius: 20px;
-            }
-        }
-
-    }
-
-
-    .agreement {
+    .div_fio {
+      td {
         all: unset;
-        display: flex;
-        flex-direction: column;
-        width: 80%;
-        margin: 0 auto;
-        justify-content: start;
-        gap: 20px;
-        font-family: $font;
-        font-size: 16px;
+        width: 100%;
+
+        p {
+          text-align: center;
+        }
 
         div {
-            display: flex;
-            flex-direction: row;
-            gap: 10px;
+          all: unset;
+          display: flex;
+          justify-content: space-between;
+
+          input {
+            width: 30%;
+          }
         }
-
-        .buttonDownload {
-            width: 150px;
-            height: 40px;
-            border: 0.5px solid white;
-            background-color: transparent;
-            color: $color;
-            border-radius: 20px;
-
-            &:disabled {
-                width: 150px;
-                height: 40px;
-                background-color: rgb(136, 136, 136);
-                border: 0.5px solid $background-color;
-                color: $background-color;
-                border-radius: 20px;
-            }
-
-            &:hover {
-                width: 150px;
-                height: 40px;
-                background-color: white;
-                border: 0.5px solid white;
-                color: $background-color;
-                border-radius: 20px;
-                transition: all 0.4s;
-            }
-
-            &:active {
-                width: 150px;
-                height: 40px;
-                background-color: transparent;
-                border: 0.5px solid white;
-                color: $color;
-                border-radius: 20px;
-            }
-        }
-    }
-}
-
-
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-    * {
-        box-sizing: border-box;
-        color: $color;
+      }
     }
 
-    html {
-        margin-bottom: 100px;
-    }
+    table {
+      width: 100%;
+      flex-direction: row;
 
-    header {
+      td,
+      tr {
+        width: 100%;
+        display: flex;
         text-align: center;
+        padding-bottom: 20px;
+        justify-content: center;
+        align-items: center;
+      }
 
-        img {
-            width: 40%;
-            padding: 3% 0 10px 0;
+      @mixin relatives-container-styles {
+        border: 1px solid white;
+        border-radius: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 40px;
+        padding: 20px 20px 0 20px;
+        div {
+          width: 100%;
+          justify-content: center;
+        }
+      }
+
+      #relatives_container_husbandWife {
+        @include relatives-container-styles;
+      }
+
+      #relatives_container_sisterbrother {
+        @include relatives-container-styles;
+      }
+      #relatives_container_daughterSon {
+        @include relatives-container-styles;
+      }
+
+      #relatives_container_grandfather {
+        @include relatives-container-styles;
+      }
+      #relatives_container_grandmother {
+        @include relatives-container-styles;
+      }
+
+      #relatives_container_grandchild {
+        @include relatives-container-styles;
+      }
+      #relatives_container_uncleaunt {
+        @include relatives-container-styles;
+      }
+
+      #relatives_container_nephew {
+        @include relatives-container-styles;
+      }
+
+      tr {
+        div {
+          all: unset;
         }
 
-        p {
-            font-family: $font2;
-            font-weight: 500;
-            color: $color;
-            font-size: 16px;
-        }
-    }
+        .passport {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          position: relative;
 
-    body {
-        background-color: $background-color;
-    }
-
-    .main_section {
-        width: 90%;
-        margin: 0 auto;
-
-        p {
-            font-family: $font;
-            font-size: 16px;
-            text-align: left;
-        }
-
-
-        .div_fio {
-            td {
-                all: unset;
-                width: 100%;
-p {
-    text-align: center;
-}
-                div {
-                    all: unset;
-                    display: flex;
-                    input {
-                        width: 100%;
-                    }
-
-                    input:not(:last-child) {
-                        margin-bottom: 20px;
-                    }
-                }
-            }
-        }
-
-        table {
-            width: 100%;
-            flex-direction: row;
-            td,
-            tr {
-                width: 100%;
-                display: flex;
-                text-align: center;
-                padding-bottom: 20px;
-                align-items: center;
-            }
-            tr {
-                div{
-                    all: unset;
-                }
-            }
-
-
-            .td_data1 {
-                all: unset;
-                width: 40%;
-                padding-right: 10px;
-                p {
-                    text-align: left;
-                }
-                input {
-                    text-align: center;
-                    width: 90%;
-                    background-color: transparent;
-                    border: none;
-                    border-bottom: 0.5px solid #fff;
-                    opacity: 76%;
-                    border-radius: 4px;
-                    height: 50px;
-                    outline: none;
-                    font-family: $font;
-                    font-size: 16px;
-                    margin-bottom: 20px;
-                }
-
-                input::placeholder {
-                    text-align: center;
-                    font-size: 12px;
-                    color: $color;
-                }
-            }
-
-            .td_data2 {
-                all: unset;
-                width: 100%;
-                div {
-                    display: flex;
-                    flex-direction: row;
-
-                    input[type="text"] {
-                        width: 100%;
-                    }
-
-                    input[type="date"] {
-                        width: 40%;
-                        padding-left: 10px;
-                        padding-right: 10px;
-                        font-family: $font;
-                        color: $color;
-                    }
-
-                    #c-30::-webkit-calendar-picker-indicator {
-                        filter: invert(1);
-                    }
-                }
-
-                .div_benefit {
-                    display: flex;
-                    flex-direction: row;
-                    gap: 20px;
-
-                    input {
-                        opacity: 76%;
-                        position: relative;
-                        width: 24px;
-                        height: 24px;
-                        flex-shrink: 0;
-                        accent-color: #D0D5DD;
-                        -webkit-appearance: none;
-                        -moz-appearance: none;
-                        appearance: none;
-                        background-color: transparent;
-                        border: 1px solid #ffffff;
-                        border-radius: 50%;
-                        outline: none;
-                        cursor: pointer;
-                    }
-
-                    :checked::before {
-                        content: "";
-                        top: 50%;
-                        left: 50%;
-                        transform: translate(-50%, -50%);
-                        position: absolute;
-                        width: 12px;
-                        height: 12px;
-                        border-radius: 50%;
-                        background-color: #D0D5DD;
-                        opacity: 76%;
-                    }
-
-                    label {
-                        font-family: $font;
-                        font-size: 14px;
-                    }
-
-                    div {
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        text-align: center;
-                        gap: 10px;
-                    }
-                }
-
-                .div_radio {
-                    all: unset;
-                    width: 100%;
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: space-between;
-                    margin: 0 auto;
-                    gap: 20px;
-
-                    div {
-                        all: unset;
-                        width: 40%;
-                    }
-
-                    input {
-                        opacity: 76%;
-                        position: relative;
-                        width: 24px;
-                        height: 24px;
-                        flex-shrink: 0;
-                        accent-color: #D0D5DD;
-                        -webkit-appearance: none;
-                        -moz-appearance: none;
-                        appearance: none;
-                        background-color: transparent;
-                        border: 1px solid #ffffff;
-                        border-radius: 50%;
-                        outline: none;
-                        cursor: pointer;
-                    }
-
-                    :checked::before {
-                        content: "";
-                        top: 50%;
-                        left: 50%;
-                        transform: translate(-50%, -50%);
-                        position: absolute;
-                        width: 12px;
-                        height: 12px;
-                        border-radius: 50%;
-                        background-color: #D0D5DD;
-                        opacity: 76%;
-                    }
-
-                    label {
-                        font-family: $font;
-                        font-size: 12px;
-                    }
-
-                    div {
-                        display: flex;
-                        flex-direction: row;
-                        align-items: center;
-                        text-align: left;
-                        gap: 10px;
-                    }
-                }
-
-
-                .language_container {
-                    all: unset;
-                }
-
-
-                .relatives {
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-between;
-                    flex-wrap: wrap;
-                    position: relative;
-
-                    .input_rel {
-                        text-align: center;
-                        width: 49%;
-                        background-color: transparent;
-                        border: none;
-                        border-bottom: 0.5px solid #fff;
-                        opacity: 76%;
-                        border-radius: 4px;
-                        height: 50px;
-                        outline: none;
-                        padding-left: 10px;
-                        font-family: $font;
-                        font-size: 16px;
-                    }
-
-                    .input_rel:first-child {
-                        width: 100%;
-                    }
-
-
-                    .relatives_container {
-                        display: flex;
-                        flex-direction: row;
-                        align-items: center;
-                    }
-
-                    .input_rel::placeholder {
-                        text-align: center;
-                        font-size: 10px;
-                        color: $color;
-                    }
-                }
-
-            }
-        }
-
-
-        .holder {
-            font-size: 14px;
-            font-weight: 200;
-            color: #bababa;
-        }
-
-        .main-table {
-            all: unset;
+          .number_series {
             display: flex;
-            width: 100%;
-            flex-direction: column;
-            .td_data1 {
-                width: 30%;
-            }
-            .td_data2 {
-                width: 70%;
-            }
-        }
+            flex-direction: row;
+          }
 
-        input[type="text"] {
-            width: 100%;
+          .date_code {
+            display: flex;
+            flex-direction: row;
+          }
+
+          .input_ps {
             text-align: center;
-            background-color: transparent;
-            border: none;
-            border-bottom: 0.5px solid #fff;
-            opacity: 76%;
-            border-radius: 4px;
-            height: 50px;
-            outline: none;
-            padding-left: 10px;
-            font-family: $font;
-            font-size: 16px;
-
-            &::placeholder {
-                text-align: center;
-                font-size: 12px;
-                color: $color;
-            }
-        }
-
-        textarea {
             width: 100%;
             background-color: transparent;
             border: none;
@@ -1678,913 +864,1891 @@ p {
             padding-left: 10px;
             font-family: $font;
             font-size: 16px;
+          }
 
-            &::placeholder {
-                text-align: center;
-                font-size: 12px;
-                color: $color;
-            }
-        }
-
-        .textarea_inp {
+          .passport_container {
             width: 100%;
-            background-color: transparent;
-            border: 0.5px solid #fff;
-            opacity: 76%;
-            border-radius: 4px;
-            height: 110px;
-            outline: none;
-            padding: 10px;
-            font-family: $font;
-            font-size: 16px;
-
-            &::placeholder {
-                all: unset;
-                text-align: left;
-                font-size: 12px;
-                color: $color;
-            }
-        }
-
-        .div_input {
             display: flex;
             flex-direction: row;
+            align-items: center;
+          }
+
+          .input_ps::placeholder {
+            text-align: center;
+            font-size: 14px;
+            color: $color;
+          }
+        }
+      }
+
+      .td_data1 {
+        all: unset;
+        width: 40%;
+        padding-right: 10px;
+
+        p {
+          text-align: left;
+        }
+
+        input {
+          text-align: center;
+          width: 90%;
+          background-color: transparent;
+          border: none;
+          border-bottom: 0.5px solid #fff;
+          opacity: 76%;
+          border-radius: 4px;
+          height: 50px;
+          outline: none;
+          font-family: $font;
+          font-size: 16px;
+          margin-bottom: 20px;
+        }
+
+        input::placeholder {
+          text-align: center;
+          font-size: 14px;
+          color: $color;
+        }
+      }
+
+      .td_data2 {
+        all: unset;
+        width: 100%;
+
+        div {
+          display: flex;
+          flex-direction: row;
+
+          input[type="text"] {
             width: 100%;
-            margin: 0 auto;
-            justify-content: space-between;
-        }
+          }
 
-        .input {
-            width: 31%;
-            background-color: transparent;
-            border: 0.5px solid #fff;
-            opacity: 76%;
-            border-radius: 4px;
-            height: 50px;
-            outline: none;
+          input[type="date"] {
+            width: 40%;
             padding-left: 10px;
+            padding-right: 10px;
             font-family: $font;
-            font-size: 16px;
+            color: $color;
+          }
+
+          #c-30::-webkit-calendar-picker-indicator {
+            filter: invert(1);
+          }
         }
 
-        .input::placeholder {
+        .div_benefit {
+          display: flex;
+          flex-direction: row;
+          gap: 20px;
+
+          input {
+            opacity: 76%;
+            position: relative;
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+            accent-color: #d0d5dd;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-color: transparent;
+            border: 1px solid #ffffff;
+            border-radius: 50%;
+            outline: none;
+            cursor: pointer;
+          }
+
+          :checked::before {
+            content: "";
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #d0d5dd;
+            opacity: 76%;
+          }
+
+          label {
+            font-family: $font;
+            font-size: 14px;
+          }
+
+          div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 10px;
+          }
+        }
+
+        .div_radio {
+          all: unset;
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          margin: 0 auto;
+          gap: 20px;
+
+          div {
+            all: unset;
+            width: 40%;
+          }
+
+          input {
+            opacity: 76%;
+            position: relative;
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+            accent-color: #d0d5dd;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-color: transparent;
+            border: 1px solid #ffffff;
+            border-radius: 50%;
+            outline: none;
+            cursor: pointer;
+          }
+
+          :checked::before {
+            content: "";
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #d0d5dd;
+            opacity: 76%;
+          }
+
+          label {
             font-family: $font;
             font-size: 12px;
-            color: $color;
-        }
+          }
 
-
-        .remove-button {
-            all: unset;
-            justify-content: center;
-
-            button {
-                margin-top: 20px;
-                background-color: transparent;
-                border: 0.5px solid $color;
-                border-radius: 4px;
-                width: 30%;
-                height: 30px;
-                opacity: 76%;
-            }
-        }
-
-        .add {
-            width: 40px;
-            height: 40px;
-            border-radius: 30px;
-            background-color: transparent;
-            border: 0.5px solid $color;
-            justify-content: center;
-            opacity: 76%;
-            margin-bottom: 30px;
-        }
-
-        .div-button {
-            width: 100%;
-            text-align: center;
-        }
-
-        .margin_section_button {
-            margin-bottom: 20px;
-        }
-
-        [data-tooltip]::after {
-            content: attr(data-tooltip);
-            opacity: 0;
-            transition: 1s;
-            pointer-events: none;
-        }
-
-        [data-tooltip]:hover::after {
-            opacity: 1;
-        }
-
-        [data-tooltip] {
-            position: relative;
-        }
-
-        [data-tooltip]::after {
-            content: attr(data-tooltip);
-            position: absolute;
-            max-width: 400px;
-            left: 0em;
-            top: 0px;
-            background: #004781;
-            color: #fff;
-            padding: 0.5em;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-            pointer-events: none;
-            opacity: 0;
-            transition: 0.4s;
-        }
-
-        [data-tooltip]:hover::after {
-            opacity: 1;
-            top: 40px;
-            z-index: 1;
-        }
-
-        select option {
-            background: $background-color;
-        }
-
-        .photos {
-            font-family: $font;
-            font-size: 16px;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .container {
-            margin: 0px 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .image-container {
-            background-color: transparent;
-            border: none;
-            max-width: 300px;
-            max-height: 400px;
-            margin-bottom: 20px;
-            position: relative;
-        }
-
-        .uploaded-image {
-            max-width: 100%;
-            max-height: 100%;
-            display: block;
-            margin: auto;
-            color: rgb(255, 255, 255);
-        }
-
-        .add-photo,
-        .remove-photo {
-            width: 150px;
-            height: 40px;
-            border: 0.5px solid white;
-            background-color: transparent;
-            color: $color;
-            border-radius: 20px;
-            margin-bottom: 10px;
-
-            &:disabled {
-                width: 150px;
-                height: 40px;
-                background-color: rgb(136, 136, 136);
-                border: 0.5px solid $background-color;
-                color: $background-color;
-                border-radius: 20px;
-            }
-
-            &:hover {
-                width: 150px;
-                height: 40px;
-                background-color: white;
-                border: 0.5px solid white;
-                color: $background-color;
-                border-radius: 20px;
-                transition: all 0.4s;
-            }
-
-            &:active {
-                width: 150px;
-                height: 40px;
-                background-color: transparent;
-                border: 0.5px solid white;
-                color: $color;
-                border-radius: 20px;
-            }
-        }
-
-    }
-
-    .agreement {
-        all: unset;
-        display: flex;
-        flex-direction: column;
-        width: 80%;
-        margin: 0 auto;
-        justify-content: start;
-        gap: 20px;
-        font-family: $font;
-        font-size: 16px;
-
-        div {
+          div {
             display: flex;
             flex-direction: row;
+            align-items: center;
+            text-align: left;
             gap: 10px;
+          }
         }
 
-        .buttonDownload {
-            width: 150px;
-            height: 40px;
-            border: 0.5px solid white;
+        .language_container {
+          all: unset;
+        }
+
+        .relatives {
+          p {
+            all: unset;
+            font-family: $font;
+            width: 100%;
+          }
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          margin-bottom: 20px;
+          position: relative;
+
+          .input_rel {
+            text-align: center;
+            width: 49%;
             background-color: transparent;
+            border: none;
+            border-bottom: 0.5px solid #fff;
+            opacity: 76%;
+            border-radius: 4px;
+            height: 50px;
+            outline: none;
+            padding-left: 10px;
+            font-family: $font;
+            font-size: 16px;
+          }
+
+          .input_rel:first-child {
+            width: 100%;
+          }
+
+          .relatives_container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+          }
+
+          .input_rel::placeholder {
+            text-align: center;
+            font-size: 12px;
             color: $color;
-            border-radius: 20px;
-
-            &:disabled {
-                width: 150px;
-                height: 40px;
-                background-color: rgb(136, 136, 136);
-                border: 0.5px solid $background-color;
-                color: $background-color;
-                border-radius: 20px;
-            }
-
-            &:hover {
-                width: 150px;
-                height: 40px;
-                background-color: white;
-                border: 0.5px solid white;
-                color: $background-color;
-                border-radius: 20px;
-                transition: all 0.4s;
-            }
-
-            &:active {
-                width: 150px;
-                height: 40px;
-                background-color: transparent;
-                border: 0.5px solid white;
-                color: $color;
-                border-radius: 20px;
-            }
+          }
         }
+      }
     }
+
+    .holder {
+      font-family: $font;
+      font-size: 14px;
+      font-weight: 200;
+      color: #bababa;
+    }
+
+    .main-table {
+      all: unset;
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+
+      .td_data1 {
+        width: 30%;
+      }
+
+      .td_data2 {
+        width: 70%;
+      }
+    }
+
+    input[type="text"] {
+      width: 100%;
+      text-align: center;
+      background-color: transparent;
+      border: none;
+      border-bottom: 0.5px solid #fff;
+      opacity: 76%;
+      border-radius: 4px;
+      height: 50px;
+      outline: none;
+      padding-left: 10px;
+      font-family: $font;
+      font-size: 16px;
+
+      &::placeholder {
+        text-align: center;
+        font-size: 14px;
+        color: $color;
+      }
+    }
+
+    textarea {
+      width: 100%;
+      background-color: transparent;
+      border: none;
+      border-bottom: 0.5px solid #fff;
+      opacity: 76%;
+      border-radius: 4px;
+      height: 50px;
+      outline: none;
+      padding-left: 10px;
+      font-family: $font;
+      font-size: 16px;
+
+      &::placeholder {
+        text-align: center;
+        font-size: 14px;
+        color: $color;
+      }
+    }
+
+    .textarea_inp {
+      width: 100%;
+      background-color: transparent;
+      border: 0.5px solid #fff;
+      opacity: 76%;
+      border-radius: 4px;
+      height: 110px;
+      outline: none;
+      padding: 10px;
+      font-family: $font;
+      font-size: 16px;
+
+      &::placeholder {
+        text-align: left;
+        font-size: 14px;
+        color: $color;
+      }
+    }
+
+    .div_input {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      margin: 0 auto;
+      justify-content: space-between;
+    }
+
+    .input {
+      width: 31%;
+      background-color: transparent;
+      border: 0.5px solid #fff;
+      opacity: 76%;
+      border-radius: 4px;
+      height: 50px;
+      outline: none;
+      padding-left: 10px;
+      font-family: $font;
+      font-size: 16px;
+    }
+
+    .input::placeholder {
+      font-family: $font;
+      font-size: 14px;
+      color: $color;
+    }
+
+    .remove-button {
+      all: unset;
+      justify-content: center;
+
+      button {
+        margin-top: 20px;
+        background-color: transparent;
+        border: 0.5px solid $color;
+        border-radius: 4px;
+        width: 30%;
+        height: 30px;
+        opacity: 76%;
+      }
+    }
+
+    .add {
+      width: 40px;
+      height: 40px;
+      border-radius: 30px;
+      background-color: transparent;
+      border: 0.5px solid $color;
+      justify-content: center;
+      opacity: 76%;
+      margin-bottom: 30px;
+    }
+
+    .div-button {
+      width: 100%;
+      text-align: center;
+    }
+
+    .margin_section_button {
+      margin-bottom: 20px;
+    }
+
+    [data-tooltip]::after {
+      content: attr(data-tooltip);
+      opacity: 0;
+      transition: 1s;
+      pointer-events: none;
+    }
+
+    [data-tooltip]:hover::after {
+      opacity: 1;
+    }
+
+    [data-tooltip] {
+      position: relative;
+    }
+
+    [data-tooltip]::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      max-width: 400px;
+      left: 0em;
+      top: 0px;
+      background: #004781;
+      color: #fff;
+      padding: 0.5em;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      pointer-events: none;
+      opacity: 0;
+      transition: 0.4s;
+    }
+
+    [data-tooltip]:hover::after {
+      opacity: 1;
+      top: 40px;
+      z-index: 1;
+    }
+
+    select option {
+      background: $background-color;
+    }
+
+    .photos {
+      font-family: $font;
+      font-size: 16px;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .container {
+      margin: 0px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .image-container {
+      background-color: transparent;
+      border: none;
+      max-width: 300px;
+      max-height: 400px;
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+
+    .uploaded-image {
+      max-width: 100%;
+      max-height: 100%;
+      display: block;
+      margin: auto;
+      object-fit: contain;
+      color: rgb(255, 255, 255);
+      
+    }
+
+    .add-photo,
+    .remove-photo {
+      width: 150px;
+      height: 40px;
+      border: 0.5px solid white;
+      background-color: transparent;
+      color: $color;
+      border-radius: 20px;
+      margin-bottom: 10px;
+
+      &:disabled {
+        width: 150px;
+        height: 40px;
+        background-color: rgb(136, 136, 136);
+        border: 0.5px solid $background-color;
+        color: $background-color;
+        border-radius: 20px;
+      }
+
+      &:hover {
+        width: 150px;
+        height: 40px;
+        background-color: white;
+        border: 0.5px solid white;
+        color: $background-color;
+        border-radius: 20px;
+        transition: all 0.4s;
+      }
+
+      &:active {
+        width: 150px;
+        height: 40px;
+        background-color: transparent;
+        border: 0.5px solid white;
+        color: $color;
+        border-radius: 20px;
+      }
+    }
+  }
+
+  .agreement {
+    all: unset;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+    justify-content: start;
+    gap: 20px;
+    font-family: $font;
+    font-size: 16px;
+
+    div {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+    }
+
+    .buttonDownload {
+      width: 150px;
+      height: 40px;
+      border: 0.5px solid white;
+      background-color: transparent;
+      color: $color;
+      border-radius: 20px;
+
+      &:disabled {
+        width: 150px;
+        height: 40px;
+        background-color: rgb(136, 136, 136);
+        border: 0.5px solid $background-color;
+        color: $background-color;
+        border-radius: 20px;
+      }
+
+      &:hover {
+        width: 150px;
+        height: 40px;
+        background-color: white;
+        border: 0.5px solid white;
+        color: $background-color;
+        border-radius: 20px;
+        transition: all 0.4s;
+      }
+
+      &:active {
+        width: 150px;
+        height: 40px;
+        background-color: transparent;
+        border: 0.5px solid white;
+        color: $color;
+        border-radius: 20px;
+      }
+    }
+  }
 }
 
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  * {
+    box-sizing: border-box;
+    color: $color;
+  }
+
+  html {
+    margin-bottom: 100px;
+  }
+
+  header {
+    text-align: center;
+
+    img {
+      width: 40%;
+      padding: 3% 0 10px 0;
+    }
+
+    p {
+      font-family: $font;
+      font-weight: 500;
+      color: $color;
+      font-size: 16px;
+    }
+  }
+
+  body {
+    background-color: $background-color;
+  }
+
+  .main_section {
+    width: 90%;
+    margin: 0 auto;
+
+    p {
+      font-family: $font;
+      font-size: 16px;
+      text-align: left;
+    }
+
+    .div_fio {
+      td {
+        all: unset;
+        width: 100%;
+        p {
+          text-align: center;
+        }
+        div {
+          all: unset;
+          display: flex;
+          input {
+            width: 100%;
+          }
+
+          input:not(:last-child) {
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+
+    table {
+      width: 100%;
+      flex-direction: row;
+      td,
+      tr {
+        width: 100%;
+        display: flex;
+        text-align: center;
+        padding-bottom: 20px;
+        align-items: center;
+      }
+
+      @mixin relatives-container-styles {
+        border: 1px solid white;
+        border-radius: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 40px;
+        padding: 20px 20px 0 20px;
+        div {
+          width: 100%;
+          justify-content: center;
+        }
+      }
+
+      #relatives_container_husbandWife {
+        @include relatives-container-styles;
+      }
+
+      #relatives_container_sisterbrother {
+        @include relatives-container-styles;
+      }
+      #relatives_container_daughterSon {
+        @include relatives-container-styles;
+      }
+
+      #relatives_container_grandfather {
+        @include relatives-container-styles;
+      }
+      #relatives_container_grandmother {
+        @include relatives-container-styles;
+      }
+
+      #relatives_container_grandchild {
+        @include relatives-container-styles;
+      }
+      #relatives_container_uncleaunt {
+        @include relatives-container-styles;
+      }
+
+      #relatives_container_nephew {
+        @include relatives-container-styles;
+      }
+
+      tr {
+        div {
+          all: unset;
+        }
+      }
+
+      .td_data1 {
+        all: unset;
+        width: 40%;
+        padding-right: 10px;
+        p {
+          text-align: left;
+        }
+        input {
+          text-align: center;
+          width: 90%;
+          background-color: transparent;
+          border: none;
+          border-bottom: 0.5px solid #fff;
+          opacity: 76%;
+          border-radius: 4px;
+          height: 50px;
+          outline: none;
+          font-family: $font;
+          font-size: 16px;
+          margin-bottom: 20px;
+        }
+
+        input::placeholder {
+          text-align: center;
+          font-size: 12px;
+          color: $color;
+        }
+      }
+
+      .td_data2 {
+        all: unset;
+        width: 100%;
+        div {
+          display: flex;
+          flex-direction: row;
+
+          input[type="text"] {
+            width: 100%;
+          }
+
+          input[type="date"] {
+            width: 40%;
+            padding-left: 10px;
+            padding-right: 10px;
+            font-family: $font;
+            color: $color;
+          }
+
+          #c-30::-webkit-calendar-picker-indicator {
+            filter: invert(1);
+          }
+        }
+
+        .div_benefit {
+          display: flex;
+          flex-direction: row;
+          gap: 20px;
+
+          input {
+            opacity: 76%;
+            position: relative;
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+            accent-color: #d0d5dd;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-color: transparent;
+            border: 1px solid #ffffff;
+            border-radius: 50%;
+            outline: none;
+            cursor: pointer;
+          }
+
+          :checked::before {
+            content: "";
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #d0d5dd;
+            opacity: 76%;
+          }
+
+          label {
+            font-family: $font;
+            font-size: 14px;
+          }
+
+          div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 10px;
+          }
+        }
+
+        .div_radio {
+          all: unset;
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          margin: 0 auto;
+          gap: 20px;
+
+          div {
+            all: unset;
+            width: 40%;
+          }
+
+          input {
+            opacity: 76%;
+            position: relative;
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+            accent-color: #d0d5dd;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-color: transparent;
+            border: 1px solid #ffffff;
+            border-radius: 50%;
+            outline: none;
+            cursor: pointer;
+          }
+
+          :checked::before {
+            content: "";
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #d0d5dd;
+            opacity: 76%;
+          }
+
+          label {
+            font-family: $font;
+            font-size: 12px;
+          }
+
+          div {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            text-align: left;
+            gap: 10px;
+          }
+        }
+
+        .language_container {
+          all: unset;
+        }
+
+        .relatives {
+          p {
+            all: unset;
+            font-family: $font;
+            width: 100%;
+          }
+          margin-bottom: 20px;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          position: relative;
+
+          .input_rel {
+            text-align: center;
+            width: 49%;
+            background-color: transparent;
+            border: none;
+            border-bottom: 0.5px solid #fff;
+            opacity: 76%;
+            border-radius: 4px;
+            height: 50px;
+            outline: none;
+            padding-left: 10px;
+            font-family: $font;
+            font-size: 16px;
+          }
+
+          .input_rel:first-child {
+            width: 100%;
+          }
+
+          .relatives_container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+          }
+
+          .input_rel::placeholder {
+            text-align: center;
+            font-size: 10px;
+            color: $color;
+          }
+        }
+      }
+    }
+
+    .holder {
+      font-family: $font;
+      font-size: 14px;
+      font-weight: 200;
+      color: #bababa;
+    }
+
+    .main-table {
+      all: unset;
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      .td_data1 {
+        width: 30%;
+      }
+      .td_data2 {
+        width: 70%;
+      }
+    }
+
+    input[type="text"] {
+      width: 100%;
+      text-align: center;
+      background-color: transparent;
+      border: none;
+      border-bottom: 0.5px solid #fff;
+      opacity: 76%;
+      border-radius: 4px;
+      height: 50px;
+      outline: none;
+      padding-left: 10px;
+      font-family: $font;
+      font-size: 16px;
+
+      &::placeholder {
+        text-align: center;
+        font-size: 12px;
+        color: $color;
+      }
+    }
+
+    textarea {
+      width: 100%;
+      background-color: transparent;
+      border: none;
+      border-bottom: 0.5px solid #fff;
+      opacity: 76%;
+      border-radius: 4px;
+      height: 50px;
+      outline: none;
+      padding-left: 10px;
+      font-family: $font;
+      font-size: 16px;
+
+      &::placeholder {
+        text-align: center;
+        font-size: 12px;
+        color: $color;
+      }
+    }
+
+    .textarea_inp {
+      width: 100%;
+      background-color: transparent;
+      border: 0.5px solid #fff;
+      opacity: 76%;
+      border-radius: 4px;
+      height: 110px;
+      outline: none;
+      padding: 10px;
+      font-family: $font;
+      font-size: 16px;
+
+      &::placeholder {
+        all: unset;
+        text-align: left;
+        font-size: 12px;
+        color: $color;
+      }
+    }
+
+    .div_input {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      margin: 0 auto;
+      justify-content: space-between;
+    }
+
+    .input {
+      width: 31%;
+      background-color: transparent;
+      border: 0.5px solid #fff;
+      opacity: 76%;
+      border-radius: 4px;
+      height: 50px;
+      outline: none;
+      padding-left: 10px;
+      font-family: $font;
+      font-size: 16px;
+    }
+
+    .input::placeholder {
+      font-family: $font;
+      font-size: 12px;
+      color: $color;
+    }
+
+    .remove-button {
+      all: unset;
+      justify-content: center;
+
+      button {
+        margin-top: 20px;
+        background-color: transparent;
+        border: 0.5px solid $color;
+        border-radius: 4px;
+        width: 30%;
+        height: 30px;
+        opacity: 76%;
+      }
+    }
+
+    .add {
+      width: 40px;
+      height: 40px;
+      border-radius: 30px;
+      background-color: transparent;
+      border: 0.5px solid $color;
+      justify-content: center;
+      opacity: 76%;
+      margin-bottom: 30px;
+    }
+
+    .div-button {
+      width: 100%;
+      text-align: center;
+    }
+
+    .margin_section_button {
+      margin-bottom: 20px;
+    }
+
+    [data-tooltip]::after {
+      content: attr(data-tooltip);
+      opacity: 0;
+      transition: 1s;
+      pointer-events: none;
+    }
+
+    [data-tooltip]:hover::after {
+      opacity: 1;
+    }
+
+    [data-tooltip] {
+      position: relative;
+    }
+
+    [data-tooltip]::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      max-width: 400px;
+      left: 0em;
+      top: 0px;
+      background: #004781;
+      color: #fff;
+      padding: 0.5em;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      pointer-events: none;
+      opacity: 0;
+      transition: 0.4s;
+    }
+
+    [data-tooltip]:hover::after {
+      opacity: 1;
+      top: 40px;
+      z-index: 1;
+    }
+
+    select option {
+      background: $background-color;
+    }
+
+    .photos {
+      font-family: $font;
+      font-size: 16px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .container {
+      margin: 0px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .image-container {
+      background-color: transparent;
+      border: none;
+      max-width: 300px;
+      max-height: 400px;
+      margin-bottom: 20px;
+      overflow: hidden;
+
+    }
+
+    .uploaded-image {
+      max-width: 100%;
+      max-height: 100%;
+      display: block;
+      margin: auto;
+      color: rgb(255, 255, 255);
+      object-fit: contain;
+    }
+
+    .add-photo,
+    .remove-photo {
+      width: 150px;
+      height: 40px;
+      border: 0.5px solid white;
+      background-color: transparent;
+      color: $color;
+      border-radius: 20px;
+      margin-bottom: 10px;
+
+      &:disabled {
+        width: 150px;
+        height: 40px;
+        background-color: rgb(136, 136, 136);
+        border: 0.5px solid $background-color;
+        color: $background-color;
+        border-radius: 20px;
+      }
+
+      &:hover {
+        width: 150px;
+        height: 40px;
+        background-color: white;
+        border: 0.5px solid white;
+        color: $background-color;
+        border-radius: 20px;
+        transition: all 0.4s;
+      }
+
+      &:active {
+        width: 150px;
+        height: 40px;
+        background-color: transparent;
+        border: 0.5px solid white;
+        color: $color;
+        border-radius: 20px;
+      }
+    }
+  }
+
+  .agreement {
+    all: unset;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+    justify-content: start;
+    gap: 20px;
+    font-family: $font;
+    font-size: 16px;
+
+    div {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+    }
+
+    .buttonDownload {
+      width: 150px;
+      height: 40px;
+      border: 0.5px solid white;
+      background-color: transparent;
+      color: $color;
+      border-radius: 20px;
+
+      &:disabled {
+        width: 150px;
+        height: 40px;
+        background-color: rgb(136, 136, 136);
+        border: 0.5px solid $background-color;
+        color: $background-color;
+        border-radius: 20px;
+      }
+
+      &:hover {
+        width: 150px;
+        height: 40px;
+        background-color: white;
+        border: 0.5px solid white;
+        color: $background-color;
+        border-radius: 20px;
+        transition: all 0.4s;
+      }
+
+      &:active {
+        width: 150px;
+        height: 40px;
+        background-color: transparent;
+        border: 0.5px solid white;
+        color: $color;
+        border-radius: 20px;
+      }
+    }
+  }
+}
 
 @media only screen and (min-width: 320px) and (max-width: 768px) {
-    * {
-        box-sizing: border-box;
-        color: $color;
+  * {
+    box-sizing: border-box;
+    color: $color;
+  }
+
+  html {
+    margin-bottom: 100px;
+  }
+
+  header {
+    text-align: center;
+
+    img {
+      width: 80%;
+      padding: 3% 0 10px 0;
     }
 
-    html {
-        margin-bottom: 100px;
+    p {
+      font-family: $font;
+      font-weight: 500;
+      color: $color;
+      font-size: 16px;
+    }
+  }
+
+  body {
+    background-color: $background-color;
+  }
+
+  .main_section {
+    width: 98%;
+    margin: 0 auto;
+
+    p {
+      font-family: $font;
+      font-size: 16px;
+      text-align: center;
     }
 
-    header {
-        text-align: center;
-
-        img {
-            width: 80%;
-            padding: 3% 0 10px 0;
-        }
-
-        p {
-            font-family: $font2;
-            font-weight: 500;
-            color: $color;
-            font-size: 16px;
-        }
-    }
-
-    body {
-        background-color: $background-color;
-    }
-
-    .main_section {
-        width: 98%;
-        margin: 0 auto;
-
-        p {
-            font-family: $font;
-            font-size: 16px;
-            text-align: center;
-        }
-
-
-        .div_fio {
-            td {
-                all: unset;
-                width: 100%;
-
-                div {
-                    all: unset;
-
-                    input {
-                        width: 100%;
-                    }
-
-                    input:not(:last-child) {
-                        margin-bottom: 20px;
-                    }
-                }
-            }
-        }
-
-        table {
-            width: 100%;
-
-            td,
-            tr {
-                width: 100%;
-                display: block;
-                text-align: center;
-                padding-bottom: 20px;
-            }
-        }
-
-        .holder {
-            font-size: 14px;
-            font-weight: 200;
-            color: #bababa;
-        }
-
-        .main-table {
-            all: unset;
-            display: flex;
-            width: 100%;
-            justify-content: space-between;
-            flex-direction: column;
-
-            td {
-                width: 100%;
-                flex-direction: row;
-                align-items: center;
-                text-align: center;
-                justify-content: center;
-            }
-        }
-
-        input[type="text"] {
-            width: 100%;
-            text-align: center;
-            ;
-            background-color: transparent;
-            border: none;
-            border-bottom: 0.5px solid #fff;
-            opacity: 76%;
-            border-radius: 4px;
-            height: 50px;
-            outline: none;
-            padding-left: 10px;
-            font-family: $font;
-            font-size: 16px;
-
-            &::placeholder {
-                text-align: center;
-                font-size: 14px;
-                color: $color;
-            }
-        }
-
-        textarea {
-            width: 100%;
-            background-color: transparent;
-            border: none;
-            border-bottom: 0.5px solid #fff;
-            opacity: 76%;
-            border-radius: 4px;
-            height: 60px;
-            outline: none;
-            padding-left: 10px;
-            font-family: $font;
-            font-size: 16px;
-
-            &::placeholder {
-                text-align: center;
-                font-size: 14px;
-                color: $color;
-            }
-        }
-
-        .textarea_inp {
-            width: 100%;
-            background-color: transparent;
-            border: 0.5px solid #fff;
-            opacity: 76%;
-            border-radius: 4px;
-            height: 110px;
-            outline: none;
-            padding: 10px;
-            font-family: $font;
-            font-size: 16px;
-
-            &::placeholder {
-                text-align: left;
-                font-size: 14px;
-                color: $color;
-            }
-        }
-
-        .div_input {
-            display: flex;
-            flex-direction: row;
-            width: 100%;
-            margin: 0 auto;
-            justify-content: space-between;
-        }
-
-        .div_input1 {
-            justify-content: center;
-        }
-
-        .input {
-            width: 31%;
-            background-color: transparent;
-            border: 0.5px solid #fff;
-            opacity: 76%;
-            border-radius: 4px;
-            height: 50px;
-            outline: none;
-            padding-left: 10px;
-            font-family: $font;
-            font-size: 16px;
-        }
-
-        .input::placeholder {
-            font-family: $font;
-            font-size: 14px;
-            color: $color;
-        }
-
-        .td_data1 {
-            all: unset;
-
-            input {
-                text-align: center;
-                width: 100%;
-                background-color: transparent;
-                border: none;
-                border-bottom: 0.5px solid #fff;
-                opacity: 76%;
-                border-radius: 4px;
-                height: 50px;
-                outline: none;
-                font-family: $font;
-                font-size: 16px;
-                margin-bottom: 20px;
-            }
-
-            input::placeholder {
-                text-align: center;
-                font-size: 14px;
-                color: $color;
-            }
-        }
-
-        .td_data2 {
-            all: unset;
-
-            div {
-                display: flex;
-                flex-wrap: wrap;
-
-                input[type="text"] {
-                    width: 100%;
-                }
-
-                input[type="date"] {
-                    width: 40%;
-                    padding-left: 10px;
-                    padding-right: 10px;
-                    font-family: $font;
-                    color: $color;
-                }
-
-                #c-30::-webkit-calendar-picker-indicator {
-                    filter: invert(1);
-                }
-            }
-
-            .div_benefit {
-                justify-content: center;
-                display: flex;
-                flex-direction: row;
-                gap: 20px;
-
-                input {
-                    opacity: 76%;
-                    position: relative;
-                    width: 18px;
-                    height: 18px;
-                    flex-shrink: 0;
-                    accent-color: #D0D5DD;
-                    -webkit-appearance: none;
-                    -moz-appearance: none;
-                    appearance: none;
-                    background-color: transparent;
-                    border: 1px solid #ffffff;
-                    border-radius: 50%;
-                    outline: none;
-                    cursor: pointer;
-                }
-
-                :checked::before {
-                    content: "";
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    position: absolute;
-                    width: 12px;
-                    height: 12px;
-                    border-radius: 50%;
-                    background-color: #D0D5DD;
-                    opacity: 76%;
-                }
-
-                label {
-                    font-family: $font;
-                    font-size: 14px;
-                }
-
-                div {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    text-align: center;
-                    gap: 10px;
-                }
-            }
-
-            .div_radio {
-                all: unset;
-                width: 100%;
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: space-between;
-                margin: 0 auto;
-                gap: 20px;
-
-                div {
-                    all: unset;
-                    width: 40%;
-                }
-
-                input {
-                    opacity: 76%;
-                    position: relative;
-                    width: 20px;
-                    height: 20px;
-                    flex-shrink: 0;
-                    accent-color: #D0D5DD;
-                    -webkit-appearance: none;
-                    -moz-appearance: none;
-                    appearance: none;
-                    background-color: transparent;
-                    border: 1px solid #ffffff;
-                    border-radius: 50%;
-                    outline: none;
-                    cursor: pointer;
-                }
-
-                :checked::before {
-                    content: "";
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    position: absolute;
-                    width: 12px;
-                    height: 12px;
-                    border-radius: 50%;
-                    background-color: #D0D5DD;
-                    opacity: 76%;
-                }
-
-                label {
-                    font-family: $font;
-                    font-size: 12px;
-                }
-
-                div {
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-                    text-align: left;
-                    gap: 10px;
-                }
-            }
-
-
-            .language_container {
-                all: unset;
-            }
-
-
-            .relatives {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                flex-wrap: wrap;
-                position: relative;
-
-                .input_rel {
-                    text-align: center;
-                    width: 49%;
-                    background-color: transparent;
-                    border: none;
-                    border-bottom: 0.5px solid #fff;
-                    opacity: 76%;
-                    border-radius: 4px;
-                    height: 50px;
-                    outline: none;
-                    padding-left: 10px;
-                    font-family: $font;
-                    font-size: 16px;
-                }
-
-                .input_rel:first-child {
-                    width: 100%;
-                }
-
-
-                .relatives_container {
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-                }
-
-                .input_rel::placeholder {
-                    text-align: center;
-                    font-size: 10px;
-                    color: $color;
-                }
-            }
-
-
-            .passport {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                position: relative;
-
-                .number_series {
-                    display: flex;
-                    flex-direction: row;
-                }
-
-                .date_code {
-                    display: flex;
-                    flex-direction: row;
-                }
-
-                .input_ps {
-                    text-align: center;
-                    width: 100%;
-                    background-color: transparent;
-                    border: none;
-                    border-bottom: 0.5px solid #fff;
-                    opacity: 76%;
-                    border-radius: 4px;
-                    height: 50px;
-                    outline: none;
-                    padding-left: 10px;
-                    font-family: $font;
-                    font-size: 16px;
-                }
-
-                .passport_container {
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-                }
-
-                .input_ps::placeholder {
-                    text-align: center;
-                    font-size: 14px;
-                    color: $color;
-                }
-            }
-
-        }
-
-        .remove-button {
-            all: unset;
-            justify-content: center;
-
-            button {
-                margin-top: 20px;
-                background-color: transparent;
-                border: 0.5px solid $color;
-                border-radius: 4px;
-                width: 30%;
-                height: 30px;
-                opacity: 76%;
-            }
-        }
-
-        .add {
-            width: 40px;
-            height: 40px;
-            border-radius: 30px;
-            background-color: transparent;
-            border: 0.5px solid $color;
-            justify-content: center;
-            opacity: 76%;
-            margin-bottom: 30px;
-        }
-
-        .div-button {
-            width: 100%;
-            text-align: center;
-        }
-
-        .margin_section_button {
-            margin-bottom: 20px;
-        }
-
-        [data-tooltip]::after {
-            content: attr(data-tooltip);
-            opacity: 0;
-            transition: 1s;
-            pointer-events: none;
-        }
-
-        [data-tooltip]:hover::after {
-            opacity: 1;
-        }
-
-        [data-tooltip] {
-            position: relative;
-        }
-
-        [data-tooltip]::after {
-            content: attr(data-tooltip);
-            position: absolute;
-            max-width: 400px;
-            left: 0em;
-            top: 0px;
-            background: #004781;
-            color: #fff;
-            padding: 0.5em;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-            pointer-events: none;
-            opacity: 0;
-            transition: 0.4s;
-        }
-
-        [data-tooltip]:hover::after {
-            opacity: 1;
-            top: 40px;
-            z-index: 1;
-        }
-
-        select option {
-            background: $background-color;
-        }
-
-        .photos {
-            font-family: $font;
-            font-size: 16px;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .container {
-            margin: 0px 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .image-container {
-            background-color: transparent;
-            border: none;
-            max-width: 300px;
-            max-height: 400px;
-            margin-bottom: 20px;
-            position: relative;
-        }
-
-        .uploaded-image {
-            max-width: 100%;
-            max-height: 100%;
-            display: block;
-            margin: auto;
-            color: rgb(255, 255, 255);
-        }
-
-        .add-photo,
-        .remove-photo {
-            width: 150px;
-            height: 40px;
-            border: 0.5px solid white;
-            background-color: transparent;
-            color: $color;
-            border-radius: 20px;
-            margin-bottom: 10px;
-
-            &:disabled {
-                width: 150px;
-                height: 40px;
-                background-color: rgb(136, 136, 136);
-                border: 0.5px solid $background-color;
-                color: $background-color;
-                border-radius: 20px;
-            }
-
-            &:hover {
-                width: 150px;
-                height: 40px;
-                background-color: white;
-                border: 0.5px solid white;
-                color: $background-color;
-                border-radius: 20px;
-                transition: all 0.4s;
-            }
-
-            &:active {
-                width: 150px;
-                height: 40px;
-                background-color: transparent;
-                border: 0.5px solid white;
-                color: $color;
-                border-radius: 20px;
-            }
-        }
-
-    }
-
-    .agreement {
+    .div_fio {
+      td {
         all: unset;
-        display: flex;
-        flex-direction: column;
-        width: 80%;
-        margin: 0 auto;
-        justify-content: start;
-        gap: 20px;
-        font-family: $font;
-        font-size: 16px;
+        width: 100%;
 
         div {
-            display: flex;
-            flex-direction: row;
-            gap: 10px;
+          all: unset;
+
+          input {
+            width: 100%;
+          }
+
+          input:not(:last-child) {
+            margin-bottom: 20px;
+          }
         }
-
-        .buttonDownload {
-            width: 150px;
-            height: 40px;
-            border: 0.5px solid white;
-            background-color: transparent;
-            color: $color;
-            border-radius: 20px;
-
-            &:disabled {
-                width: 150px;
-                height: 40px;
-                background-color: rgb(136, 136, 136);
-                border: 0.5px solid $background-color;
-                color: $background-color;
-                border-radius: 20px;
-            }
-
-            &:hover {
-                width: 150px;
-                height: 40px;
-                background-color: white;
-                border: 0.5px solid white;
-                color: $background-color;
-                border-radius: 20px;
-                transition: all 0.4s;
-            }
-
-            &:active {
-                width: 150px;
-                height: 40px;
-                background-color: transparent;
-                border: 0.5px solid white;
-                color: $color;
-                border-radius: 20px;
-            }
-        }
+      }
     }
+
+    table {
+      width: 100%;
+
+      td,
+      tr {
+        width: 100%;
+        display: block;
+        text-align: center;
+        padding-bottom: 20px;
+        flex-wrap: wrap;
+      }
+
+      @mixin relatives-container-styles {
+        border: 1px solid white;
+        border-radius: 20px;
+        flex-wrap: wrap;
+        margin-bottom: 40px;
+        padding: 20px 20px 0 20px;
+        div {
+          width: 100%;
+          justify-content: center;
+        }
+      }
+      
+      #relatives_container_husbandWife {
+        @include relatives-container-styles;
+      }
+      
+      #relatives_container_sisterbrother {
+        @include relatives-container-styles;
+      }
+      #relatives_container_daughterSon {
+        @include relatives-container-styles;
+      }
+
+      #relatives_container_grandfather {
+        @include relatives-container-styles;
+      }
+      #relatives_container_grandmother {
+        @include relatives-container-styles;
+      }
+      
+      #relatives_container_grandchild {
+        @include relatives-container-styles;
+      }
+      #relatives_container_uncleaunt {
+        @include relatives-container-styles;
+      }
+
+      
+      #relatives_container_nephew {
+        @include relatives-container-styles;
+      }
+    }
+
+    .holder {
+      font-family: $font;
+      font-size: 14px;
+      font-weight: 200;
+      color: #bababa;
+    }
+
+    .main-table {
+      all: unset;
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      flex-direction: column;
+
+      td {
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+      }
+    }
+
+    input[type="text"] {
+      width: 100%;
+      text-align: center;
+      background-color: transparent;
+      border: none;
+      border-bottom: 0.5px solid #fff;
+      opacity: 76%;
+      border-radius: 4px;
+      height: 50px;
+      outline: none;
+      padding-left: 10px;
+      font-family: $font;
+      font-size: 16px;
+
+      &::placeholder {
+        text-align: center;
+        font-size: 14px;
+        color: $color;
+      }
+    }
+
+    textarea {
+      width: 100%;
+      background-color: transparent;
+      border: none;
+      border-bottom: 0.5px solid #fff;
+      opacity: 76%;
+      border-radius: 4px;
+      height: 60px;
+      outline: none;
+      padding-left: 10px;
+      font-family: $font;
+      font-size: 16px;
+
+      &::placeholder {
+        text-align: center;
+        font-size: 14px;
+        color: $color;
+      }
+    }
+
+    .textarea_inp {
+      width: 100%;
+      background-color: transparent;
+      border: 0.5px solid #fff;
+      opacity: 76%;
+      border-radius: 4px;
+      height: 110px;
+      outline: none;
+      padding: 10px;
+      font-family: $font;
+      font-size: 16px;
+
+      &::placeholder {
+        text-align: left;
+        font-size: 14px;
+        color: $color;
+      }
+    }
+
+    .div_input {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      margin: 0 auto;
+      justify-content: space-between;
+    }
+
+    .div_input1 {
+      justify-content: center;
+    }
+
+    .input {
+      width: 31%;
+      background-color: transparent;
+      border: 0.5px solid #fff;
+      opacity: 76%;
+      border-radius: 4px;
+      height: 50px;
+      outline: none;
+      padding-left: 10px;
+      font-family: $font;
+      font-size: 16px;
+    }
+
+    .input::placeholder {
+      font-family: $font;
+      font-size: 14px;
+      color: $color;
+    }
+
+    .td_data1 {
+      all: unset;
+
+      input {
+        text-align: center;
+        width: 100%;
+        background-color: transparent;
+        border: none;
+        border-bottom: 0.5px solid #fff;
+        opacity: 76%;
+        border-radius: 4px;
+        height: 50px;
+        outline: none;
+        font-family: $font;
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+
+      input::placeholder {
+        text-align: center;
+        font-size: 14px;
+        color: $color;
+      }
+    }
+
+    .td_data2 {
+      all: unset;
+
+      div {
+        display: flex;
+        flex-wrap: wrap;
+
+        input[type="text"] {
+          width: 100%;
+        }
+
+        input[type="date"] {
+          width: 40%;
+          padding-left: 10px;
+          padding-right: 10px;
+          font-family: $font;
+          color: $color;
+        }
+
+        #c-30::-webkit-calendar-picker-indicator {
+          filter: invert(1);
+        }
+      }
+
+      .div_benefit {
+        justify-content: center;
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+
+        input {
+          opacity: 76%;
+          position: relative;
+          width: 18px;
+          height: 18px;
+          flex-shrink: 0;
+          accent-color: #d0d5dd;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          background-color: transparent;
+          border: 1px solid #ffffff;
+          border-radius: 50%;
+          outline: none;
+          cursor: pointer;
+        }
+
+        :checked::before {
+          content: "";
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          position: absolute;
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          background-color: #d0d5dd;
+          opacity: 76%;
+        }
+
+        label {
+          font-family: $font;
+          font-size: 14px;
+        }
+
+        div {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          gap: 10px;
+        }
+      }
+
+      .div_radio {
+        all: unset;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 0 auto;
+        gap: 20px;
+
+        div {
+          all: unset;
+          width: 40%;
+        }
+
+        input {
+          opacity: 76%;
+          position: relative;
+          width: 20px;
+          height: 20px;
+          flex-shrink: 0;
+          accent-color: #d0d5dd;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          background-color: transparent;
+          border: 1px solid #ffffff;
+          border-radius: 50%;
+          outline: none;
+          cursor: pointer;
+        }
+
+        :checked::before {
+          content: "";
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          position: absolute;
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          background-color: #d0d5dd;
+          opacity: 76%;
+        }
+
+        label {
+          font-family: $font;
+          font-size: 12px;
+        }
+
+        div {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          text-align: left;
+          gap: 10px;
+        }
+      }
+
+      .language_container {
+        all: unset;
+      }
+
+      .relatives {
+        p {
+          all: unset;
+          font-family: $font;
+          width: 100%;
+        }
+        display: flex;
+        margin-bottom: 20px;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        position: relative;
+
+        .input_rel {
+          text-align: center;
+          width: 100%;
+          background-color: transparent;
+          border: none;
+          border-bottom: 0.5px solid #fff;
+          opacity: 76%;
+          border-radius: 4px;
+          height: 50px;
+          outline: none;
+          padding-left: 10px;
+          font-family: $font;
+          font-size: 16px;
+        }
+
+        .input_rel:first-child {
+          width: 100%;
+        }
+
+        .relatives_container {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+        }
+
+        .input_rel::placeholder {
+          text-align: center;
+          font-size: 10px;
+          color: $color;
+        }
+      }
+
+      .passport {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+
+        .number_series {
+          display: flex;
+          flex-direction: row;
+        }
+
+        .date_code {
+          display: flex;
+          flex-direction: row;
+        }
+
+        .input_ps {
+          text-align: center;
+          width: 100%;
+          background-color: transparent;
+          border: none;
+          border-bottom: 0.5px solid #fff;
+          opacity: 76%;
+          border-radius: 4px;
+          height: 50px;
+          outline: none;
+          padding-left: 10px;
+          font-family: $font;
+          font-size: 16px;
+        }
+
+        .passport_container {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+        }
+
+        .input_ps::placeholder {
+          text-align: center;
+          font-size: 14px;
+          color: $color;
+        }
+      }
+    }
+
+    .remove-button {
+      all: unset;
+      justify-content: center;
+
+      button {
+        margin-top: 20px;
+        background-color: transparent;
+        border: 0.5px solid $color;
+        border-radius: 4px;
+        width: 30%;
+        height: 30px;
+        opacity: 76%;
+      }
+    }
+
+    .add {
+      width: 40px;
+      height: 40px;
+      border-radius: 30px;
+      background-color: transparent;
+      border: 0.5px solid $color;
+      justify-content: center;
+      opacity: 76%;
+      margin-bottom: 30px;
+    }
+
+    .div-button {
+      width: 100%;
+      text-align: center;
+    }
+
+    .margin_section_button {
+      margin-bottom: 20px;
+    }
+
+    [data-tooltip]::after {
+      content: attr(data-tooltip);
+      opacity: 0;
+      transition: 1s;
+      pointer-events: none;
+    }
+
+    [data-tooltip]:hover::after {
+      opacity: 1;
+    }
+
+    [data-tooltip] {
+      position: relative;
+    }
+
+    [data-tooltip]::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      max-width: 400px;
+      left: 0em;
+      top: 0px;
+      background: #004781;
+      color: #fff;
+      padding: 0.5em;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      pointer-events: none;
+      opacity: 0;
+      transition: 0.4s;
+    }
+
+    [data-tooltip]:hover::after {
+      opacity: 1;
+      top: 40px;
+      z-index: 1;
+    }
+
+    select option {
+      background: $background-color;
+    }
+
+    .photos {
+      font-family: $font;
+      font-size: 16px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .container {
+      margin: 0px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .image-container {
+      background-color: transparent;
+      border: none;
+      max-width: 300px;
+      max-height: 400px;
+      margin-bottom: 20px;
+      overflow: hidden;
+
+    }
+
+    .uploaded-image {
+      max-width: 100%;
+      max-height: 100%;
+      display: block;
+      margin: auto;
+      color: rgb(255, 255, 255);
+      object-fit: contain;
+    }
+
+    .add-photo,
+    .remove-photo {
+      width: 150px;
+      height: 40px;
+      border: 0.5px solid white;
+      background-color: transparent;
+      color: $color;
+      border-radius: 20px;
+      margin-bottom: 10px;
+
+      &:disabled {
+        width: 150px;
+        height: 40px;
+        background-color: rgb(136, 136, 136);
+        border: 0.5px solid $background-color;
+        color: $background-color;
+        border-radius: 20px;
+      }
+
+      &:hover {
+        width: 150px;
+        height: 40px;
+        background-color: white;
+        border: 0.5px solid white;
+        color: $background-color;
+        border-radius: 20px;
+        transition: all 0.4s;
+      }
+
+      &:active {
+        width: 150px;
+        height: 40px;
+        background-color: transparent;
+        border: 0.5px solid white;
+        color: $color;
+        border-radius: 20px;
+      }
+    }
+  }
+
+  .agreement {
+    all: unset;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+    justify-content: start;
+    gap: 20px;
+    font-family: $font;
+    font-size: 16px;
+
+    div {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+    }
+
+    .buttonDownload {
+      width: 150px;
+      height: 40px;
+      border: 0.5px solid white;
+      background-color: transparent;
+      color: $color;
+      border-radius: 20px;
+
+      &:disabled {
+        width: 150px;
+        height: 40px;
+        background-color: rgb(136, 136, 136);
+        border: 0.5px solid $background-color;
+        color: $background-color;
+        border-radius: 20px;
+      }
+
+      &:hover {
+        width: 150px;
+        height: 40px;
+        background-color: white;
+        border: 0.5px solid white;
+        color: $background-color;
+        border-radius: 20px;
+        transition: all 0.4s;
+      }
+
+      &:active {
+        width: 150px;
+        height: 40px;
+        background-color: transparent;
+        border: 0.5px solid white;
+        color: $color;
+        border-radius: 20px;
+      }
+    }
+  }
 }

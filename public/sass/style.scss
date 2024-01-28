@@ -21,16 +21,16 @@ $color: #fff;
   header {
     text-align: center;
 
-    img {
-      width: 40%;
-      padding: 3% 0 10px 0;
-    }
-
     p {
       font-family: $font;
       font-weight: 500;
       color: $color;
       font-size: 1.1em;
+    }
+    .titleHead {
+      font-family: Garamond;
+      font-size: 34px;
+      font-weight: 700;
     }
   }
 
@@ -606,7 +606,6 @@ $color: #fff;
       max-height: 400px;
       margin-bottom: 20px;
       overflow: hidden;
-
     }
 
     .uploaded-image {
@@ -725,16 +724,16 @@ $color: #fff;
   header {
     text-align: center;
 
-    img {
-      width: 40%;
-      padding: 3% 0 10px 0;
-    }
-
     p {
       font-family: $font;
       font-weight: 500;
       color: $color;
       font-size: 16px;
+    }
+    .titleHead {
+      font-family: Garamond;
+      font-size: 34px;
+      font-weight: 700;
     }
   }
 
@@ -1315,7 +1314,6 @@ $color: #fff;
       margin: auto;
       object-fit: contain;
       color: rgb(255, 255, 255);
-      
     }
 
     .add-photo,
@@ -1427,16 +1425,16 @@ $color: #fff;
   header {
     text-align: center;
 
-    img {
-      width: 40%;
-      padding: 3% 0 10px 0;
-    }
-
     p {
       font-family: $font;
       font-weight: 500;
       color: $color;
       font-size: 16px;
+    }
+    .titleHead {
+      font-family: Garamond;
+      font-size: 34px;
+      font-weight: 700;
     }
   }
 
@@ -1956,7 +1954,6 @@ $color: #fff;
       max-height: 400px;
       margin-bottom: 20px;
       overflow: hidden;
-
     }
 
     .uploaded-image {
@@ -2077,16 +2074,17 @@ $color: #fff;
   header {
     text-align: center;
 
-    img {
-      width: 80%;
-      padding: 3% 0 10px 0;
-    }
-
     p {
       font-family: $font;
       font-weight: 500;
       color: $color;
       font-size: 16px;
+    }
+
+    .titleHead {
+      font-family: Garamond;
+      font-size: 34px;
+      font-weight: 700;
     }
   }
 
@@ -2146,11 +2144,11 @@ $color: #fff;
           justify-content: center;
         }
       }
-      
+
       #relatives_container_husbandWife {
         @include relatives-container-styles;
       }
-      
+
       #relatives_container_sisterbrother {
         @include relatives-container-styles;
       }
@@ -2164,7 +2162,7 @@ $color: #fff;
       #relatives_container_grandmother {
         @include relatives-container-styles;
       }
-      
+
       #relatives_container_grandchild {
         @include relatives-container-styles;
       }
@@ -2172,7 +2170,6 @@ $color: #fff;
         @include relatives-container-styles;
       }
 
-      
       #relatives_container_nephew {
         @include relatives-container-styles;
       }
@@ -2645,7 +2642,6 @@ $color: #fff;
       max-height: 400px;
       margin-bottom: 20px;
       overflow: hidden;
-
     }
 
     .uploaded-image {

@@ -11,8 +11,11 @@ header {
   text-align: center;
   padding-top: 30px;
 }
-header img {
-  margin-bottom: 20px;
+
+header p {
+  font-family: Garamond;
+  font-weight: 700;
+  font-size: 34px;
 }
 
 section {

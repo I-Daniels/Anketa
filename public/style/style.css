@@ -12,9 +12,10 @@
   header {
     text-align: center;
   }
-  header img {
-    width: 40%;
-    padding: 3% 0 10px 0;
+  .titleHead {
+    font-family: Garamond;
+    font-size: 34px;
+    font-weight: 700;
   }
   header p {
     font-family: Montserrat;
@@ -690,9 +691,10 @@
   header {
     text-align: center;
   }
-  header img {
-    width: 40%;
-    padding: 3% 0 10px 0;
+  .titleHead {
+    font-family: Garamond;
+    font-size: 34px;
+    font-weight: 700;
   }
   header p {
     font-family: Montserrat;
@@ -1364,9 +1366,10 @@
   header {
     text-align: center;
   }
-  header img {
-    width: 40%;
-    padding: 3% 0 10px 0;
+  .titleHead {
+    font-family: Garamond;
+    font-size: 30px;
+    font-weight: 700;
   }
   header p {
     font-family: Montserrat;
@@ -2000,9 +2003,10 @@
   header {
     text-align: center;
   }
-  header img {
-    width: 80%;
-    padding: 3% 0 10px 0;
+  .titleHead {
+    font-family: Garamond;
+    font-size: 26px;
+    font-weight: 700;
   }
   header p {
     font-family: Montserrat;

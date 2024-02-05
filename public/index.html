@@ -552,11 +552,11 @@
         </p>
       </div>
       <table id="relatives-table">
-        <!-- Папа -->
+        <!-- Отец -->
         <tr id="relatives_container_father">
           <td colspan="2" class="td_data2">
             <div class="relatives">
-              <p>Папа</p>
+              <p>Отец</p>
               <input
                 type="text"
                 class="input_rel"
@@ -585,11 +585,11 @@
           </td>
         </tr>
 
-        <!-- Мама -->
+        <!-- Мать -->
         <tr id="relatives_container_mother">
           <td colspan="2" class="td_data2">
             <div class="relatives">
-              <p>Мама</p>
+              <p>Мать</p>
               <input
                 type="text"
                 class="input_rel"
@@ -618,34 +618,34 @@
           </td>
         </tr>
 
-        <!-- Муж.Жена -->
-        <tr id="relatives_container_husbandWife">
+        <!-- Супруг -->
+        <tr id="relatives_container_husband">
           <td colspan="2" class="td_data2">
             <div class="relatives">
-              <p>Муж/Жена (и/или бывшие)</p>
+              <p>Супруг</p>
               <input
                 type="text"
                 class="input_rel"
                 placeholder="ФИО"
-                id="data_relfio_husbandWife"
+                id="data_relfio_husband"
               />
               <input
                 type="text"
                 class="input_rel"
                 placeholder="Дата и место рождения"
-                id="date_reldate_husbandWife"
+                id="date_reldate_husband"
               />
               <input
                 type="text"
                 class="input_rel"
                 placeholder="Место работы, должность"
-                id="date_reljob_husbandWife"
+                id="date_reljob_husband"
               />
               <input
                 type="text"
                 class="input_rel"
                 placeholder="Адрес места жительства"
-                id="date_relpl_husbandWife"
+                id="date_relpl_husband"
               />
               <div class="remove-button"></div>
             </div>
@@ -653,7 +653,50 @@
           <td class="td_data2">
             <div class="div-button">
               <button
-                onclick="addRelatives('relatives_container_husbandWife')"
+                onclick="addRelatives('relatives_container_husband')"
+                class="add"
+              >
+                <img src="img/add.svg" alt="add" width="90%" />
+              </button>
+            </div>
+          </td>
+        </tr>
+        <!-- Супруга -->
+        <tr id="relatives_container_Wife" class="relatives-container">
+          <td colspan="2" class="td_data2">
+            <div class="relatives">
+              <p>Супруга</p>
+              <input
+                type="text"
+                class="input_rel"
+                placeholder="ФИО"
+                id="data_relfio_Wife"
+              />
+              <input
+                type="text"
+                class="input_rel"
+                placeholder="Дата и место рождения"
+                id="date_reldate_Wife"
+              />
+              <input
+                type="text"
+                class="input_rel"
+                placeholder="Место работы (учебы), должность"
+                id="date_reljob_Wife"
+              />
+              <input
+                type="text"
+                class="input_rel"
+                placeholder="Адрес места жительства"
+                id="date_relpl_Wife"
+              />
+              <div class="remove-button"></div>
+            </div>
+          </td>
+          <td class="td_data2">
+            <div class="div-button">
+              <button
+                onclick="addRelatives('relatives_container_Wife')"
                 class="add"
               >
                 <img src="img/add.svg" alt="add" width="90%" />
@@ -662,34 +705,34 @@
           </td>
         </tr>
 
-        <!-- Сестра.Брат -->
-        <tr id="relatives_container_sisterbrother" class="relatives-container">
+        <!-- Бывший Супруг/Супруга -->
+        <tr id="relatives_container_ex-WifeHusband" class="relatives-container">
           <td colspan="2" class="td_data2">
             <div class="relatives">
-              <p>Брат/Сестра</p>
+              <p>Бывший Супруг/Супруга</p>
               <input
                 type="text"
                 class="input_rel"
                 placeholder="ФИО"
-                id="data_relfio_sisterbrother"
+                id="data_relfio_ex-WifeHusband"
               />
               <input
                 type="text"
                 class="input_rel"
                 placeholder="Дата и место рождения"
-                id="date_reldate_sisterbrother"
+                id="date_reldate_ex-WifeHusband"
               />
               <input
                 type="text"
                 class="input_rel"
                 placeholder="Место работы (учебы), должность"
-                id="date_reljob_sisterbrother"
+                id="date_reljob_ex-WifeHusband"
               />
               <input
                 type="text"
                 class="input_rel"
                 placeholder="Адрес места жительства"
-                id="date_relpl_sisterbrother"
+                id="date_relpl_ex-WifeHusband"
               />
               <div class="remove-button"></div>
             </div>
@@ -697,7 +740,7 @@
           <td class="td_data2">
             <div class="div-button">
               <button
-                onclick="addRelatives('relatives_container_sisterbrother')"
+                onclick="addRelatives('relatives_container_ex-WifeHusband')"
                 class="add"
               >
                 <img src="img/add.svg" alt="add" width="90%" />
@@ -705,35 +748,34 @@
             </div>
           </td>
         </tr>
-
-        <!-- Дочь.Сын -->
-        <tr id="relatives_container_daughterSon" class="relatives-container">
+        <!-- Дети -->
+        <tr id="relatives_container_childs" class="relatives-container">
           <td colspan="2" class="td_data2">
             <div class="relatives">
-              <p>Сын/Дочь</p>
+              <p>Дети</p>
               <input
                 type="text"
                 class="input_rel"
                 placeholder="ФИО"
-                id="data_relfio_daughterSon"
+                id="data_relfio_childs"
               />
               <input
                 type="text"
                 class="input_rel"
                 placeholder="Дата и место рождения"
-                id="date_reldate_daughterSon"
+                id="date_reldate_childs"
               />
               <input
                 type="text"
                 class="input_rel"
                 placeholder="Место работы (учебы), должность"
-                id="date_reljob_daughterSon"
+                id="date_reljob_childs"
               />
               <input
                 type="text"
                 class="input_rel"
                 placeholder="Адрес места жительства"
-                id="date_relpl_daughterSon"
+                id="date_relpl_childs"
               />
               <div class="remove-button"></div>
             </div>
@@ -741,227 +783,7 @@
           <td class="td_data2">
             <div class="div-button">
               <button
-                onclick="addRelatives('relatives_container_daughterSon')"
-                class="add"
-              >
-                <img src="img/add.svg" alt="add" width="90%" />
-              </button>
-            </div>
-          </td>
-        </tr>
-
-        <!-- Дед -->
-        <tr id="relatives_container_grandfather" class="relatives-container">
-          <td colspan="2" class="td_data2">
-            <div class="relatives">
-              <p>Дед</p>
-              <input
-                type="text"
-                class="input_rel"
-                placeholder="ФИО"
-                id="data_relfio_grandfather"
-              />
-              <input
-                type="text"
-                class="input_rel"
-                placeholder="Дата и место рождения"
-                id="date_reldate_grandfather"
-              />
-              <input
-                type="text"
-                class="input_rel"
-                placeholder="Место работы (учебы), должность"
-                id="date_reljob_grandfather"
-              />
-              <input
-                type="text"
-                class="input_rel"
-                placeholder="Адрес места жительства"
-                id="date_relpl_grandfather"
-              />
-              <div class="remove-button"></div>
-            </div>
-          </td>
-          <td class="td_data2">
-            <div class="div-button">
-              <button
-                onclick="addRelatives('relatives_container_grandfather')"
-                class="add"
-              >
-                <img src="img/add.svg" alt="add" width="90%" />
-              </button>
-            </div>
-          </td>
-        </tr>
-
-        <!-- Бабушка -->
-        <tr id="relatives_container_grandmother" class="relatives-container">
-          <td colspan="2" class="td_data2">
-            <div class="relatives">
-              <p>Бабушка</p>
-              <input
-                type="text"
-                class="input_rel"
-                placeholder="ФИО"
-                id="data_relfio_grandmother"
-              />
-              <input
-                type="text"
-                class="input_rel"
-                placeholder="Дата и место рождения"
-                id="date_reldate_grandmother"
-              />
-              <input
-                type="text"
-                class="input_rel"
-                placeholder="Место работы (учебы), должность"
-                id="date_reljob_grandmother"
-              />
-              <input
-                type="text"
-                class="input_rel"
-                placeholder="Адрес места жительства"
-                id="date_relpl_grandmother"
-              />
-              <div class="remove-button"></div>
-            </div>
-          </td>
-          <td class="td_data2">
-            <div class="div-button">
-              <button
-                onclick="addRelatives('relatives_container_grandmother')"
-                class="add"
-              >
-                <img src="img/add.svg" alt="add" width="90%" />
-              </button>
-            </div>
-          </td>
-        </tr>
-
-        <!-- Внук(чка) -->
-        <tr id="relatives_container_grandchild" class="relatives-container">
-          <td colspan="2" class="td_data2">
-            <div class="relatives">
-              <p>Внук(чка)</p>
-              <input
-                type="text"
-                class="input_rel"
-                placeholder="ФИО"
-                id="data_relfio_grandchild"
-              />
-              <input
-                type="text"
-                class="input_rel"
-                placeholder="Дата и место рождения"
-                id="date_reldate_grandchild"
-              />
-              <input
-                type="text"
-                class="input_rel"
-                placeholder="Место работы (учебы), должность"
-                id="date_reljob_grandchild"
-              />
-              <input
-                type="text"
-                class="input_rel"
-                placeholder="Адрес места жительства"
-                id="date_relpl_grandchild"
-              />
-              <div class="remove-button"></div>
-            </div>
-          </td>
-          <td class="td_data2">
-            <div class="div-button">
-              <button
-                onclick="addRelatives('relatives_container_grandchild')"
-                class="add"
-              >
-                <img src="img/add.svg" alt="add" width="90%" />
-              </button>
-            </div>
-          </td>
-        </tr>
-
-        <!-- Дядя -->
-        <tr id="relatives_container_uncleaunt" class="relatives-container">
-          <td colspan="2" class="td_data2">
-            <div class="relatives">
-              <p>Дядя/Тетя</p>
-              <input
-                type="text"
-                class="input_rel"
-                placeholder="ФИО"
-                id="data_relfio_uncleaunt"
-              />
-              <input
-                type="text"
-                class="input_rel"
-                placeholder="Дата и место рождения"
-                id="date_reldate_uncleaunt"
-              />
-              <input
-                type="text"
-                class="input_rel"
-                placeholder="Место работы (учебы), должность"
-                id="date_reljob_uncleaunt"
-              />
-              <input
-                type="text"
-                class="input_rel"
-                placeholder="Адрес места жительства"
-                id="date_relpl_uncleaunt"
-              />
-              <div class="remove-button"></div>
-            </div>
-          </td>
-          <td class="td_data2">
-            <div class="div-button">
-              <button
-                onclick="addRelatives('relatives_container_uncleaunt')"
-                class="add"
-              >
-                <img src="img/add.svg" alt="add" width="90%" />
-              </button>
-            </div>
-          </td>
-        </tr>
-
-        <!-- Племянник(ца) -->
-        <tr id="relatives_container_nephew" class="relatives-container">
-          <td colspan="2" class="td_data2">
-            <div class="relatives">
-              <p>Племянник(ца)</p>
-              <input
-                type="text"
-                class="input_rel"
-                placeholder="ФИО"
-                id="data_relfio_nephew"
-              />
-              <input
-                type="text"
-                class="input_rel"
-                placeholder="Дата и место рождения"
-                id="date_reldate_nephew"
-              />
-              <input
-                type="text"
-                class="input_rel"
-                placeholder="Место работы (учебы), должность"
-                id="date_reljob_nephew"
-              />
-              <input
-                type="text"
-                class="input_rel"
-                placeholder="Адрес места жительства"
-                id="date_relpl_nephew"
-              />
-              <div class="remove-button"></div>
-            </div>
-          </td>
-          <td class="td_data2">
-            <div class="div-button">
-              <button
-                onclick="addRelatives('relatives_container_nephew')"
+                onclick="addRelatives('relatives_container_childs')"
                 class="add"
               >
                 <img src="img/add.svg" alt="add" width="90%" />
@@ -1154,45 +976,57 @@
       <table class="passport-table">
         <tr class="passport_container">
           <td class="td_data1">
-            <p>Загранпаспорт</p>
+            <p>Загранпаспорт*</p>
+            <p class="holder">
+              (Если у вас имеется загранпаспорт, нажмите "Есть" и заполните
+              данные)
+            </p>
           </td>
           <td colspan="2" class="td_data">
             <div class="passport">
-              <div class="number_series">
-                <input
-                  type="text"
-                  class="input_ps"
-                  id="c-11"
-                  placeholder="Серия"
-                />
-                <input
-                  type="text"
-                  class="input_ps"
-                  id="c-12"
-                  placeholder="Номер"
-                />
+              <div class="inputs hidden">
+                <div class="number_series">
+                  <input
+                    type="text"
+                    class="input_ps"
+                    id="c-11"
+                    placeholder="Серия"
+                  />
+                  <input
+                    type="text"
+                    class="input_ps"
+                    id="c-12"
+                    placeholder="Номер"
+                  />
+                </div>
+                <div class="whereps">
+                  <input
+                    type="text"
+                    class="input_ps"
+                    id="c-13"
+                    placeholder="Кем выдан"
+                  />
+                </div>
+                <div class="date_code">
+                  <input
+                    type="text"
+                    class="input_ps"
+                    id="c-14"
+                    placeholder="Дата выдачи"
+                  />
+                  <input
+                    type="text"
+                    class="input_ps"
+                    id="c-15"
+                    placeholder="Действует до"
+                  />
+                </div>
               </div>
-              <div class="whereps">
-                <input
-                  type="text"
-                  class="input_ps"
-                  id="c-13"
-                  placeholder="Кем выдан"
-                />
-              </div>
-              <div class="date_code">
-                <input
-                  type="text"
-                  class="input_ps"
-                  id="c-14"
-                  placeholder="Дата выдачи"
-                />
-                <input
-                  type="text"
-                  class="input_ps"
-                  id="c-15"
-                  placeholder="Действует до"
-                />
+              <div id="buttonPass">
+                <button onclick="showInputs()" class="add-passport">Есть</button>
+                <button onclick="hideInputs()" class="add-passport">
+                  Отсутствует
+                </button>
               </div>
             </div>
           </td>

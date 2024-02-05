@@ -99,6 +99,7 @@ function populateRelativesData(tableId) {
   }
 }
 
+
 populateEducationData('education-table');
 populateEducationData('attestation-table');
 populateEducationData('qualification-table');

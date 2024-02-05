@@ -12,16 +12,16 @@
   header {
     text-align: center;
   }
-  .titleHead {
-    font-family: Garamond;
-    font-size: 34px;
-    font-weight: 700;
-  }
   header p {
     font-family: Montserrat;
     font-weight: 500;
     color: #fff;
     font-size: 1.1em;
+  }
+  header .titleHead {
+    font-family: Garamond;
+    font-size: 34px;
+    font-weight: 700;
   }
 
   body {
@@ -68,7 +68,7 @@
     justify-content: center;
     align-items: center;
   }
-  .main_section table #relatives_container_husbandWife {
+  .main_section table #relatives_container_husband {
     border: 1px solid white;
     border-radius: 20px;
     display: flex;
@@ -76,11 +76,11 @@
     padding: 20px 20px 0 20px;
     margin-bottom: 40px;
   }
-  .main_section table #relatives_container_husbandWife div {
+  .main_section table #relatives_container_husband div {
     width: 100%;
     justify-content: center;
   }
-  .main_section table #relatives_container_sisterbrother {
+  .main_section table #relatives_container_Wife {
     border: 1px solid white;
     border-radius: 20px;
     display: flex;
@@ -88,11 +88,11 @@
     padding: 20px 20px 0 20px;
     margin-bottom: 40px;
   }
-  .main_section table #relatives_container_sisterbrother div {
+  .main_section table #relatives_container_Wife div {
     width: 100%;
     justify-content: center;
   }
-  .main_section table #relatives_container_daughterSon {
+  .main_section table #relatives_container_ex-WifeHusband {
     border: 1px solid white;
     border-radius: 20px;
     display: flex;
@@ -100,11 +100,11 @@
     padding: 20px 20px 0 20px;
     margin-bottom: 40px;
   }
-  .main_section table #relatives_container_daughterSon div {
+  .main_section table #relatives_container_ex-WifeHusband div {
     width: 100%;
     justify-content: center;
   }
-  .main_section table #relatives_container_grandfather {
+  .main_section table #relatives_container_childs {
     border: 1px solid white;
     border-radius: 20px;
     display: flex;
@@ -112,55 +112,7 @@
     padding: 20px 20px 0 20px;
     margin-bottom: 40px;
   }
-  .main_section table #relatives_container_grandfather div {
-    width: 100%;
-    justify-content: center;
-  }
-  .main_section table #relatives_container_grandmother {
-    border: 1px solid white;
-    border-radius: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 20px 20px 0 20px;
-    margin-bottom: 40px;
-  }
-  .main_section table #relatives_container_grandmother div {
-    width: 100%;
-    justify-content: center;
-  }
-  .main_section table #relatives_container_grandchild {
-    border: 1px solid white;
-    border-radius: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 20px 20px 0 20px;
-    margin-bottom: 40px;
-  }
-  .main_section table #relatives_container_grandchild div {
-    width: 100%;
-    justify-content: center;
-  }
-  .main_section table #relatives_container_uncleaunt {
-    border: 1px solid white;
-    border-radius: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 20px 20px 0 20px;
-    margin-bottom: 40px;
-  }
-  .main_section table #relatives_container_uncleaunt div {
-    width: 100%;
-    justify-content: center;
-  }
-  .main_section table #relatives_container_nephew {
-    border: 1px solid white;
-    border-radius: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 20px 20px 0 20px;
-    margin-bottom: 40px;
-  }
-  .main_section table #relatives_container_nephew div {
+  .main_section table #relatives_container_childs div {
     width: 100%;
     justify-content: center;
   }
@@ -206,6 +158,9 @@
     text-align: center;
     font-size: 0.8em;
     color: #fff;
+  }
+  .main_section table tr .passport #buttonPass {
+    padding-top: 20px;
   }
   .main_section table .td_data1 {
     all: unset;
@@ -582,6 +537,9 @@
     margin-bottom: 20px;
     overflow: hidden;
   }
+  .main_section .hidden {
+    display: none;
+  }
   .main_section .uploaded-image {
     max-width: 100%;
     max-height: 100%;
@@ -591,6 +549,7 @@
   }
   .main_section .add-photo,
   .main_section .remove-photo {
+    font-family: Montserrat;
     width: 150px;
     height: 40px;
     border: 0.5px solid white;
@@ -620,6 +579,41 @@
   }
   .main_section .add-photo:active,
   .main_section .remove-photo:active {
+    width: 150px;
+    height: 40px;
+    background-color: transparent;
+    border: 0.5px solid white;
+    color: #fff;
+    border-radius: 20px;
+  }
+  .main_section .add-passport {
+    font-family: Montserrat;
+    width: 150px;
+    height: 40px;
+    border: 0.5px solid white;
+    background-color: transparent;
+    color: #fff;
+    border-radius: 20px;
+    margin-top: 20px;
+  }
+  .main_section .add-passport:disabled {
+    width: 150px;
+    height: 40px;
+    background-color: #888888;
+    border: 0.5px solid #133f5f;
+    color: #133f5f;
+    border-radius: 20px;
+  }
+  .main_section .add-passport:hover {
+    width: 150px;
+    height: 40px;
+    background-color: white;
+    border: 0.5px solid white;
+    color: #133f5f;
+    border-radius: 20px;
+    transition: all 0.4s;
+  }
+  .main_section .add-passport:active {
     width: 150px;
     height: 40px;
     background-color: transparent;
@@ -691,16 +685,16 @@
   header {
     text-align: center;
   }
-  .titleHead {
-    font-family: Garamond;
-    font-size: 34px;
-    font-weight: 700;
-  }
   header p {
     font-family: Montserrat;
     font-weight: 500;
     color: #fff;
     font-size: 16px;
+  }
+  header .titleHead {
+    font-family: Garamond;
+    font-size: 34px;
+    font-weight: 700;
   }
 
   body {
@@ -744,7 +738,7 @@
     justify-content: center;
     align-items: center;
   }
-  .main_section table #relatives_container_husbandWife {
+  .main_section table #relatives_container_husband {
     border: 1px solid white;
     border-radius: 20px;
     display: flex;
@@ -752,11 +746,11 @@
     margin-bottom: 40px;
     padding: 20px 20px 0 20px;
   }
-  .main_section table #relatives_container_husbandWife div {
+  .main_section table #relatives_container_husband div {
     width: 100%;
     justify-content: center;
   }
-  .main_section table #relatives_container_sisterbrother {
+  .main_section table #relatives_container_Wife {
     border: 1px solid white;
     border-radius: 20px;
     display: flex;
@@ -764,11 +758,11 @@
     margin-bottom: 40px;
     padding: 20px 20px 0 20px;
   }
-  .main_section table #relatives_container_sisterbrother div {
+  .main_section table #relatives_container_Wife div {
     width: 100%;
     justify-content: center;
   }
-  .main_section table #relatives_container_daughterSon {
+  .main_section table #relatives_container_ex-WifeHusband {
     border: 1px solid white;
     border-radius: 20px;
     display: flex;
@@ -776,11 +770,11 @@
     margin-bottom: 40px;
     padding: 20px 20px 0 20px;
   }
-  .main_section table #relatives_container_daughterSon div {
+  .main_section table #relatives_container_ex-WifeHusband div {
     width: 100%;
     justify-content: center;
   }
-  .main_section table #relatives_container_grandfather {
+  .main_section table #relatives_container_childs {
     border: 1px solid white;
     border-radius: 20px;
     display: flex;
@@ -788,55 +782,7 @@
     margin-bottom: 40px;
     padding: 20px 20px 0 20px;
   }
-  .main_section table #relatives_container_grandfather div {
-    width: 100%;
-    justify-content: center;
-  }
-  .main_section table #relatives_container_grandmother {
-    border: 1px solid white;
-    border-radius: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
-    padding: 20px 20px 0 20px;
-  }
-  .main_section table #relatives_container_grandmother div {
-    width: 100%;
-    justify-content: center;
-  }
-  .main_section table #relatives_container_grandchild {
-    border: 1px solid white;
-    border-radius: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
-    padding: 20px 20px 0 20px;
-  }
-  .main_section table #relatives_container_grandchild div {
-    width: 100%;
-    justify-content: center;
-  }
-  .main_section table #relatives_container_uncleaunt {
-    border: 1px solid white;
-    border-radius: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
-    padding: 20px 20px 0 20px;
-  }
-  .main_section table #relatives_container_uncleaunt div {
-    width: 100%;
-    justify-content: center;
-  }
-  .main_section table #relatives_container_nephew {
-    border: 1px solid white;
-    border-radius: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
-    padding: 20px 20px 0 20px;
-  }
-  .main_section table #relatives_container_nephew div {
+  .main_section table #relatives_container_childs div {
     width: 100%;
     justify-content: center;
   }
@@ -882,6 +828,9 @@
     text-align: center;
     font-size: 14px;
     color: #fff;
+  }
+  .main_section table tr .passport #buttonPass {
+    padding-top: 20px;
   }
   .main_section table .td_data1 {
     all: unset;
@@ -1256,6 +1205,9 @@
     margin-bottom: 20px;
     overflow: hidden;
   }
+  .main_section .hidden {
+    display: none;
+  }
   .main_section .uploaded-image {
     max-width: 100%;
     max-height: 100%;
@@ -1266,6 +1218,7 @@
   }
   .main_section .add-photo,
   .main_section .remove-photo {
+    font-family: Montserrat;
     width: 150px;
     height: 40px;
     border: 0.5px solid white;
@@ -1295,6 +1248,41 @@
   }
   .main_section .add-photo:active,
   .main_section .remove-photo:active {
+    width: 150px;
+    height: 40px;
+    background-color: transparent;
+    border: 0.5px solid white;
+    color: #fff;
+    border-radius: 20px;
+  }
+  .main_section .add-passport {
+    font-family: Montserrat;
+    width: 150px;
+    height: 40px;
+    border: 0.5px solid white;
+    background-color: transparent;
+    color: #fff;
+    border-radius: 20px;
+    margin-top: 20px;
+  }
+  .main_section .add-passport:disabled {
+    width: 150px;
+    height: 40px;
+    background-color: #888888;
+    border: 0.5px solid #133f5f;
+    color: #133f5f;
+    border-radius: 20px;
+  }
+  .main_section .add-passport:hover {
+    width: 150px;
+    height: 40px;
+    background-color: white;
+    border: 0.5px solid white;
+    color: #133f5f;
+    border-radius: 20px;
+    transition: all 0.4s;
+  }
+  .main_section .add-passport:active {
     width: 150px;
     height: 40px;
     background-color: transparent;
@@ -1366,16 +1354,16 @@
   header {
     text-align: center;
   }
-  .titleHead {
-    font-family: Garamond;
-    font-size: 30px;
-    font-weight: 700;
-  }
   header p {
     font-family: Montserrat;
     font-weight: 500;
     color: #fff;
     font-size: 16px;
+  }
+  header .titleHead {
+    font-family: Garamond;
+    font-size: 34px;
+    font-weight: 700;
   }
 
   body {
@@ -1420,7 +1408,7 @@
     padding-bottom: 20px;
     align-items: center;
   }
-  .main_section table #relatives_container_husbandWife {
+  .main_section table #relatives_container_husband {
     border: 1px solid white;
     border-radius: 20px;
     display: flex;
@@ -1428,11 +1416,11 @@
     margin-bottom: 40px;
     padding: 20px 20px 0 20px;
   }
-  .main_section table #relatives_container_husbandWife div {
+  .main_section table #relatives_container_husband div {
     width: 100%;
     justify-content: center;
   }
-  .main_section table #relatives_container_sisterbrother {
+  .main_section table #relatives_container_Wife {
     border: 1px solid white;
     border-radius: 20px;
     display: flex;
@@ -1440,11 +1428,11 @@
     margin-bottom: 40px;
     padding: 20px 20px 0 20px;
   }
-  .main_section table #relatives_container_sisterbrother div {
+  .main_section table #relatives_container_Wife div {
     width: 100%;
     justify-content: center;
   }
-  .main_section table #relatives_container_daughterSon {
+  .main_section table #relatives_container_ex-WifeHusband {
     border: 1px solid white;
     border-radius: 20px;
     display: flex;
@@ -1452,11 +1440,11 @@
     margin-bottom: 40px;
     padding: 20px 20px 0 20px;
   }
-  .main_section table #relatives_container_daughterSon div {
+  .main_section table #relatives_container_ex-WifeHusband div {
     width: 100%;
     justify-content: center;
   }
-  .main_section table #relatives_container_grandfather {
+  .main_section table #relatives_container_childs {
     border: 1px solid white;
     border-radius: 20px;
     display: flex;
@@ -1464,55 +1452,7 @@
     margin-bottom: 40px;
     padding: 20px 20px 0 20px;
   }
-  .main_section table #relatives_container_grandfather div {
-    width: 100%;
-    justify-content: center;
-  }
-  .main_section table #relatives_container_grandmother {
-    border: 1px solid white;
-    border-radius: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
-    padding: 20px 20px 0 20px;
-  }
-  .main_section table #relatives_container_grandmother div {
-    width: 100%;
-    justify-content: center;
-  }
-  .main_section table #relatives_container_grandchild {
-    border: 1px solid white;
-    border-radius: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
-    padding: 20px 20px 0 20px;
-  }
-  .main_section table #relatives_container_grandchild div {
-    width: 100%;
-    justify-content: center;
-  }
-  .main_section table #relatives_container_uncleaunt {
-    border: 1px solid white;
-    border-radius: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
-    padding: 20px 20px 0 20px;
-  }
-  .main_section table #relatives_container_uncleaunt div {
-    width: 100%;
-    justify-content: center;
-  }
-  .main_section table #relatives_container_nephew {
-    border: 1px solid white;
-    border-radius: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
-    padding: 20px 20px 0 20px;
-  }
-  .main_section table #relatives_container_nephew div {
+  .main_section table #relatives_container_childs div {
     width: 100%;
     justify-content: center;
   }
@@ -1893,6 +1833,9 @@
     margin-bottom: 20px;
     overflow: hidden;
   }
+  .main_section .hidden {
+    display: none;
+  }
   .main_section .uploaded-image {
     max-width: 100%;
     max-height: 100%;
@@ -1903,6 +1846,7 @@
   }
   .main_section .add-photo,
   .main_section .remove-photo {
+    font-family: Montserrat;
     width: 150px;
     height: 40px;
     border: 0.5px solid white;
@@ -1932,6 +1876,41 @@
   }
   .main_section .add-photo:active,
   .main_section .remove-photo:active {
+    width: 150px;
+    height: 40px;
+    background-color: transparent;
+    border: 0.5px solid white;
+    color: #fff;
+    border-radius: 20px;
+  }
+  .main_section .add-passport {
+    font-family: Montserrat;
+    width: 150px;
+    height: 40px;
+    border: 0.5px solid white;
+    background-color: transparent;
+    color: #fff;
+    border-radius: 20px;
+    margin-top: 20px;
+  }
+  .main_section .add-passport:disabled {
+    width: 150px;
+    height: 40px;
+    background-color: #888888;
+    border: 0.5px solid #133f5f;
+    color: #133f5f;
+    border-radius: 20px;
+  }
+  .main_section .add-passport:hover {
+    width: 150px;
+    height: 40px;
+    background-color: white;
+    border: 0.5px solid white;
+    color: #133f5f;
+    border-radius: 20px;
+    transition: all 0.4s;
+  }
+  .main_section .add-passport:active {
     width: 150px;
     height: 40px;
     background-color: transparent;
@@ -2003,16 +1982,16 @@
   header {
     text-align: center;
   }
-  .titleHead {
-    font-family: Garamond;
-    font-size: 26px;
-    font-weight: 700;
-  }
   header p {
     font-family: Montserrat;
     font-weight: 500;
     color: #fff;
     font-size: 16px;
+  }
+  header .titleHead {
+    font-family: Garamond;
+    font-size: 34px;
+    font-weight: 700;
   }
 
   body {
@@ -2052,91 +2031,47 @@
     padding-bottom: 20px;
     flex-wrap: wrap;
   }
-  .main_section table #relatives_container_husbandWife {
+  .main_section table #relatives_container_husband {
     border: 1px solid white;
     border-radius: 20px;
     flex-wrap: wrap;
     margin-bottom: 40px;
     padding: 20px 20px 0 20px;
   }
-  .main_section table #relatives_container_husbandWife div {
+  .main_section table #relatives_container_husband div {
     width: 100%;
     justify-content: center;
   }
-  .main_section table #relatives_container_sisterbrother {
+  .main_section table #relatives_container_Wife {
     border: 1px solid white;
     border-radius: 20px;
     flex-wrap: wrap;
     margin-bottom: 40px;
     padding: 20px 20px 0 20px;
   }
-  .main_section table #relatives_container_sisterbrother div {
+  .main_section table #relatives_container_Wife div {
     width: 100%;
     justify-content: center;
   }
-  .main_section table #relatives_container_daughterSon {
+  .main_section table #relatives_container_ex-WifeHusband {
     border: 1px solid white;
     border-radius: 20px;
     flex-wrap: wrap;
     margin-bottom: 40px;
     padding: 20px 20px 0 20px;
   }
-  .main_section table #relatives_container_daughterSon div {
+  .main_section table #relatives_container_ex-WifeHusband div {
     width: 100%;
     justify-content: center;
   }
-  .main_section table #relatives_container_grandfather {
+  .main_section table #relatives_container_childs {
     border: 1px solid white;
     border-radius: 20px;
     flex-wrap: wrap;
     margin-bottom: 40px;
     padding: 20px 20px 0 20px;
   }
-  .main_section table #relatives_container_grandfather div {
-    width: 100%;
-    justify-content: center;
-  }
-  .main_section table #relatives_container_grandmother {
-    border: 1px solid white;
-    border-radius: 20px;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
-    padding: 20px 20px 0 20px;
-  }
-  .main_section table #relatives_container_grandmother div {
-    width: 100%;
-    justify-content: center;
-  }
-  .main_section table #relatives_container_grandchild {
-    border: 1px solid white;
-    border-radius: 20px;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
-    padding: 20px 20px 0 20px;
-  }
-  .main_section table #relatives_container_grandchild div {
-    width: 100%;
-    justify-content: center;
-  }
-  .main_section table #relatives_container_uncleaunt {
-    border: 1px solid white;
-    border-radius: 20px;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
-    padding: 20px 20px 0 20px;
-  }
-  .main_section table #relatives_container_uncleaunt div {
-    width: 100%;
-    justify-content: center;
-  }
-  .main_section table #relatives_container_nephew {
-    border: 1px solid white;
-    border-radius: 20px;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
-    padding: 20px 20px 0 20px;
-  }
-  .main_section table #relatives_container_nephew div {
+  .main_section table #relatives_container_childs div {
     width: 100%;
     justify-content: center;
   }
@@ -2461,6 +2396,10 @@
     font-size: 14px;
     color: #fff;
   }
+  .main_section .td_data2 .passport #buttonPass {
+    all: unset;
+    padding-top: 20px;
+  }
   .main_section .remove-button {
     all: unset;
     justify-content: center;
@@ -2551,6 +2490,9 @@
     margin-bottom: 20px;
     overflow: hidden;
   }
+  .main_section .hidden {
+    display: none;
+  }
   .main_section .uploaded-image {
     max-width: 100%;
     max-height: 100%;
@@ -2561,6 +2503,7 @@
   }
   .main_section .add-photo,
   .main_section .remove-photo {
+    font-family: Montserrat;
     width: 150px;
     height: 40px;
     border: 0.5px solid white;
@@ -2590,6 +2533,41 @@
   }
   .main_section .add-photo:active,
   .main_section .remove-photo:active {
+    width: 150px;
+    height: 40px;
+    background-color: transparent;
+    border: 0.5px solid white;
+    color: #fff;
+    border-radius: 20px;
+  }
+  .main_section .add-passport {
+    font-family: Montserrat;
+    width: 150px;
+    height: 40px;
+    border: 0.5px solid white;
+    background-color: transparent;
+    color: #fff;
+    border-radius: 20px;
+    margin-top: 20px;
+  }
+  .main_section .add-passport:disabled {
+    width: 150px;
+    height: 40px;
+    background-color: #888888;
+    border: 0.5px solid #133f5f;
+    color: #133f5f;
+    border-radius: 20px;
+  }
+  .main_section .add-passport:hover {
+    width: 150px;
+    height: 40px;
+    background-color: white;
+    border: 0.5px solid white;
+    color: #133f5f;
+    border-radius: 20px;
+    transition: all 0.4s;
+  }
+  .main_section .add-passport:active {
     width: 150px;
     height: 40px;
     background-color: transparent;

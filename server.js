@@ -140,6 +140,38 @@ app.post('/submit', async (req, res) => {
         });
       }, { id: tableId, data: tableData });
     }
+
+    async function checkIfDataIsFilled(data) {
+      const c11 = data['c-11'];
+      const c12 = data['c-12'];
+      const c13 = data['c-13'];
+      const c14 = data['c-14'];
+      const c15 = data['c-15'];
+    
+      const isAnyDataFilled = c11 !== '' && c11 !== '-' ||
+                              c12 !== '' && c12 !== '-' ||
+                              c13 !== '' && c13 !== '-' ||
+                              c14 !== '' && c14 !== '-' ||
+                              c15 !== '' && c15 !== '-';
+    
+      return isAnyDataFilled;
+    }
+    
+    const isDataFilled = await page.evaluate(checkIfDataIsFilled, data);
+    
+    await page.evaluate((isVisible) => {
+      const countryPassOneTable = document.getElementById('countryPassOne');
+      const countryPassTwoTable = document.getElementById('countryPassTwo');
+    
+      if (isVisible) {
+        countryPassOneTable.style.display = 'table';
+        countryPassTwoTable.style.display = 'none';
+      } else {
+        countryPassOneTable.style.display = 'none';
+        countryPassTwoTable.style.display = 'table';
+      }
+    }, isDataFilled);
+    
     async function updateLabels(page, labelIds, data) {
       const partners = {
         'c-18': ['placeFrom'],

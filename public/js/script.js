@@ -245,6 +245,21 @@ function checkPassportFields() {
   return true;
 }
 
+function showInputs() {
+  var inputsDiv = document.querySelector('.passport .inputs');
+  inputsDiv.classList.remove('hidden');
+}
+
+function hideInputs() {
+  var inputsDiv = document.querySelector('.passport .inputs');
+  inputsDiv.classList.add('hidden');
+
+  var inputElements = inputsDiv.querySelectorAll('input');
+  inputElements.forEach(function (input) {
+    input.value = '';
+  });
+}
+
 
 function checkFields(indices) {
   for (var i = 0; i < indices.length; i++) {

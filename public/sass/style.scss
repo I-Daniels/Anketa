@@ -97,32 +97,16 @@ $color: #fff;
         }
       }
 
-      #relatives_container_husbandWife {
+      #relatives_container_husband {
         @include relatives-container-styles;
       }
-
-      #relatives_container_sisterbrother {
+      #relatives_container_Wife {
         @include relatives-container-styles;
       }
-      #relatives_container_daughterSon {
+      #relatives_container_ex-WifeHusband {
         @include relatives-container-styles;
       }
-
-      #relatives_container_grandfather {
-        @include relatives-container-styles;
-      }
-      #relatives_container_grandmother {
-        @include relatives-container-styles;
-      }
-
-      #relatives_container_grandchild {
-        @include relatives-container-styles;
-      }
-      #relatives_container_uncleaunt {
-        @include relatives-container-styles;
-      }
-
-      #relatives_container_nephew {
+      #relatives_container_childs {
         @include relatives-container-styles;
       }
 
@@ -174,6 +158,10 @@ $color: #fff;
             text-align: center;
             font-size: 0.8em;
             color: $color;
+          }
+          
+          #buttonPass {
+            padding-top: 20px;
           }
         }
       }
@@ -608,6 +596,10 @@ $color: #fff;
       overflow: hidden;
     }
 
+    .hidden {
+      display: none;
+    }
+
     .uploaded-image {
       max-width: 100%;
       max-height: 100%;
@@ -618,6 +610,7 @@ $color: #fff;
 
     .add-photo,
     .remove-photo {
+      font-family: $font;
       width: 150px;
       height: 40px;
       border: 0.5px solid white;
@@ -625,6 +618,45 @@ $color: #fff;
       color: $color;
       border-radius: 20px;
       margin-bottom: 10px;
+
+      &:disabled {
+        width: 150px;
+        height: 40px;
+        background-color: rgb(136, 136, 136);
+        border: 0.5px solid $background-color;
+        color: $background-color;
+        border-radius: 20px;
+      }
+
+      &:hover {
+        width: 150px;
+        height: 40px;
+        background-color: white;
+        border: 0.5px solid white;
+        color: $background-color;
+        border-radius: 20px;
+        transition: all 0.4s;
+      }
+
+      &:active {
+        width: 150px;
+        height: 40px;
+        background-color: transparent;
+        border: 0.5px solid white;
+        color: $color;
+        border-radius: 20px;
+      }
+    }
+
+    .add-passport {
+      font-family: $font;
+      width: 150px;
+      height: 40px;
+      border: 0.5px solid white;
+      background-color: transparent;
+      color: $color;
+      border-radius: 20px;
+      margin-top: 20px;
 
       &:disabled {
         width: 150px;
@@ -799,34 +831,19 @@ $color: #fff;
         }
       }
 
-      #relatives_container_husbandWife {
+      #relatives_container_husband {
+        @include relatives-container-styles;
+      }
+      #relatives_container_Wife {
+        @include relatives-container-styles;
+      }
+      #relatives_container_ex-WifeHusband {
+        @include relatives-container-styles;
+      }
+      #relatives_container_childs {
         @include relatives-container-styles;
       }
 
-      #relatives_container_sisterbrother {
-        @include relatives-container-styles;
-      }
-      #relatives_container_daughterSon {
-        @include relatives-container-styles;
-      }
-
-      #relatives_container_grandfather {
-        @include relatives-container-styles;
-      }
-      #relatives_container_grandmother {
-        @include relatives-container-styles;
-      }
-
-      #relatives_container_grandchild {
-        @include relatives-container-styles;
-      }
-      #relatives_container_uncleaunt {
-        @include relatives-container-styles;
-      }
-
-      #relatives_container_nephew {
-        @include relatives-container-styles;
-      }
 
       tr {
         div {
@@ -876,6 +893,10 @@ $color: #fff;
             text-align: center;
             font-size: 14px;
             color: $color;
+          }
+
+          #buttonPass {
+            padding-top: 20px;
           }
         }
       }
@@ -1306,6 +1327,10 @@ $color: #fff;
       margin-bottom: 20px;
       overflow: hidden;
     }
+    
+    .hidden {
+      display: none;
+    }
 
     .uploaded-image {
       max-width: 100%;
@@ -1318,6 +1343,7 @@ $color: #fff;
 
     .add-photo,
     .remove-photo {
+      font-family: $font;
       width: 150px;
       height: 40px;
       border: 0.5px solid white;
@@ -1325,6 +1351,45 @@ $color: #fff;
       color: $color;
       border-radius: 20px;
       margin-bottom: 10px;
+
+      &:disabled {
+        width: 150px;
+        height: 40px;
+        background-color: rgb(136, 136, 136);
+        border: 0.5px solid $background-color;
+        color: $background-color;
+        border-radius: 20px;
+      }
+
+      &:hover {
+        width: 150px;
+        height: 40px;
+        background-color: white;
+        border: 0.5px solid white;
+        color: $background-color;
+        border-radius: 20px;
+        transition: all 0.4s;
+      }
+
+      &:active {
+        width: 150px;
+        height: 40px;
+        background-color: transparent;
+        border: 0.5px solid white;
+        color: $color;
+        border-radius: 20px;
+      }
+    }
+
+    .add-passport {
+      font-family: $font;
+      width: 150px;
+      height: 40px;
+      border: 0.5px solid white;
+      background-color: transparent;
+      color: $color;
+      border-radius: 20px;
+      margin-top: 20px;
 
       &:disabled {
         width: 150px;
@@ -1498,34 +1563,19 @@ $color: #fff;
         }
       }
 
-      #relatives_container_husbandWife {
+      #relatives_container_husband {
+        @include relatives-container-styles;
+      }
+      #relatives_container_Wife {
+        @include relatives-container-styles;
+      }
+      #relatives_container_ex-WifeHusband {
+        @include relatives-container-styles;
+      }
+      #relatives_container_childs {
         @include relatives-container-styles;
       }
 
-      #relatives_container_sisterbrother {
-        @include relatives-container-styles;
-      }
-      #relatives_container_daughterSon {
-        @include relatives-container-styles;
-      }
-
-      #relatives_container_grandfather {
-        @include relatives-container-styles;
-      }
-      #relatives_container_grandmother {
-        @include relatives-container-styles;
-      }
-
-      #relatives_container_grandchild {
-        @include relatives-container-styles;
-      }
-      #relatives_container_uncleaunt {
-        @include relatives-container-styles;
-      }
-
-      #relatives_container_nephew {
-        @include relatives-container-styles;
-      }
 
       tr {
         div {
@@ -1956,6 +2006,10 @@ $color: #fff;
       overflow: hidden;
     }
 
+    .hidden {
+      display: none;
+    }
+
     .uploaded-image {
       max-width: 100%;
       max-height: 100%;
@@ -1967,6 +2021,7 @@ $color: #fff;
 
     .add-photo,
     .remove-photo {
+      font-family: $font;
       width: 150px;
       height: 40px;
       border: 0.5px solid white;
@@ -1974,6 +2029,44 @@ $color: #fff;
       color: $color;
       border-radius: 20px;
       margin-bottom: 10px;
+
+      &:disabled {
+        width: 150px;
+        height: 40px;
+        background-color: rgb(136, 136, 136);
+        border: 0.5px solid $background-color;
+        color: $background-color;
+        border-radius: 20px;
+      }
+
+      &:hover {
+        width: 150px;
+        height: 40px;
+        background-color: white;
+        border: 0.5px solid white;
+        color: $background-color;
+        border-radius: 20px;
+        transition: all 0.4s;
+      }
+
+      &:active {
+        width: 150px;
+        height: 40px;
+        background-color: transparent;
+        border: 0.5px solid white;
+        color: $color;
+        border-radius: 20px;
+      }
+    }
+    .add-passport {
+      font-family: $font;
+      width: 150px;
+      height: 40px;
+      border: 0.5px solid white;
+      background-color: transparent;
+      color: $color;
+      border-radius: 20px;
+      margin-top: 20px;
 
       &:disabled {
         width: 150px;
@@ -2145,34 +2238,19 @@ $color: #fff;
         }
       }
 
-      #relatives_container_husbandWife {
+      #relatives_container_husband {
+        @include relatives-container-styles;
+      }
+      #relatives_container_Wife {
+        @include relatives-container-styles;
+      }
+      #relatives_container_ex-WifeHusband {
+        @include relatives-container-styles;
+      }
+      #relatives_container_childs {
         @include relatives-container-styles;
       }
 
-      #relatives_container_sisterbrother {
-        @include relatives-container-styles;
-      }
-      #relatives_container_daughterSon {
-        @include relatives-container-styles;
-      }
-
-      #relatives_container_grandfather {
-        @include relatives-container-styles;
-      }
-      #relatives_container_grandmother {
-        @include relatives-container-styles;
-      }
-
-      #relatives_container_grandchild {
-        @include relatives-container-styles;
-      }
-      #relatives_container_uncleaunt {
-        @include relatives-container-styles;
-      }
-
-      #relatives_container_nephew {
-        @include relatives-container-styles;
-      }
     }
 
     .holder {
@@ -2537,6 +2615,10 @@ $color: #fff;
           font-size: 14px;
           color: $color;
         }
+        #buttonPass {
+          all: unset;
+          padding-top: 20px;
+        }
       }
     }
 
@@ -2644,6 +2726,10 @@ $color: #fff;
       overflow: hidden;
     }
 
+    .hidden {
+      display: none;
+    }
+
     .uploaded-image {
       max-width: 100%;
       max-height: 100%;
@@ -2655,6 +2741,7 @@ $color: #fff;
 
     .add-photo,
     .remove-photo {
+      font-family: $font;
       width: 150px;
       height: 40px;
       border: 0.5px solid white;
@@ -2662,6 +2749,45 @@ $color: #fff;
       color: $color;
       border-radius: 20px;
       margin-bottom: 10px;
+
+      &:disabled {
+        width: 150px;
+        height: 40px;
+        background-color: rgb(136, 136, 136);
+        border: 0.5px solid $background-color;
+        color: $background-color;
+        border-radius: 20px;
+      }
+
+      &:hover {
+        width: 150px;
+        height: 40px;
+        background-color: white;
+        border: 0.5px solid white;
+        color: $background-color;
+        border-radius: 20px;
+        transition: all 0.4s;
+      }
+
+      &:active {
+        width: 150px;
+        height: 40px;
+        background-color: transparent;
+        border: 0.5px solid white;
+        color: $color;
+        border-radius: 20px;
+      }
+    }
+
+    .add-passport {
+      font-family: $font;
+      width: 150px;
+      height: 40px;
+      border: 0.5px solid white;
+      background-color: transparent;
+      color: $color;
+      border-radius: 20px;
+      margin-top: 20px;
 
       &:disabled {
         width: 150px;

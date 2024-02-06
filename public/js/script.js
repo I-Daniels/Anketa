@@ -338,6 +338,10 @@ async function sendButtonClicked() {
         sendLanguage();
         redirectCategoryPeople();
 
+        const button = document.getElementById('buttonDownload');
+        button.innerText = '';
+        button.classList.add('loading');
+
         for (const index in uploadedImages) {
           const imageData = uploadedImages[index].imageData;
           const file = uploadedImages[index].file;
@@ -478,6 +482,10 @@ function sendDataToServer(
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
+
+        button.innerText = 'Скачать результаты';
+
+        button.classList.remove('loading');
       })
       .catch((error) => console.error("Error in fetch:", error));
   } catch (error) {

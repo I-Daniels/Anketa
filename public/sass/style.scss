@@ -6,6 +6,11 @@ $font: Montserrat;
 $font2: EB + Garamond;
 $color: #fff;
 
+
+.invalid-input {
+  box-shadow: 0 4px 4px -2px red;
+  transition: box-shadow 0.3s ease;
+}
 // ----------------------------------
 
 @media only screen and (min-width: 1440px) {

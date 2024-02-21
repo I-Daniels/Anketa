@@ -219,30 +219,58 @@ function checkIfPhotosUploaded() {
 }
 
 function checkNameFields() {
-  var lastName = document.getElementById("i-1").value;
-  var firstName = document.getElementById("i-2").value;
+  var lastNameInput = document.getElementById("i-1");
+  var firstNameInput = document.getElementById("i-2");
+
+  var lastName = lastNameInput.value.trim();
+  var firstName = firstNameInput.value.trim();
 
   if (!lastName || !firstName) {
-    alert("Вы не ввели Имя и/или Фамилию");
+    if (!lastName) {
+      lastNameInput.classList.add("invalid-input");
+      lastNameInput.scrollIntoView({ behavior: "smooth", block: "center" });
+    } else {
+      lastNameInput.classList.remove("invalid-input");
+    }
+    if (!firstName) {
+      firstNameInput.classList.add("invalid-input");
+      firstNameInput.scrollIntoView({ behavior: "smooth", block: "center" });
+    } else {
+      firstNameInput.classList.remove("invalid-input");
+    }
     return false;
   }
 
   return true;
 }
+document.querySelectorAll('input, textarea').forEach(function(element) {
+  element.addEventListener('input', function() {
+    if (!this.value.trim()) {
+      this.classList.add('invalid-input');
+    } else {
+      this.classList.remove('invalid-input');
+    }
+  });
+});
 
 function checkPassportFields() {
   var passportFieldsToCheck = [6, 7, 8, 9, 10];
+  var isValid = true;
 
-  for (var i = 0; i < passportFieldsToCheck.length; i++) {
-    var fieldValue = document.getElementById('c-' + passportFieldsToCheck[i]).value;
+  passportFieldsToCheck.forEach(function (fieldIndex) {
+    var fieldValue = document.getElementById('c-' + fieldIndex).value.trim();
+    var fieldInput = document.getElementById('c-' + fieldIndex);
 
     if (!fieldValue) {
-      alert("Вы не заполнили данные паспорта");
-      return false;
+      fieldInput.classList.add("invalid-input");
+      fieldInput.scrollIntoView({ behavior: "smooth", block: "center" });
+      isValid = false;
+    } else {
+      fieldInput.classList.remove("invalid-input");
     }
-  }
+  });
 
-  return true;
+  return isValid;
 }
 
 function showInputs() {
@@ -262,17 +290,26 @@ function hideInputs() {
 
 
 function checkFields(indices) {
+  var isValid = true;
+
   for (var i = 0; i < indices.length; i++) {
-    var fieldValue = document.getElementById('c-' + indices[i]).value;
+    var fieldId = 'c-' + indices[i];
+    var fieldValue = document.getElementById(fieldId).value.trim();
+    var fieldInput = document.getElementById(fieldId);
 
     if (!fieldValue) {
-      alert("Не все обязательные поля заполнены");
-      return false;
+      fieldInput.classList.add("invalid-input");
+      fieldInput.scrollIntoView({ behavior: "smooth", block: "center" });
+      isValid = false;
+    } else {
+      fieldInput.classList.remove("invalid-input");
     }
   }
 
-  return true;
+  return isValid;
 }
+
+
 var fieldsToCheck = [1, 2, 3, 4, 5, 16, 18, 19, 20, 23, 30, 31, 32];
 async function sendButtonClicked() {
   try {

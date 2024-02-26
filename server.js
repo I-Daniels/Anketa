@@ -5,6 +5,7 @@ const { chromium } = require('playwright');
 const cors = require('cors');
 const multer = require('multer');
 const path = require('path');
+const heicConvert = require('heic-convert');
 const fs = require('fs');
 const fsExtra = require('fs-extra');
 
@@ -13,12 +14,14 @@ const port = 3050;
 const globalData = {
   uploadedFiles: [],
 };
-const corsOptions = {
-  origin: 'http://anketa.daniels-it.ru',
-  optionsSuccessStatus: 200,
-};
 
-app.use(cors(corsOptions));
+// const corsOptions = {
+//   origin: 'http://anketa.daniels-it.ru',
+//   optionsSuccessStatus: 200,
+// };
+
+// app.use(cors(corsOptions));
+
 app.use(cors());
 app.use(bodyParser.json({ limit: '10mb' }));
 app.use(express.static('public'));
@@ -59,14 +62,28 @@ app.post('/upload-image', upload.array('image', 3), async (req, res) => {
       return res.status(400).json({ error: 'No image provided' });
     }
 
+    for (const image of images) {
+      const imagePath = image.path;
+      const imageFileName = image.filename;
+
+      if (path.extname(imageFileName).toLowerCase() === '.heic') {
+        const jpegImageBuffer = await heicConvert({
+          buffer: fs.readFileSync(imagePath),
+          format: 'JPEG'
+        });
+        await fs.promises.writeFile(imagePath, jpegImageBuffer);
+      }
+    }
+
     globalData.uploadedFiles.push(...images);
-    const imageUrls = images.map((image) => `/uploads/images/${userId}_${image.originalname}`);
+    const imageUrls = images.map((image) => `/uploads/images/${userId}/${image.filename}`);
     res.status(200).json({ imageUrl: imageUrls });
   } catch (error) {
     console.error('Error processing image upload:', error);
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
+
 
 app.post('/submit', async (req, res) => {
   try {

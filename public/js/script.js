@@ -313,7 +313,8 @@ function checkFields(indices) {
 var fieldsToCheck = [1, 2, 3, 4, 5, 16, 18, 19, 20, 23, 30, 31, 32];
 async function sendButtonClicked() {
   try {
-    if (!checkNameFields() || !checkFields(fieldsToCheck) || !checkPassportFields() || !checkIfPhotosUploaded()) {
+    // 
+    if (!checkNameFields() || !checkNameFields() || !checkFields(fieldsToCheck) || !checkPassportFields() || !checkIfPhotosUploaded()) {
       return;
     }
     
@@ -446,6 +447,7 @@ async function sendButtonClicked() {
     console.error("Ошибка при обработке sendButtonClicked:", error);
   }
 }
+
 
 function sendDataToServer(
   selectedLevel,
@@ -682,19 +684,46 @@ function handleSelect(inputId) {
   const files = input.files;
 
   if (files.length > 0) {
-    const reader = new FileReader();
-
-    reader.onload = function (e) {
-      const imageData = e.target.result;
-
-      addToContainer(imageData);
-    };
-
-    reader.readAsDataURL(files[0]);
+    for (const file of files) {
+      if (file.type === "image/heic") {
+        convertAndAddToContainer(file);
+      } else {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          const imageData = e.target.result;
+          addToContainer(imageData);
+        };
+        reader.readAsDataURL(file);
+      }
+    }
   }
 }
 
+async function convertToPNG(heicFile) {
+  const arrayBuffer = await heicFile.arrayBuffer();
+  const jpegData = await convert({
+    buffer: new Uint8Array(arrayBuffer),
+    format: "PNG"
+  });
+  return new Blob([jpegData], { type: "image/png" });
+}
+
 // ------------------------------------------------------------ Photos
+
+async function convertAndAddToContainer(heicFile) {
+  try {
+    const jpegBlob = await convertToPNG(heicFile);
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      const imageData = e.target.result;
+      addToContainer(imageData);
+    };
+    reader.readAsDataURL(jpegBlob);
+  } catch (error) {
+    console.error("Ошибка при конвертации HEIC в JPEG:", error);
+  }
+}
+
 
 function generateUniqueId() {
   const timestamp = new Date().getTime();

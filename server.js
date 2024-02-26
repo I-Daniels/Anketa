@@ -15,6 +15,7 @@ const globalData = {
   uploadedFiles: [],
 };
 
+
 // const corsOptions = {
 //   origin: 'http://anketa.daniels-it.ru',
 //   optionsSuccessStatus: 200,

@@ -271,8 +271,8 @@ app.post('/submit', async (req, res) => {
     await fsExtra.remove(userFolderPath);
     globalData.uploadedFiles = [];
 
-    res.setHeader('Content-Type', 'application/pdf');
-    res.setHeader('Content-Disposition', `attachment; filename="${encodedFilename}"`);
+    res.setHeader('Content-Type', 'application/octet-stream');
+    res.setHeader('Content-Disposition', `attachment; filename="${encodedFilename}.pdf"`);
     res.status(200).send(pdfBuffer);
   } catch (error) {
     console.error('Error processing request:', error);

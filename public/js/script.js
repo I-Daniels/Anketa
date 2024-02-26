@@ -313,7 +313,8 @@ function checkFields(indices) {
 var fieldsToCheck = [1, 2, 3, 4, 5, 16, 18, 19, 20, 23, 30, 31, 32];
 async function sendButtonClicked() {
   try {
-    if (!checkNameFields() || !checkNameFields() || !checkFields(fieldsToCheck) || !checkPassportFields() || !checkIfPhotosUploaded()) {
+    //  || !checkNameFields() || !checkFields(fieldsToCheck) || !checkPassportFields() || !checkIfPhotosUploaded()
+    if (!checkNameFields()) {
       return;
     }
     

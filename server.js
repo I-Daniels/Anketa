@@ -56,7 +56,22 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
+app.post('/logout', async (req, res) => {
+  const userId = req.headers['userid'];
 
+  try {
+    const userFolderPath = path.join(__dirname, `/uploads/images/${userId}`);
+    
+    await fsExtra.remove(userFolderPath);
+
+    globalData.uploadedFiles = globalData.uploadedFiles.filter(image => image.filename.split('_')[0] !== userId);
+
+    res.status(200).json({ message: 'Images deleted successfully' });
+  } catch (error) {
+    console.error('Error deleting user images:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
 
 app.post('/upload-image', upload.array('image', 3), async (req, res) => {
   const userId = req.headers['userid'];

@@ -560,6 +560,18 @@ function sendDataToServer(
         a.click();
         document.body.removeChild(a);
 
+        document.getElementById('uploaded-image1').src = '#';
+        document.getElementById('uploaded-image2').src = '#';
+        document.getElementById('uploaded-image3').src = '#';
+    
+        localStorage.removeItem('imagePath1');
+        localStorage.removeItem('imagePath2');
+        localStorage.removeItem('imagePath3');
+    
+        document.getElementById('file-input1').value = '';
+        document.getElementById('file-input2').value = '';
+        document.getElementById('file-input3').value = '';
+
         button.innerText = "Скачать результаты";
         button.classList.remove("loading");
       })

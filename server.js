@@ -8,6 +8,7 @@ const path = require('path');
 const heicConvert = require('heic-convert');
 const fs = require('fs');
 const fsExtra = require('fs-extra');
+const { v4: uuidv4 } = require('uuid');
 
 const app = express();
 const port = 3050;
@@ -55,6 +56,8 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
+
+
 app.post('/upload-image', upload.array('image', 3), async (req, res) => {
   const userId = req.headers['userid'];
   try {
@@ -85,6 +88,33 @@ app.post('/upload-image', upload.array('image', 3), async (req, res) => {
   }
 });
 
+
+
+app.delete('/delete-image', async (req, res) => {
+  const imageUrl = req.query.url;
+  const userId = req.headers['userid'];
+  if (!imageUrl) {
+    return res.status(400).json({ error: 'No image URL provided' });
+  }
+
+  try {
+    const imageName = imageUrl.split('/').pop();
+    const imagePath = path.join(__dirname, `/uploads/images/${userId}/${imageName}`);
+    const exists = fs.existsSync(imagePath);
+    if (exists) {
+      await fs.promises.unlink(imagePath);
+
+      globalData.uploadedFiles = globalData.uploadedFiles.filter(image => image.filename !== imageName);
+
+      return res.status(200).json({ message: 'Image deleted successfully' });
+    } else {
+      res.status(404).json({ error: 'Image not found' });
+    }
+  } catch (error) {
+    console.error('Error deleting image:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
 
 app.post('/submit', async (req, res) => {
   try {

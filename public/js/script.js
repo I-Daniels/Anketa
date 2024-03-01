@@ -562,10 +562,6 @@ function sendDataToServer(
 
         button.innerText = "Скачать результаты";
         button.classList.remove("loading");
-
-        setTimeout(() => {
-          window.location.reload();
-        }, 500);
       })
       .catch((error) => console.error("Error in fetch:", error));
   } catch (error) {

@@ -148,7 +148,7 @@ function updatePhotoButtonsState() {
     const addButton = document.getElementById(`add-photo${i}`);
     const removeButton = document.getElementById(`remove-photo${i}`);
     const uploadedImage = document.getElementById(`uploaded-image${i}`);
-    
+
     if (uploadedImage.src == "") {
       addButton.disabled = true;
       addButton.setAttribute("disabled", true);
@@ -165,23 +165,28 @@ window.addEventListener("load", function () {
   updatePhotoButtonsState();
 });
 
-
-document.querySelectorAll('input[type="file"]').forEach(function(input) {
-  input.addEventListener('change', function(event) {
+document.querySelectorAll('input[type="file"]').forEach(function (input) {
+  input.addEventListener("change", function (event) {
     const currentFile = event.target.files[0];
     const currentInput = event.target;
 
-    document.querySelectorAll('input[type="file"]').forEach(function(otherInput) {
-      if (otherInput !== currentInput) {
-        const otherFile = otherInput.files[0];
-        if (otherFile && currentFile && otherFile.name === currentFile.name) {
-          if (!confirm('Вы уже выбрали этот файл в другом поле. Нажмите "Отмена" если хотите загрузить другой файл, или нажмите "Ок" чтобы продолжить.')) {
-            event.target.value = null;
+    document
+      .querySelectorAll('input[type="file"]')
+      .forEach(function (otherInput) {
+        if (otherInput !== currentInput) {
+          const otherFile = otherInput.files[0];
+          if (otherFile && currentFile && otherFile.name === currentFile.name) {
+            if (
+              !confirm(
+                'Вы уже выбрали этот файл в другом поле. Нажмите "Отмена" если хотите загрузить другой файл, или нажмите "Ок" чтобы продолжить.'
+              )
+            ) {
+              event.target.value = null;
+            }
+            return;
           }
-          return;
         }
-      }
-    });
+      });
   });
 });
 
@@ -275,7 +280,7 @@ function setupPhotoContainer(index, userId) {
     fileInput.value = "";
     removePhotoButton.disabled = true;
     addPhotoButton.disabled = false;
-    
+
     const savedImagePath = localStorage.getItem(`imagePath${index}`);
     if (savedImagePath) {
       deleteImageFromServer(savedImagePath, userId);
@@ -288,18 +293,18 @@ function setupPhotoContainer(index, userId) {
     const encodedUrl = encodeURIComponent(imageUrl);
     try {
       const response = await fetch(`/delete-image?url=${encodedUrl}`, {
-        method: 'DELETE',
+        method: "DELETE",
         headers: {
-          'userid': userId
-        }
+          userid: userId,
+        },
       });
       if (response.ok) {
-        console.log('Изображение успешно удалено с сервера');
+        console.log("Изображение успешно удалено с сервера");
       } else {
-        console.error('Ошибка при удалении изображения с сервера');
+        console.error("Ошибка при удалении изображения с сервера");
       }
     } catch (error) {
-      console.error('Ошибка при удалении изображения с сервера:', error);
+      console.error("Ошибка при удалении изображения с сервера:", error);
     }
   }
 }
@@ -412,8 +417,13 @@ function checkFields(indices) {
 var fieldsToCheck = [1, 2, 3, 4, 5, 16, 18, 19, 20, 23, 30, 31, 32];
 async function sendButtonClicked() {
   try {
-    // !checkNameFields() || !checkNameFields() || !checkFields(fieldsToCheck) || !checkPassportFields() ||
-    if (!checkIfPhotosUploaded()) {
+    if (
+      !checkNameFields() ||
+      !checkNameFields() ||
+      !checkFields(fieldsToCheck) ||
+      !checkPassportFields() ||
+      !checkIfPhotosUploaded()
+    ) {
       return;
     }
 
@@ -620,19 +630,18 @@ function sendDataToServer(
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
-        updatePhotoButtonsState()
-        document.getElementById('uploaded-image1').src = '#';
-        document.getElementById('uploaded-image2').src = '#';
-        document.getElementById('uploaded-image3').src = '#';
-    
-        localStorage.removeItem('imagePath1');
-        localStorage.removeItem('imagePath2');
-        localStorage.removeItem('imagePath3');
-    
-        document.getElementById('file-input1').value = '';
-        document.getElementById('file-input2').value = '';
-        document.getElementById('file-input3').value = '';
-        
+        updatePhotoButtonsState();
+        document.getElementById("uploaded-image1").src = "#";
+        document.getElementById("uploaded-image2").src = "#";
+        document.getElementById("uploaded-image3").src = "#";
+
+        localStorage.removeItem("imagePath1");
+        localStorage.removeItem("imagePath2");
+        localStorage.removeItem("imagePath3");
+
+        document.getElementById("file-input1").value = "";
+        document.getElementById("file-input2").value = "";
+        document.getElementById("file-input3").value = "";
 
         button.innerText = "Скачать результаты";
         button.classList.remove("loading");

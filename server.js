@@ -61,8 +61,17 @@ app.post('/logout', async (req, res) => {
 
   try {
     const userFolderPath = path.join(__dirname, `/uploads/images/${userId}`);
-    
-    await fsExtra.remove(userFolderPath);
+    console.log('User folder path:', userFolderPath);
+
+    const files = fs.readdirSync(userFolderPath);
+    console.log('Files in user folder:', files);
+
+    for (const file of files) {
+      const imagePath = path.join(userFolderPath, file);
+      console.log('Attempting to delete image:', imagePath);
+      await fsExtra.remove(imagePath);
+      console.log('Image deleted successfully:', imagePath);
+    }
 
     globalData.uploadedFiles = globalData.uploadedFiles.filter(image => image.filename.split('_')[0] !== userId);
 

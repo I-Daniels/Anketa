@@ -133,6 +133,58 @@ function updateElementIdAndName(container, newIndex) {
   });
 }
 
+function checkIfAllPhotosUploaded() {
+  for (let i = 1; i <= 3; i++) {
+    const savedImagePath = localStorage.getItem(`imagePath${i}`);
+    if (!savedImagePath) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function updatePhotoButtonsState() {
+  for (let i = 1; i <= 3; i++) {
+    const addButton = document.getElementById(`add-photo${i}`);
+    const removeButton = document.getElementById(`remove-photo${i}`);
+    const uploadedImage = document.getElementById(`uploaded-image${i}`);
+    
+    if (uploadedImage.src == "") {
+      addButton.disabled = true;
+      addButton.setAttribute("disabled", true);
+      removeButton.disabled = false;
+    } else {
+      addButton.disabled = false;
+      addButton.removeAttribute("disabled");
+      removeButton.disabled = true;
+    }
+  }
+}
+
+window.addEventListener("load", function () {
+  updatePhotoButtonsState();
+});
+
+
+document.querySelectorAll('input[type="file"]').forEach(function(input) {
+  input.addEventListener('change', function(event) {
+    const currentFile = event.target.files[0];
+    const currentInput = event.target;
+
+    document.querySelectorAll('input[type="file"]').forEach(function(otherInput) {
+      if (otherInput !== currentInput) {
+        const otherFile = otherInput.files[0];
+        if (otherFile && currentFile && otherFile.name === currentFile.name) {
+          if (!confirm('Вы уже выбрали этот файл в другом поле. Нажмите "Отмена" если хотите загрузить другой файл, или нажмите "Ок" чтобы продолжить.')) {
+            event.target.value = null;
+          }
+          return;
+        }
+      }
+    });
+  });
+});
+
 function moveCheckedValues() {
   const checkedCheckboxes = document.querySelectorAll(
     '.div_radio input[type="checkbox"]:checked'
@@ -154,24 +206,29 @@ function setupPhotoContainer(index, userId) {
   const fileInput = document.getElementById(`file-input${index}`);
   const uploadedImage = document.getElementById(`uploaded-image${index}`);
   const removePhotoButton = document.getElementById(`remove-photo${index}`);
+  let isUploading = false;
 
-  localStorage.setItem(`userId${index}`, userId);
+  updatePhotoButtonsState();
 
   const savedImagePath = localStorage.getItem(`imagePath${index}`);
 
   if (savedImagePath) {
     uploadedImage.src = savedImagePath;
     removePhotoButton.disabled = false;
+    addPhotoButton.disabled = true;
   }
 
   addPhotoButton.addEventListener("click", function () {
-    fileInput.click();
+    if (!isUploading) {
+      fileInput.click();
+    }
   });
 
   fileInput.addEventListener("change", async function (event) {
     const file = event.target.files[0];
 
-    if (file) {
+    if (file && !isUploading) {
+      isUploading = true;
       const formData = new FormData();
       formData.append("image", file);
       formData.append("imageFileName", file.name);
@@ -195,6 +252,7 @@ function setupPhotoContainer(index, userId) {
 
             uploadedImage.src = imageUrl;
             removePhotoButton.disabled = false;
+            addPhotoButton.disabled = true;
             localStorage.setItem(`imagePath${index}`, imageUrl);
           } catch (error) {
             console.error("Ошибка при обработке JSON:", error);
@@ -207,6 +265,8 @@ function setupPhotoContainer(index, userId) {
         }
       } catch (error) {
         console.error("Ошибка при обработке запроса:", error);
+      } finally {
+        isUploading = false;
       }
     }
   });
@@ -214,6 +274,7 @@ function setupPhotoContainer(index, userId) {
     uploadedImage.src = "";
     fileInput.value = "";
     removePhotoButton.disabled = true;
+    addPhotoButton.disabled = false;
     
     const savedImagePath = localStorage.getItem(`imagePath${index}`);
     if (savedImagePath) {
@@ -223,24 +284,24 @@ function setupPhotoContainer(index, userId) {
     }
   });
 
-async function deleteImageFromServer(imageUrl, userId) {
-  const encodedUrl = encodeURIComponent(imageUrl);
-  try {
-    const response = await fetch(`/delete-image?url=${encodedUrl}`, {
-      method: 'DELETE',
-      headers: {
-        'userid': userId
+  async function deleteImageFromServer(imageUrl, userId) {
+    const encodedUrl = encodeURIComponent(imageUrl);
+    try {
+      const response = await fetch(`/delete-image?url=${encodedUrl}`, {
+        method: 'DELETE',
+        headers: {
+          'userid': userId
+        }
+      });
+      if (response.ok) {
+        console.log('Изображение успешно удалено с сервера');
+      } else {
+        console.error('Ошибка при удалении изображения с сервера');
       }
-    });
-    if (response.ok) {
-      console.log('Изображение успешно удалено с сервера');
-    } else {
-      console.error('Ошибка при удалении изображения с сервера');
+    } catch (error) {
+      console.error('Ошибка при удалении изображения с сервера:', error);
     }
-  } catch (error) {
-    console.error('Ошибка при удалении изображения с сервера:', error);
   }
-}
 }
 
 for (let i = 1; i <= 3; i++) {
@@ -559,7 +620,7 @@ function sendDataToServer(
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
-
+        updatePhotoButtonsState()
         document.getElementById('uploaded-image1').src = '#';
         document.getElementById('uploaded-image2').src = '#';
         document.getElementById('uploaded-image3').src = '#';
@@ -571,6 +632,7 @@ function sendDataToServer(
         document.getElementById('file-input1').value = '';
         document.getElementById('file-input2').value = '';
         document.getElementById('file-input3').value = '';
+        
 
         button.innerText = "Скачать результаты";
         button.classList.remove("loading");
